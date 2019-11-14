@@ -1,0 +1,5 @@
+//- Пример вызова: +picture('http://herrkessler.de/codepen', 'beer', ['jpg','webp'])
+mixin picture(path, name, type)
+  picture
+    source(srcset=path + "/" + name + "." + val type="image/" + val)
+    img(src=path + "/" + name + ".jpg" alt=name)

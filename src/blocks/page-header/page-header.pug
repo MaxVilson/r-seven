@@ -1,0 +1,36 @@
+//- Все примеси в этом файле должны начинаться c имени блока (page-header)
+
+mixin page-header(mods)
+
+  //- Принимает:
+  //-   mods  {string} - список модификаторов
+  //- Вызов:
+        +page-header()
+          p «Шапка»
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' page-header--' + modsList[i].trim();
+      }
+    }
+
+  header.page-header(class=allMods, role='banner')&attributes(attributes)
+    .container
+      .page-header__inner
+        +logo('/')(class='page-header__logo')
+          img(src='img/logo.svg', alt='Logo')
+        .page-header__icons
+          a(href='tel:+74955182175').page-header__icon.page-header__icon-tel
+            svg(width="21", height="20")
+              use(xlink:href="img/sprite.svg#mobile")
+          a(href='#').page-header__icon.page-header__icon-search
+            svg(width="24", height="23")
+              use(xlink:href="img/sprite.svg#search_icon")
+          a(href='#').page-header__icon.page-header__icon-cart
+            svg(width="25", height="20")
+              use(xlink:href="img/sprite.svg#cart")
+        +main-nav('10')
+

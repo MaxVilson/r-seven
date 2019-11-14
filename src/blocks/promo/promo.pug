@@ -1,0 +1,50 @@
+//- Все примеси в этом файле должны начинаться c имени блока (promo)
+
+mixin promo(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +promo('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' promo--' + modsList[i].trim();
+      }
+    }
+
+  .promo(class=allMods)&attributes(attributes)
+    .promo__slider
+      .promo__slide
+        picture.promo__slide-bg
+          source(media='(min-width: 1200px)' srcset='img/promo-slide-desktop.jpg')
+          img(src='img/promo-slide.jpg' alt='Промо акции')
+        .promo__slide-content
+          h2.promo__title Сезон подарков
+            .promo__subtitle до 31 декабря
+          .promo__text дарим крутые подарки при покупке игровых ноутбуков Asus ROG
+          +btn('Подробнее', 'transparent, sm promo__btn')(href='#')
+      .promo__slide
+        picture.promo__slide-bg
+          source(media='(min-width: 1200px)' srcset='img/promo-slide-desktop.jpg')
+          img(src='img/promo-slide.jpg' alt='Промо акции')
+        .promo__slide-content
+          h2.promo__title Сезон подарков
+            .promo__subtitle до 31 декабря
+          .promo__text дарим крутые подарки при покупке игровых ноутбуков Asus ROG
+          +btn('Подробнее', 'transparent, sm promo__btn')(href='#')
+      .promo__slide
+        picture.promo__slide-bg
+          source(media='(min-width: 1200px)' srcset='img/promo-slide-desktop.jpg')
+          img(src='img/promo-slide.jpg' alt='Промо акции')
+        .promo__slide-content
+          h2.promo__title Сезон подарков
+            .promo__subtitle до 31 декабря
+          .promo__text дарим крутые подарки при покупке игровых ноутбуков Asus ROG
+          +btn('Подробнее', 'transparent, sm promo__btn')(href='#')
+
