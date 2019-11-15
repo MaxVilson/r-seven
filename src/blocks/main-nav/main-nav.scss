@@ -3,20 +3,18 @@
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .main-nav {
+  $block-name: &; // #{$block-name}__element
 
-  $block-name:                &; // #{$block-name}__element
+  position: absolute;
+  left: 0;
+  z-index: 10;
+  width: 100vw;
 
   // первый уровень
   &__list {
-    position: absolute;
-    top: 60px;
-    left: 0;
     margin: 0;
     padding: 0;
-    width: 100%;
     list-style: none;
-    text-align: center;
-    background-color: #fff;
 
     // мобильный вид списка
     @media (max-width: ($menu-desktop-width - 1)) {
@@ -63,7 +61,8 @@
 
     &--active {
 
-      & > #{$block-name}__link { // stylelint-disable-line  selector-combinator-blacklist
+      &>#{$block-name}__link {
+        // stylelint-disable-line  selector-combinator-blacklist
         color: #000;
       }
     }
@@ -113,12 +112,13 @@
         transition: opacity $transition-time;
 
         // stylelint-disable
-        #{$block-name}__item--show-child > &,
+        #{$block-name}__item--show-child>&,
         #{$block-name}__item:hover & {
           height: auto;
           overflow: visible;
           opacity: 1;
         }
+
         // stylelint-enable
       }
     }
@@ -136,12 +136,13 @@
         transition: opacity $transition-time;
 
         // stylelint-disable
-        #{$block-name}__item--show-child > &,
+        #{$block-name}__item--show-child>&,
         #{$block-name}__item--lvl-2:hover & {
           height: auto;
           overflow: visible;
           opacity: 1;
         }
+
         // stylelint-enable
       }
     }

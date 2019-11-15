@@ -1,0 +1,71 @@
+// В этом файле должны быть стили для БЭМ-блока menu, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.menu {
+
+  &__widget {
+    color: $gray-darkest;
+    background-color: #fff;
+
+    &:after {
+      // background-image: url('../img/logo.svg');
+      // background-repeat: no-repeat;
+      // background-position: right;
+    }
+  }
+
+  &__item {
+    padding-left: 60px !important;
+
+    &:after {
+      display: none !important;
+    }
+
+    & span {
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-left: 0 !important;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 60px;
+    }
+
+    & a {
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-left: 0 !important;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 60px;
+    }
+  }
+
+  &__footer {
+    position: relative;
+    padding-top: 15px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;  
+      height: 1px;
+      background-color: $gray-lightest;
+    }
+
+    a {
+      padding-top: 0;
+      padding-bottom: 0;
+      font-size: 12px;
+      font-weight: 300;
+      line-height: 36px;
+      color: $gray-darkest;
+
+      &:after {
+        display: none !important;
+      }
+    }
+  }
+}

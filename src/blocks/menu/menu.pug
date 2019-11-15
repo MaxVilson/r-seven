@@ -1,0 +1,65 @@
+//- Все примеси в этом файле должны начинаться c имени блока (menu)
+
+mixin menu(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +menu('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' menu--' + modsList[i].trim();
+      }
+    }
+
+  nav.menu(class=allMods)&attributes(attributes)
+    .menu__inner
+      +burger('')(href="#my-menu")
+      .menu__widget#my-menu(data-mm-title='aaa')
+        ul.menu__list
+          li.menu__item
+            a(href='#').menu__link Компьютеры  
+              //- svg(width="24", height="20")
+              //-   use(xlink:href="img/sprite.svg#computer")
+          li.menu__item
+            span Комплектующие 
+            ul.menu__sublist
+              li.menu__item.menu__subitem
+                a(href='#').menu__lik.menu__sublink Процессоры
+              li.menu__item.menu__subitem
+                a(href='#').menu__lik.menu__sublink Материнские платы
+              li.menu__item.menu__subitem
+                a(href='#').menu__lik.menu__sublink Видеокарты
+              li.menu__item.menu__subitem
+                a(href='#').menu__lik.menu__sublink Жесткие диски
+              li.menu__item.menu__subitem
+                a(href='#').menu__lik.menu__sublink SSD накопители
+              li.menu__item.menu__subitem
+                a(href='#').menu__lik.menu__sublink Блоки питания 
+              li.menu__item.menu__subitem
+                a(href='#').menu__lik.menu__sublink Корпуса
+              li.menu__item.menu__subitem
+                a(href='#').menu__lik.menu__sublink Звуковые карты 
+          li.menu__item
+            a(href='#').menu__lik Мониторы
+          li.menu__item
+            a(href='#').menu__lik Оргтехника, расходка 
+          li.menu__item
+            a(href='#').menu__lik Периферия 
+          li.menu__item
+            a(href='#').menu__lik Акустика  
+          li.menu__item
+            a(href='#').menu__lik Сетевое оборудование
+          li.menu__item
+            a(href='#').menu__lik Конфигуратор ПК   
+          .menu__footer
+            a.menu__footer-link(href='#') Акции
+            a.menu__footer-link(href='#') Оплата и доставка   
+            a.menu__footer-link(href='#') Сервис  
+            a.menu__footer-link(href='#') Контакты 

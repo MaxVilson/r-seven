@@ -79,7 +79,9 @@
     "baron": "^3.0.3",
     "choices.js": "^7.0.0",
     "closest": "0.0.1",
+    "hc-sticky": "^2.2.3",
     "jquery": "^3.4.1",
+    "mmenu-light": "^2.3.1",
     "object-fit-images": "^3.2.4",
     "slick-carousel": "^1.8.1",
     "svg4everybody": "^2.1.8"

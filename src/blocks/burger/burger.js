@@ -2,7 +2,7 @@
 
 const ready = require('../../js/utils/documentReady.js');
 
-ready(function(){
+ready(function() {
 
   var burgers = document.querySelectorAll('.burger');
 

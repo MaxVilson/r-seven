@@ -1,6 +1,6 @@
 const ready = require('../../js/utils/documentReady.js');
 const baron = require('baron');
-
+baron.
 ready(function(){
 
   baron({

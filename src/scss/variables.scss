@@ -32,7 +32,7 @@ $text-color-muted:            $gray;
 $body-bg:                     $white;
 
 $link-color:                  $color-main;
-$link-color--hover:           darken($color-main, 15%);
+$link-color--hover:           $color-main;
 
 $border-color:                $gray-lighten;
 
@@ -55,7 +55,7 @@ $line-height:                 1.5;
 
 $typo-margin-vertical:        1em;
 
-$font-family: 'museo_sans_cyrl300';
+$font-family: 'MuseoSansCyrl';
 $font-family--monospace:     SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
 // Georgia, Times New Roman, Times, serif
 
@@ -94,7 +94,7 @@ $transition-time:             0.3s;
 $shadow:                      0 4px 2px -2px rgba(0, 0, 0, 0.3);
 
 $menu-desktop-width:          $screen-xl;
-$toggler-part-height:         3px;
-$toggler-part-bg-color:       $gray-dark;
+$toggler-part-height:         2px;
+$toggler-part-bg-color:       $gray-darkest;
 
 $z-index-modal:               100;
