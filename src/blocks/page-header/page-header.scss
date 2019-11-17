@@ -6,6 +6,10 @@
   position: relative;
   padding-bottom: 2px;
 
+  @include desktop {
+    box-shadow: 0 0 6px 6px rgba(0, 0, 0, 0.05);
+  }
+
   &__wrapper {
     @include container;
     display: flex;
@@ -15,6 +19,7 @@
     padding-top: 13px;
 
     @include desktop {
+      justify-content: flex-start;
       margin-right: auto;
       margin-left: auto;
     }
@@ -24,7 +29,7 @@
     display: none;
 
     @include desktop {
-      display: block;
+      @include container;
       border-bottom: 1px solid #f2f2f2;
     }
 
@@ -42,10 +47,8 @@
       position: relative;
       padding-bottom: 20px;
 
-      &:hover {
-        & .page-header__top-line-dropdown {
-          display: block;
-        }
+      &-arrow {
+        cursor: pointer;
       }
     }
 
@@ -74,6 +77,14 @@
       font-weight: 300;
       background-color: #fff;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+
+      &-icon-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 0; 
+        cursor: pointer;
+      }
 
       &-title {
         margin-bottom: 20px;
@@ -132,6 +143,8 @@
     @include desktop {
       align-items: flex-start;
       order: 3;
+      margin-right: 0;
+      margin-left: 10px;
     }
   }
 
@@ -151,6 +164,9 @@
 
     &-cart {
       @include desktop {
+        margin-top: 14px;
+        margin-left: 74px;
+
         & svg {
           fill: #ccc;
         }

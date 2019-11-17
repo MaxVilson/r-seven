@@ -17,7 +17,28 @@ document.addEventListener(
   }
 );
 
+function getWindowWidth() {
+  return window.innerWidth || document.body.clientWidth;
+}
+
 // Откртытия меню при наведении на элемент
-// const desktopMenu = () => {
-//   const items = document.querySelectorAll('.menu__item-dropdown');
+// if (getWindowWidth() >= 1200) {
+//   const desktopMenu = () => {
+//     const items = document.querySelectorAll('.menu__item-dropdown');
+//     for (let i = 0; i < items.length; i++) {
+//       items[i].addEventListener('mouseenter', function () {
+//         if (this.children.length > 1) {
+//           this.children[1].classList.add('menu__sublist--active');  
+//           this.children[2].classList.add('menu__sublist--active');
+//         }
+//       })
+//       items[i].addEventListener('mouseleave', function () {
+//         if (this.children.length > 1) {
+//           this.children[1].classList.remove('menu__sublist--active'); 
+//           this.children[2].classList.remove('menu__sublist--active');
+//         }
+//       })
+//     }
+//   }
+//   desktopMenu();
 // }

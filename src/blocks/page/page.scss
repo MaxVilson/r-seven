@@ -339,6 +339,12 @@ pre {
   @include tablet {
     @include container;
   }
+
+  &-promo {
+    @include desktop {
+      margin-top: 20px;
+    }
+  }
 }
 
 .container {

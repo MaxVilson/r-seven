@@ -9,6 +9,16 @@
     margin-left: 39px;
   }
 
+  &__inner {
+    @include desktop {
+      &:hover {
+        & .menu__widget {
+          visibility: inherit;
+        }
+      }
+    }
+  }
+
   &__burger {
     margin-top: 5px;
 
@@ -31,11 +41,12 @@
 
     @include desktop {
       position: absolute;
-      top: 74px;
+      top: 0;
       left: 0;
       z-index: 999;
-      padding-top: 20px;
+      visibility: hidden;
       min-width: 280px;
+      background-color: transparent;
     }
 
     &:after {
@@ -48,13 +59,23 @@
   &__list {
     @include desktop {
       position: relative;
-      margin: 0;
-      padding: 0;
+      margin-top: 64px;
+      padding-left: 0;
       list-style: none;
+      background-color: #fff;
     }
   }
 
   &__item {
+    @include desktop {
+      cursor: pointer;
+        
+      &:hover {
+        & .menu__sublist {
+          display: block;
+        }
+      }
+    }
 
     &:after {
       display: none !important;
@@ -66,7 +87,7 @@
 
     &-dropdown {
       @include desktop {
-        display: inline-block;
+
       }
     }
 
@@ -98,8 +119,7 @@
       cursor: pointer;
 
       @include desktop {
-        display: inline-block;
-        line-height: 50px;
+        display: none;
       }
 
       &:hover,
@@ -127,8 +147,17 @@
     @include desktop {
       position: inherit;
       display: inline-block;
+      width: 100%;
+      height: 100%;
       line-height: 50px;
       text-decoration: none;
+    }
+
+    &-desktop {
+      display: none !important;
+      @include desktop {
+        display: inline-block;
+      }
     }
 
     &:after {
@@ -211,11 +240,15 @@
       position: absolute;
       top: 0;
       right: -260px;
-      min-width: 260px;
+      width: 260px;
       height: 100%;
       padding-left: 30px;
       list-style: none;
       background-color: #f7f7f7;
+
+      &--active {
+        display: block;
+      }
     }
   }
 

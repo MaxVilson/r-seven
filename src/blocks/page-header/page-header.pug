@@ -23,9 +23,14 @@ mixin page-header(mods)
         .page-header__top-line-phones
           a(href='tel:74955182175').page-header__top-line-phone 8 495 518 21 75,
           a(href='tel:78001002676').page-header__top-line-phone 8 800 100 26 76
-          svg(width="10", height="8")
-            use(xlink:href="img/sprite.svg#arrow-down")
+          span.page-header__top-line-phones-arrow
+            svg(width="10", height="8")
+              use(xlink:href="img/sprite.svg#arrow-down")
           .page-header__top-line-dropdown 
+            .page-header__top-line-dropdown-icon-close 
+              |Закрыть
+              svg(width="10", height="10")
+                use(xlink:href="img/sprite.svg#close")
             .page-header__top-line-dropdown-title График работы:
             .page-header__top-line-dropdown-time Пн.-Пт.:
               span с 10-00 до 20-00
@@ -51,6 +56,7 @@ mixin page-header(mods)
             mods: '',
             attrs: {
               name: 'search',
+              placeholder: 'Поиск по названию товара'
             }
           })
           a(href='#').page-header__search-icon
