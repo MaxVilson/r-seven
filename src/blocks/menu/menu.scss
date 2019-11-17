@@ -3,10 +3,40 @@
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .menu {
+  position: relative;
+
+  @include desktop {
+    margin-left: 39px;
+  }
+
+  &__burger {
+    margin-top: 5px;
+
+    @include desktop {
+      display: none;  
+    }
+  }
+
+  &__dropdown {
+    display: none;
+
+    @include desktop {
+      display: block;
+    }
+  }
 
   &__widget {
     color: $gray-darkest;
     background-color: #fff;
+
+    @include desktop {
+      position: absolute;
+      top: 74px;
+      left: 0;
+      z-index: 999;
+      padding-top: 20px;
+      min-width: 280px;
+    }
 
     &:after {
       // background-image: url('../img/logo.svg');
@@ -15,35 +45,203 @@
     }
   }
 
+  &__list {
+    @include desktop {
+      position: relative;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+  }
+
   &__item {
-    padding-left: 60px !important;
 
     &:after {
       display: none !important;
     }
 
+    &:before {
+      top: 28px !important;
+    }
+
+    &-dropdown {
+      @include desktop {
+        display: inline-block;
+      }
+    }
+
+    &-complektuyushie {
+      background-image: url('../img/complektuyushie.svg') !important;
+      background-repeat: no-repeat !important;
+      background-position: 17px center !important;
+      background-size: 24px !important;
+    }
+
+    & svg {
+      position: absolute;
+      top: 18px;
+      fill: #191919;
+
+      @include desktop {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+
     & span {
       padding-top: 0;
       padding-bottom: 0;
-      padding-left: 0 !important;
+      padding-left: 60px !important;
       font-size: 12px;
       font-weight: 700;
       line-height: 60px;
+      cursor: pointer;
+
+      @include desktop {
+        display: inline-block;
+        line-height: 50px;
+      }
+
+      &:hover,
+      &:focus {
+
+        color: $color-main;
+
+        & svg {
+          fill: $color-main;
+          transition: all 0.3s;
+        }
+      }
+    }
+  }
+
+  &__link {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    padding-left: 60px !important;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 60px;
+    color: $gray-darkest;
+
+    @include desktop {
+      position: inherit;
+      display: inline-block;
+      line-height: 50px;
+      text-decoration: none;
     }
 
-    & a {
-      padding-top: 0;
-      padding-bottom: 0;
-      padding-left: 0 !important;
-      font-size: 12px;
-      font-weight: 700;
-      line-height: 60px;
+    &:after {
+      display: none !important;
+    }
+
+    &:hover,
+    &:focus {
+
+      & svg {
+        fill: $color-main;
+        transition: all 0.3s;
+      }
+    }
+
+    & svg { 
+      position: absolute;
+      top: 18px;
+      fill: #191919;
+
+      @include desktop {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+
+    &-computer {
+      background-image: url('../img/computer.svg') !important;
+      background-repeat: no-repeat !important;
+      background-position: 16px center !important;
+      background-size: 24px !important;
+    }
+
+    &-monitori {
+      background-image: url('../img/monitori.svg') !important;
+      background-repeat: no-repeat !important;
+      background-position: 17px center !important;
+      background-size: 24px !important;
+    }
+
+    &-orgtehnika {
+      background-image: url('../img/orgtehnika.svg') !important;
+      background-repeat: no-repeat !important;
+      background-position: 17px center !important;
+      background-size: 24px !important;
+    }
+
+    &-pereferiya {
+      background-image: url('../img/pereferiya.svg') !important;
+      background-repeat: no-repeat !important;
+      background-position: 21px center !important;
+      background-size: 21px !important;
+    }
+
+    &-audio {
+      background-image: url('../img/audio.svg') !important;
+      background-repeat: no-repeat !important;
+      background-position: 19px center !important;
+      background-size: 30px !important;
+    }
+
+    &-setevoe_oborudovanie {
+      background-image: url('../img/setevoe_oborudovanie.svg') !important;
+      background-repeat: no-repeat !important;
+      background-position: 17px center !important;
+      background-size: 24px !important;
+    }
+
+    &-configurator {
+      background-image: url('../img/configurator.svg') !important;
+      background-repeat: no-repeat !important;
+      background-position: 19px center !important;
+      background-size: 19px !important;
+    }
+  }
+
+  &__sublist {
+    @include desktop {
+      display: none;
+      position: absolute;
+      top: 0;
+      right: -260px;
+      min-width: 260px;
+      height: 100%;
+      padding-left: 30px;
+      list-style: none;
+      background-color: #f7f7f7;
+    }
+  }
+
+  &__subitem {
+    background-image: none !important;
+  }
+
+  &__sublink {
+    padding-left: 20px !important;
+    font-size: 12px;
+    font-weight: 300;
+    text-decoration: none;
+    color: $gray-darkest;
+
+    @include desktop {
+      line-height: 50px;
     }
   }
 
   &__footer {
     position: relative;
     padding-top: 15px;
+
+    @include desktop {
+      display: none;
+    }
 
     &:before {
       content: '';

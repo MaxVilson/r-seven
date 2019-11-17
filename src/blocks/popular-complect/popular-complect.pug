@@ -1,0 +1,23 @@
+//- Все примеси в этом файле должны начинаться c имени блока (popular-complect)
+
+mixin popular-complect(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +popular-complect('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' popular-complect--' + modsList[i].trim();
+      }
+    }
+
+  .popular-complect(class=allMods)&attributes(attributes)
+    .popular-complect__inner
+      h2.popular-complect__title Популярные комплекты

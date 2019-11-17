@@ -19,4 +19,102 @@ mixin page-footer(mods)
 
   footer.page-footer(class=allMods, role='contentinfo')&attributes(attributes)
     .page-footer__inner
-      block
+      ul.page-footer__list
+        li.page-footer__item Компьютеры
+          svg(width="10", height="6").page-footer__item-icon
+            use(xlink:href="img/sprite.svg#arrow-down")
+          ul.page-footer__sublist
+            li.page-footer__subitem
+              a(href='#').page-footer__sublink Офисные
+            li.page-footer__subitem
+              a(href='#').page-footer__sublink Домашние
+            li.page-footer__subitem
+              a(href='#').page-footer__sublink Игровые
+            li.page-footer__subitem
+              a(href='#').page-footer__sublink Профессиональные
+            li.page-footer__subitem
+              a(href='#').page-footer__sublink Компактные
+        li.page-footer__item Комплектующие
+          svg(width="10", height="6").page-footer__item-icon
+            use(xlink:href="img/sprite.svg#arrow-down")
+          ul.page-footer__sublist
+            li.page-footer__subitem
+              a(href='#').page-footer__sublink Процессоры
+            li.page-footer__subitem
+              a(href='#').page-footer__sublink Системы охлаждения
+            li.page-footer__subitem
+              a(href='#').page-footer__sublink Жесткие диски
+            li.page-footer__subitem
+              a(href='#').page-footer__sublink Блоки питания
+            li.page-footer__subitem
+              a(href='#').page-footer__sublink Материнские платы
+            li.page-footer__subitem
+              a(href='#').page-footer__sublink Видеокарты
+            li.page-footer__subitem
+              a(href='#').page-footer__sublink Корпуса
+        li.page-footer__item Сетевое оборудование
+          svg(width="10", height="6").page-footer__item-icon
+            use(xlink:href="img/sprite.svg#arrow-down") 
+          ul.page-footer__sublist
+            li.page-footer__subitem
+              a(href='#').page-footer__sublink Сетевые адаптеры
+            li.page-footer__subitem
+              a(href='#').page-footer__sublink Коммутаторы
+            li.page-footer__subitem
+              a(href='#').page-footer__sublink Антенны
+            li.page-footer__subitem
+              a(href='#').page-footer__sublink Сетевые кабели
+            li.page-footer__subitem
+              a(href='#').page-footer__sublink Маршрутизаторы
+            li.page-footer__subitem
+              a(href='#').page-footer__sublink Адаптеры
+        li.page-footer__item Переферия 
+          svg(width="10", height="6").page-footer__item-icon
+            use(xlink:href="img/sprite.svg#arrow-down")
+          ul.page-footer__sublist
+            li.page-footer__subitem
+              a(href='#').page-footer__sublink Мониторы
+            li.page-footer__subitem
+              a(href='#').page-footer__sublink Клавиатуры
+            li.page-footer__subitem
+              a(href='#').page-footer__sublink Мыши
+            li.page-footer__subitem
+              a(href='#').page-footer__sublink Наушники
+            li.page-footer__subitem
+              a(href='#').page-footer__sublink Акустические системы
+            li.page-footer__subitem
+              a(href='#').page-footer__sublink Аксесуары
+            li.page-footer__subitem
+              a(href='#').page-footer__sublink Внешние накопители
+        li.page-footer__item Оргтехника
+          svg(width="10", height="6").page-footer__item-icon
+            use(xlink:href="img/sprite.svg#arrow-down")    
+          ul.page-footer__sublist
+            li.page-footer__subitem
+              a(href='#').page-footer__sublink Принтеры и МФУ
+            li.page-footer__subitem
+              a(href='#').page-footer__sublink Сканеры
+            li.page-footer__subitem
+              a(href='#').page-footer__sublink Расходные материалы
+            li.page-footer__subitem
+              a(href='#').page-footer__sublink Защита питания
+            li.page-footer__subitem
+              a(href='#').page-footer__sublink Сетевые фильтрыы
+            li.page-footer__subitem
+              a(href='#').page-footer__sublink Лицензионное ПО
+      .page-footer__bottom-line
+        .page-footer__logo
+          img(src="img/logo-monocolor.svg" alt='Логотип')
+        ul.page-footer__second-list
+          li.page-footer__second-list-item
+            a(href='#').page-footer__second-list-link Акции
+          li.page-footer__second-list-item
+            a(href='#').page-footer__second-list-link Оплата и доставка  
+          li.page-footer__second-list-item
+            a(href='#').page-footer__second-list-link Сервис
+          li.page-footer__second-list-item
+            a(href='#').page-footer__second-list-link Контакты
+        .page-footer__phones
+          a(href='tel:+74955182175').page-footer__phones-link 8 495 518 21 75,
+          a(href='tel:+78001002676').page-footer__phones-link 8 800 100 26 76
+        p.page-footer__description Сайт носит информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями ч.2 ст. 437 ГК РФ. Внешний вид, цвет, комплектация и характеристики товаров указаны ориентировочно, могут не совпадать с обновленными моделями — уточняйте информацию у менеджеров при заказе.

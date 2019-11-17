@@ -10,7 +10,12 @@
   white-space: nowrap;
 
   img {
-    width: 92px;
-    height: 32px;
+    width: 91px;
+    height: 33px;
+
+    @include desktop {
+      width: 142px;
+      height: 48px;
+    }
   }
 }

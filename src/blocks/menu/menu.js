@@ -5,7 +5,7 @@ document.addEventListener(
     const menu = new MmenuLight(node, {
       title: 'Категории товаров'
     });
-    menu.enable("(max-width: 600px)");
+    menu.enable("(max-width: 1179px)");
     menu.offcanvas();
 
     document.querySelector("a[href='#my-menu']")
@@ -16,3 +16,8 @@ document.addEventListener(
       });
   }
 );
+
+// Откртытия меню при наведении на элемент
+// const desktopMenu = () => {
+//   const items = document.querySelectorAll('.menu__item-dropdown');
+// }

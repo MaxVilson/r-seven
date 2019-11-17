@@ -22,11 +22,11 @@ mixin promo(text, mods)
     .promo__slider
       .promo__slide
         picture.promo__slide-bg
-          source(media='(min-width: 1200px)' srcset='img/promo-slide-desktop.jpg')
+          source(media='(min-width: 768px)' srcset='img/promo-slide-desktop.jpg')
           img(src='img/promo-slide.jpg' alt='Промо акции')
         .promo__slide-content
           h2.promo__title Сезон подарков
-            .promo__subtitle до 31 декабря
+          .promo__subtitle до 31 декабря
           .promo__text дарим крутые подарки при покупке игровых ноутбуков Asus ROG
           +btn('Подробнее', 'transparent, sm promo__btn')(href='#')
       .promo__slide
@@ -35,7 +35,7 @@ mixin promo(text, mods)
           img(src='img/promo-slide.jpg' alt='Промо акции')
         .promo__slide-content
           h2.promo__title Сезон подарков
-            .promo__subtitle до 31 декабря
+          .promo__subtitle до 31 декабря
           .promo__text дарим крутые подарки при покупке игровых ноутбуков Asus ROG
           +btn('Подробнее', 'transparent, sm promo__btn')(href='#')
       .promo__slide
@@ -44,7 +44,7 @@ mixin promo(text, mods)
           img(src='img/promo-slide.jpg' alt='Промо акции')
         .promo__slide-content
           h2.promo__title Сезон подарков
-            .promo__subtitle до 31 декабря
+          .promo__subtitle до 31 декабря
           .promo__text дарим крутые подарки при покупке игровых ноутбуков Asus ROG
           +btn('Подробнее', 'transparent, sm promo__btn')(href='#')
 

@@ -8,7 +8,6 @@
   max-width: 100%;
   margin: 0;
   border-radius: $border-radius;
-  // border: 1px solid $gray-lighter;
   border: 0;
   padding: $field-padding-vertical  $field-padding-horizontal;
   vertical-align: middle;
@@ -30,8 +29,7 @@
   &:hover,
   &:focus {
     text-decoration: none;
-    color: $text-color;
-    background-color: darken($gray-lightest, 10%);
+    background-color: $color-main-light;
     // border-color: darken($gray-lighter, 12%);
   }
 
@@ -41,7 +39,7 @@
 
   &:active,
   &:focus {
-    @include field-focus;
+    
   }
 
   &--disabled,
@@ -58,6 +56,8 @@
   }
 
   &--transparent {
+    font-size: 12px;
+    line-height: 24px;
     color: $gray-lightest;
     border: 1px solid $gray-lightest;
     background-color: transparent;
@@ -65,6 +65,17 @@
 
   &--sm {
     min-width: 130px;
+  }
+
+  &--dropdown {
+    padding-top: 17px;
+    padding-bottom: 17px;
+    padding-left: 48px;
+    min-width: 180px;
+    font-weight: 700;
+    background-image: url('../img/circle.svg');
+    background-repeat: no-repeat;
+    background-position: 22px center;
   }
 
   // &__icon {
