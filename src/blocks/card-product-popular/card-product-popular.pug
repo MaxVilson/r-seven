@@ -1,0 +1,35 @@
+//- Все примеси в этом файле должны начинаться c имени блока (card-product-popular)
+
+mixin card-product-popular(img, title, sale, price, icon, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +card-product-popular('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' card-product-popular--' + modsList[i].trim();
+      }
+    }
+
+  a(href='#').card-product-popular(class=allMods)&attributes(attributes)
+    .card-product-popular__inner
+      .card-product-popular__img 
+        img(src=img alt='Товар') 
+      .card-product-popular__title= title
+      .card-product-popular__sale= sale
+      .card-product-popular__price= price
+      if(icon == 'plus')
+        .card-product-popular__plus 
+          svg.popular-complect__mobile-nav-icon-prev(width="31", height="31")
+            use(xlink:href="img/sprite.svg#plus")
+      if(icon == 'arrow')
+        .card-product-popular__arrow 
+          svg.popular-complect__mobile-nav-icon-next(width="13", height="8")
+            use(xlink:href="img/sprite.svg#arrow-down")

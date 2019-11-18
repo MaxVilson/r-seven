@@ -1,0 +1,70 @@
+// В этом файле должны быть стили для БЭМ-блока card-info, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.card-info {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  width: 100%;
+  max-width: 280px;
+  background-color: $color-secondory;
+  color: $white;
+
+  @include tablet {
+    width: 250px;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 300;
+  }
+
+  &__list {
+    margin-top: 22px;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+
+    & li {
+      margin-top: 11px;
+      font-size: 12px;
+      font-weight: 300;
+    }
+  }
+
+  &__profit {
+    margin-top: 45px;
+    font-weight: 700;
+  }
+
+  &__price {
+    font-size: 30px;
+    font-weight: 700;
+
+    &-wrapper {
+      display: flex;
+      align-items: center;
+      margin-top: 27px;
+    }
+  }
+
+  &__sale {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    width: 48px;
+    height: 32px;
+    border-radius: 16px;
+    background-color: #fff;
+    font-weight: 700;
+    color: $color-main;
+  }
+
+  &__btn {
+    margin-top: 30px;
+    min-width: 220px;
+    min-height: 54px;
+  }
+}

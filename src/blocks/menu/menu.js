@@ -17,9 +17,9 @@ document.addEventListener(
   }
 );
 
-function getWindowWidth() {
-  return window.innerWidth || document.body.clientWidth;
-}
+// function getWindowWidth() {
+//   return window.innerWidth || document.body.clientWidth;
+// }
 
 // Откртытия меню при наведении на элемент
 // if (getWindowWidth() >= 1200) {

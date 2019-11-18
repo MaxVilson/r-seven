@@ -16,7 +16,7 @@ let config = {
     'src/scss/variables.scss',
     'src/scss/mixins.scss',
     'src/scss/fonts.scss',
-    '../../node_modules/slick-carousel/slick/slick.css',
+    '../../node_modules/swiper/css/swiper.min.css',
     '../../node_modules/mmenu-light/dist/mmenu-light.css',
     // 'somePackage/dist/somePackage.css', // для 'node_modules/somePackage/dist/somePackage.css',
   ],

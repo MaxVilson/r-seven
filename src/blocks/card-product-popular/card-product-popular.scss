@@ -1,0 +1,85 @@
+// В этом файле должны быть стили для БЭМ-блока card-product-popular, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.card-product-popular {
+  position: relative;
+  padding-top: 56px;
+  padding-bottom: 49px;
+  width: 280px;
+  background-color: $white;
+  text-decoration: none;  
+  color: $gray-darker;
+
+  &:hover {
+    color: inherit;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  &__img {
+    display: flex;
+    justify-content: center;
+    width: 180px;
+    height: 160px;
+  }
+
+  &__title {
+    margin-top: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+    font-weight: 700;
+    line-height: 24px;
+  }
+
+  &__sale {
+    margin-top: 25px;
+    font-weight: 300;
+    text-decoration: line-through;
+    color: #afb1b3;
+  }
+
+  &__price {
+    margin-top: 14px;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  &__plus {
+    position: absolute;
+    top: 50%;
+    right: -27px;
+    z-index: 5;
+    width: 32px;
+    height: 32px;
+    transform: translateY(-50%);
+    cursor: initial;
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    right: -27px;
+    z-index: 5;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    background-color: $color-main;
+    transform: translateY(-50%);
+    cursor: initial;
+
+    & svg {
+      position: absolute;
+      top: 10px;
+      left: 9px;
+      fill: $white;
+      transform: rotate(-90deg);
+    }
+  }
+}

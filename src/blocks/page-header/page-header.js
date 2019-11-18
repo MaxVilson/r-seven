@@ -5,7 +5,6 @@ ready(function () {
     const open = document.querySelector('.page-header__top-line-phones-arrow');
     const close = document.querySelector('.page-header__top-line-dropdown-icon-close');
     const dropdown = document.querySelector('.page-header__top-line-dropdown');
-    console.log(dropdown);
 
     open.addEventListener('click', () => {
       dropdown.style.display = 'block';

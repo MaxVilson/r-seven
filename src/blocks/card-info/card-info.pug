@@ -1,0 +1,31 @@
+//- Все примеси в этом файле должны начинаться c имени блока (card-info)
+
+mixin card-info(title, profit, price, sale, list, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +card-info('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' card-info--' + modsList[i].trim();
+      }
+    }
+
+  .card-info(class=allMods)&attributes(attributes)
+    .card-info__wrapper
+      .card-info__title= title
+      ul.card-info__list
+        each val in list
+          li= val 
+      .card-info__profit= profit
+      .card-info__price-wrapper 
+        .card-info__price= price
+        .card-info__sale= sale
+      +btn('Купить комплект', 'transparent')(class='card-info__btn')

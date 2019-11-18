@@ -337,7 +337,7 @@ pre {
 
 .page__index-content {
   @include tablet {
-    @include container;
+    
   }
 
   &-promo {
