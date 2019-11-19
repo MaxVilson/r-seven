@@ -1,0 +1,53 @@
+//- Все примеси в этом файле должны начинаться c имени блока (discount-items)
+
+mixin discount-items(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +discount-items('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' discount-items--' + modsList[i].trim();
+      }
+    }
+
+  .discount-items(class=allMods)&attributes(attributes)
+    .discount-items__inner
+      .discount-items__top-line
+        h2.discount-items__title Товары со скидкой
+        +slider-controls(class='discount-items__desktop-controls')
+      .swiper-container.discount-items__slider
+        .swiper-wrapper.discount-items__slider-wrapper
+          .swiper-slide.discount-items__slide
+            +card-hit('img/hit1.png', 'Наушники игровые Asus ROG Strix Big Bass', '3', '18 850', '14 999 ₽', '-18%')
+          .swiper-slide.discount-items__slide
+            +card-hit('img/hit2.png', 'Видеокарта MSI GeForce RTX 2080 Ti VENTUS', '5', '95 999', '80 999 ₽', '-28%')
+          .swiper-slide.discount-items__slide
+            +card-hit('img/hit3.png', 'Ультрабук 14’’ HP Pavilion 14-ce0068ur красный', '4', '48 860', '34 999 ₽', '-15%')
+          .swiper-slide.discount-items__slide
+            +card-hit('img/hit4.png', 'Мышь проводная A4Tech Bloody Winner T6/T60 черный', '4', '1 899', '1 599 ₽', '-11%')
+          .swiper-slide.discount-items__slide
+            +card-hit('img/hit5.png', 'Блок питания Thermaltake ToughPower 1200W', '4', '17 860', '16 999 ₽', '-33%')
+          .swiper-slide.discount-items__slide
+            +card-hit('img/hit6.png', 'Кулер для процессора Noctua NH-U12S DX-3647', '3', '10 200', '8 399  ₽', '-42%')
+          .swiper-slide.discount-items__slide.discount-items__slide--large
+            +card-hit('img/hit7.png', 'Игровой монитор 49’’ Samsung QLED C49HG90DMIg', '4', '67 580', '58 499 ₽', '-15%', 'Подарок: портативный SSD Thunderbolt™3 X5 500ГБ', 'large')
+          .swiper-slide.discount-items__slide
+            +card-hit('img/hit2.png', 'Видеокарта MSI GeForce RTX 2080 Ti VENTUS', '5', '95 999', '80 999 ₽', '-28%')
+          .swiper-slide.discount-items__slide
+            +card-hit('img/hit3.png', 'Ультрабук 14’’ HP Pavilion 14-ce0068ur красный', '4', '48 860', '34 999 ₽', '-15%')
+          .swiper-slide.discount-items__slide
+            +card-hit('img/hit4.png', 'Мышь проводная A4Tech Bloody Winner T6/T60 черный', '4', '1 899', '1 599 ₽', '-11%')
+          .swiper-slide.discount-items__slide
+            +card-hit('img/hit5.png', 'Блок питания Thermaltake ToughPower 1200W', '4', '17 860', '16 999 ₽', '-33%')
+          .swiper-slide.discount-items__slide
+            +card-hit('img/hit6.png', 'Кулер для процессора Noctua NH-U12S DX-3647', '3', '10 200', '8 399  ₽', '-42%')
+        +slider-controls(class='discount-items__mobile-controls')
+

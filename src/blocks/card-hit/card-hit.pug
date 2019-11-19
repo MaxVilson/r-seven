@@ -1,0 +1,34 @@
+//- Все примеси в этом файле должны начинаться c имени блока (card-hit)
+
+mixin card-hit(img, title, stars, sale, price, priceSale, present, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +card-hit('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' card-hit--' + modsList[i].trim();
+      }
+    }
+
+  a(href='#').card-hit(class=allMods)&attributes(attributes)
+    .card-hit__inner
+      .card-hit__img  
+        img(src= img alt='Хит')
+      .card-hit__title= title
+        div= present
+      +stars(stars)(class='card-hit__stars')
+      .card-hit__sale= sale
+      .card-hit__price-wrapper
+        .card-hit__price= price
+        .card-hit__price-sale= priceSale
+      .card-hit__footer
+        +btn('Купить', 'transparent')(href='' class='card-hit__btn')
+        +comparison('card-hit__comparison')

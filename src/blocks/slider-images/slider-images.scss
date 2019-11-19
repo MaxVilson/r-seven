@@ -1,0 +1,38 @@
+// В этом файле должны быть стили для БЭМ-блока slider-images, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.slider-images {
+  padding-bottom: 58px;
+  background-color: #f7f7f7;
+
+  @include desktop {
+    display: none;
+  }
+
+  &__slide {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__pagination {
+    margin-top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    & span {
+      margin-right: 8px;
+      background-color: inherit;
+      box-shadow: 0 0 0 2px #ccc inset;
+      opacity: 1;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    & .swiper-pagination-bullet-active {
+      background-color: $color-secondory;
+      box-shadow: 0 0 0 2px $color-secondory inset;
+    }
+  }
+}

@@ -6,8 +6,8 @@ ready(function () {
     const swiper = new Swiper('.popular-complect__mobile-slider', {
       slidesPerView: 1,
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.popular-complect__mobile-controls .swiper-button-next',
+        prevEl: '.popular-complect__mobile-controls .swiper-button-prev',
       },
       breakpoints: {
         768: {
@@ -21,8 +21,8 @@ ready(function () {
     const swiper2 = new Swiper('.popular-complect__desktop-slider', {
       slidesPerView: 1,
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.popular-complect__desktop-controls .swiper-button-next',
+        prevEl: '.popular-complect__desktop-controls .swiper-button-prev',
       },
     });
   }

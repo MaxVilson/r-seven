@@ -345,6 +345,22 @@ pre {
       margin-top: 20px;
     }
   }
+
+  &-slider-images {
+    padding-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  &-discount-items {
+    margin-top: 30px;
+    @include desktop {
+      margin-top: 40px;
+    }
+  }
+
+  &-widget-about {
+    
+  }
 }
 
 .container {

@@ -1,0 +1,23 @@
+//- Все примеси в этом файле должны начинаться c имени блока (comparison)
+
+mixin comparison(mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +comparison('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' comparison--' + modsList[i].trim();
+      }
+    }
+
+  button.comparison(class=allMods)&attributes(attributes)
+    svg(width="17", height="20")
+      use(xlink:href="img/sprite.svg#comparison")

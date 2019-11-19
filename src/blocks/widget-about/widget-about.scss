@@ -1,0 +1,50 @@
+// В этом файле должны быть стили для БЭМ-блока widget-about, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.widget-about {
+  display: none;
+  padding-top: 70px;
+  padding-bottom: 105px;
+  text-align: center;
+  color: $gray-darken;
+
+  @include desktop {
+    display: block;
+  }
+
+  &__inner {
+    @include container;
+  }
+
+  &__title {
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  &__text {
+    margin-top: 50px;
+    font-weight: 300;
+    line-height: 24px;
+  }
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 78px;
+  }
+
+  &__item {
+
+    &-img {
+      height: 60px;
+    }
+    
+    &-text {
+      margin-top: 54px;
+      font-weight: 700;
+      line-height: 24px;
+    }
+  }
+}

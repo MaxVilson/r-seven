@@ -1,0 +1,94 @@
+// В этом файле должны быть стили для БЭМ-блока card-hit, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.card-hit {
+  display: block;
+  width: 280px;
+  border: 1px solid #e6e6e6;
+  background-color: $white;
+  text-decoration: none;
+  color: $gray-darken;
+
+  &--large {
+    @include desktop {
+      width: 580px;
+    }
+  }
+
+  &__inner {
+    padding-top: 20px;
+    padding-right: 35px;
+    padding-bottom: 35px;
+    padding-left: 30px;
+  }
+
+  &__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+  }
+
+  &__title {
+    margin-top: 20px;
+    font-weight: 700;
+    line-height: 24px;  
+
+    & div {
+      display: none;
+      font-size: 12px;
+      font-weight: 300;
+      color: #5d4fc4;
+    }
+  }
+
+  &__stars {
+    margin-top: 17px;
+  }
+
+  &__sale {
+    margin-top: 26px; 
+    font-weight: 300;
+    text-decoration: line-through;
+    color: #afb1b3;
+  }
+
+  &__price {
+    font-size: 24px;
+    font-weight: 700;
+
+    &-wrapper {
+      display: flex;
+      margin-top: 14px;
+    }
+
+    &-sale {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 16px;  
+      width: 40px;
+      height: 24px;
+      border-radius: 12px;
+      background-color: #ff6900;
+      color: $white;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 21px;
+  }
+
+  &__btn {   
+    padding: 0;
+    width: 90px;
+    height: 30px;
+    border: 1px solid #e6e6e6;
+    font-weight: 700;
+    color: $gray-darkest;
+  }
+}

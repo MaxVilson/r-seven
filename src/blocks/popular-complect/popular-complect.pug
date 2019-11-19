@@ -20,16 +20,6 @@ mixin popular-complect(text, mods)
 
   .popular-complect(class=allMods)&attributes(attributes)
     .popular-complect__inner
-      .popular-complect__top-line
-        h2.popular-complect__title Популярные комплекты
-        .popular-complect__top-line-wrapper
-          a(href='#').popular-complect__link.popular-complect__top-line-link Смотреть все
-          .swiper-button-prev.popular-complect__nav
-            svg.popular-complect__nav-icon-prev(width="8", height="13")
-              use(xlink:href="img/sprite.svg#arrow-down")
-          .swiper-button-next.popular-complect__nav
-            svg.popular-complect__nav-icon-next(width="8", height="13")
-              use(xlink:href="img/sprite.svg#arrow-down")
       .popular-complect__mobile
         .popular-complect__mobile-slider.swiper-container
           .popular-complect__mobile-slider-wrapper.swiper-wrapper
@@ -39,16 +29,12 @@ mixin popular-complect(text, mods)
               +card-info('Игровой 007', 'Выгода 18 999 ₽', '560 280 ₽', '-18%', ['Процессор: Intel Corei9 9900R','Видеокарта: Nvidia RTX 2080Ti', 'Монитор: 32’’ Asus ROG 240 Hz', 'SSD накопитель:  Sandisk M2 1000 Gb', 'Оперативная память: Hynix Fury 64 Gb'])
             .popular-complect__mobile-slide.swiper-slide
               +card-info('Игровой 007', 'Выгода 18 999 ₽', '560 280 ₽', '-18%', ['Процессор: Intel Corei9 9900R','Видеокарта: Nvidia RTX 2080Ti', 'Монитор: 32’’ Asus ROG 240 Hz', 'SSD накопитель:  Sandisk M2 1000 Gb', 'Оперативная память: Hynix Fury 64 Gb'])
-          .popular-complect__nav-wrapper.popular-complect__mobile-nav-wrapper
-            .popular-complect__nav.popular-complect__mobile-nav.swiper-button-prev
-              svg.popular-complect__nav-icon-prev.popular-complect__mobile-nav-icon-prev(width="8", height="13")
-                use(xlink:href="img/sprite.svg#arrow-down")
-            a(href='#').popular-complect__link.popular-complect__mobile-nav-link Смотреть все
-            .popular-complect__nav.popular-complect__mobile-nav.swiper-button-next
-              svg.popular-complect__nav-icon-next.popular-complect__mobile-nav-icon-next(width="8", height="13")
-                use(xlink:href="img/sprite.svg#arrow-down")
+          +slider-controls(class='popular-complect__mobile-controls')
 
       .popular-complect__desktop
+        .popular-complect__top-line
+          h2.popular-complect__title Популярные комплекты
+          +slider-controls(class='popular-complect__desktop-controls')
         .popular-complect__desktop-slider.swiper-container
           .popular-complect__desktop-slider-wrapper.swiper-wrapper
             .popular-complect__desktop-slide.swiper-slide

@@ -1,0 +1,41 @@
+//- Все примеси в этом файле должны начинаться c имени блока (widget-about)
+
+mixin widget-about(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +widget-about('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' widget-about--' + modsList[i].trim();
+      }
+    }
+
+  .widget-about(class=allMods)&attributes(attributes)
+    .widget-about__inner
+      .widget-about__title R Seven - Больше, чем интернет-магазин!
+      .widget-about__text Мы заботимся о надёжных поставщиках, качестве товаров и безопасной оплате. А что делать вам? Просто наслаждаться покупками. Для экономии не нужен повод, поэтому мы каждый день даём вам скидки на популярные товары самых разных категорий.
+      .widget-about__items
+        .widget-about__item 
+          .widget-about__item-img
+            img(src='img/delivery.svg' width='80px' height='60px')
+          .widget-about__item-text Быстрая и надежная<br> доставка
+        .widget-about__item 
+          .widget-about__item-img
+            img(src='img/service.svg' width='71px' height='60px')
+          .widget-about__item-text Качественный сервис<br> и ремонт
+        .widget-about__item 
+          .widget-about__item-img
+            img(src='img/sale.svg' width='71px' height='60px')
+          .widget-about__item-text Скидки и гарантия<br> низких цен
+        .widget-about__item 
+          .widget-about__item-img
+            img(src='img/warantly.svg' width='49px' height='60px')
+          .widget-about__item-text Гарантия магазина<br> и производителя

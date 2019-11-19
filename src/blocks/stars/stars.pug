@@ -1,0 +1,28 @@
+//- Все примеси в этом файле должны начинаться c имени блока (stars)
+
+mixin stars(stars, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +stars('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' stars--' + modsList[i].trim();
+      }
+    }
+
+  .stars(class=allMods)&attributes(attributes)
+    .stars__inner
+      if(stars == 3)
+        img(src='img/stars3.png' alt='рейтинг')
+      if(stars == 4)
+        img(src='img/stars4.png' alt='рейтинг')
+      if(stars == 5)
+        img(src='img/stars5.png' alt='рейтинг')

@@ -1,0 +1,29 @@
+//- Все примеси в этом файле должны начинаться c имени блока (slider-controls)
+
+mixin slider-controls(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +slider-controls('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' slider-controls--' + modsList[i].trim();
+      }
+    }
+
+  .slider-controls(class=allMods)&attributes(attributes)
+    .slider-controls__inner
+      .swiper-button-prev.slider-controls__item.slider-controls__item-prev
+        svg(width="13", height="13")
+          use(xlink:href="img/sprite.svg#arrow-down")
+      a(href='#').slider-controls__link Смотреть все
+      .swiper-button-next.slider-controls__item.slider-controls__item-next
+        svg(width="13", height="13")
+          use(xlink:href="img/sprite.svg#arrow-down")

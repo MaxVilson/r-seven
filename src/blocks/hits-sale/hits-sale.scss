@@ -1,0 +1,85 @@
+// В этом файле должны быть стили для БЭМ-блока hits-sale, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.hits-sale {
+  position: relative;
+  padding-top: 30px;
+  @include desktop {
+    padding-top: 50px;
+  }
+
+  &__inner {
+    @include container;
+    position: relative;
+  }
+
+  &__top-line {
+    @include desktop {
+      display: flex;
+    }
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+    color: $gray-darken;
+
+    @include desktop {
+      margin-bottom: 30px;
+      font-size: 30px;
+      text-align: left;
+    }
+  }
+
+  &__slide {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px !important;
+    width: 280px;
+    height: 420px;
+
+    &--large {
+      // @include desktop {
+      //   width: 580px !important;
+      // }
+    }
+  }
+
+  &__slider {
+    width: 100%;
+    height: auto;
+  }
+
+  &__mobile-controls {
+    margin-top: 30px;
+
+    & .slider-controls__item {
+      background-color: #f7f7f7;
+    }
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__desktop-controls {
+    display: none;
+    margin-top: 0;
+    @include desktop {
+      display: block;
+      margin-left: auto;
+
+      & .slider-controls__item {
+        background-color: #f7f7f7;
+      }
+    }
+  }
+}
+
+.swiper-container-multirow-column>.swiper-wrapper {
+  flex-direction: row;
+}

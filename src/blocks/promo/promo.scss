@@ -5,13 +5,31 @@
 .promo {
   color: $white;
 
+  &__inner {
+    @include desktop {
+      display: flex;
+      justify-content: space-between; 
+      width: 1180px;
+      margin: 0 auto;
+    }
+  }
+
   &__slider {
     position: relative; 
+    @include desktop {
+      margin-left: 0;
+      width: 880px;
+      height: 410px;
+    }
   }
 
   &__slide {
     position: relative;
     padding-bottom: 68px;
+
+    @include desktop {
+      padding-bottom: 0;
+    }
 
     &-bg {
       position: absolute;
@@ -27,6 +45,10 @@
 
         @include tablet {
           width: auto;
+        }
+
+        @include desktop {
+          width: 100%;
         }
       }
     }
@@ -125,6 +147,21 @@
 
     & .swiper-pagination-bullet-active {
       background-color: #fff;
+    }
+  }
+
+  &__images {
+    display: none;
+    @include desktop {
+      display: block;
+      width: 280px;
+
+      & img {
+        margin-bottom: 18px;
+        &:last-child {
+          margin-bottom: 0; 
+        }
+      }
     }
   }
 }
