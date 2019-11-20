@@ -1,0 +1,63 @@
+// В этом файле должны быть стили для БЭМ-блока input-range, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.input-range {
+  width: 280px;
+
+  & .irs-from {
+    display: none;
+  }
+  & .irs-to {
+    display: none;  
+  }
+  & .irs-min {
+    display: none;
+  }
+  & .irs-max {
+    display: none;
+  }
+  & .irs-single {
+    display: none;
+  }
+
+  & .irs {
+    width: 280px;
+  }
+
+  & .irs-line {
+    width: 280px;
+    height: 5px;
+    border-radius: 2px;
+    background-color: #e6e6e6;
+  }
+
+  & .irs-bar {
+    height: 5px;
+    border-radius: 2px;
+    background-color: $color-main;
+  }
+
+  & .irs-handle {
+    top: 18px;
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(4, 7, 8, 0.25);
+    background-color: $white;
+    
+    & i {
+      display: none !important;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background-color: $color-main;
+      &:last-child {
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        display: inline-block !important;
+      }
+    }
+  }
+}

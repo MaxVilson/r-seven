@@ -1,0 +1,39 @@
+// В этом файле должны быть стили для БЭМ-блока filter-btn, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.filter-btn {
+  position: relative;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-right: 23px;
+  padding-left: 6px;
+  border-radius: 2px;
+  border: 1px solid #e6e6e6;
+  background-color: transparent;
+  font-size: 12px;
+  font-weight: 300;
+  color: $gray-dark;
+
+  & span {
+    display: none;
+    position: absolute;
+    top: 9px;
+    right: 8px;
+    width: 8px;
+    height: 8px;
+    background-image: url('../img/close.png');
+    background-repeat: no-repeat;
+  }
+
+  &:hover {
+    background-color: $color-main;
+    color: $white;
+    cursor: pointer;
+    transition: all .5s;
+
+    & span {
+      display: block;
+    }
+  }
+}

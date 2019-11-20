@@ -7,7 +7,7 @@
   $block-name:                &; // #{$block-name}__element
 
   display: block;
-  margin-bottom: $typo-margin-vertical;
+  // margin-bottom: $typo-margin-vertical;
 
   &__title {
     @include field-name;
@@ -16,7 +16,7 @@
   &__input-wrap {
 
     & + & {
-      margin-top: $typo-margin-vertical;
+      margin-top: 20px;
     }
 
     &--error {
@@ -31,10 +31,10 @@
   &__name {
     display: inline-block;
     position: relative;
-    padding-left: 1.5em;
-    margin-right: 0.6em;
+    padding-left: 25px;
+    // margin-right: 0.6em;
     font-weight: 400;
-    line-height: $line-height;
+    line-height: 20px;
   }
 
   &__name-text {
@@ -47,8 +47,10 @@
     //   position: absolute;
     //   top: 5px;
     //   left: 0;
-    //   width: 14px;
-    //   height: 14px;
+    //   width: 18px;
+    //   height: 18px;
+    //   border-radius: 4px;
+    //   background-color: #fff;
     //   background-image: svg-load('../blocks/field-checkbox/bg-img/checkbox.svg');
     //   background-size: 100%;
     // }
@@ -67,16 +69,18 @@
     &:before {
       content: '';
       position: absolute;
-      top: 5px;
+      top: 0;
       left: 0;
-      width: 14px;
-      height: 14px;
-      border: 2px solid currentColor;
+      width: 18px;
+      height: 18px;
+      border: 1px solid #e6e6e6;
       border-radius: $border-radius;
     }
 
     @at-root input:focus ~ &:before {
-      @include field-focus;
+      // @include field-focus;
+      background-color: $color-main;
+      border: none;
     }
 
     @at-root input:disabled ~ &:before {
@@ -87,16 +91,12 @@
     &:after {
       content: '';
       position: absolute;
-      top: 6px;
-      left: 3px;
-      width: 14px;
+      top: 7px;
+      left: 5px;
+      width: 8px;
       height: 6px;
-      opacity: 0;
-      border-left: 2px solid currentColor;
-      border-bottom: 2px solid currentColor;
-      transform: rotate(-45deg);
-      transition: opacity $transition-time;
-      box-shadow: 1px 2px 0 #fff, inset 0 -2px 0 #fff;
+      background-image: url('../img/check.png');
+      background-repeat: no-repeat;
 
       @at-root input:checked ~ & {
         opacity: 1;

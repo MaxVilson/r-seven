@@ -44,13 +44,8 @@ mixin field-num(props)
     if(isNaN(val)) val = 0;
 
   .field-num(class=allMods)&attributes(attributes)
-    if(typeof(props.title) !== 'undefined' && props.title)
-      span.field-num__name!= props.title
     span.field-num__input-wrap
-      span.field-num__input-and-btns
-        button.field-num__btn.field-num__btn--minus(type='button') -
-        button.field-num__btn.field-num__btn--plus(type='button') +
-        input.field-num__input(type='number', value=val)&attributes(props.attrs)
+      input.field-num__input(type='number', value=val)&attributes(props.attrs)
       if(typeof(props.helpText) !== 'undefined' && props.helpText)
         span.field-num__help-text!= props.helpText
       block

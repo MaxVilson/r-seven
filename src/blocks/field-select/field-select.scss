@@ -16,40 +16,39 @@
   &__select-wrap {}
 
   // Оформление штатного селекта
-  // &__select {
-  //   display: inline-block;
-  //   vertical-align: middle;
-  //   width: 100%;
-  //   line-height: $line-height;
-  //   padding: $field-padding-vertical $field-padding-horizontal;
-  //   padding-right: 35px;
-  //   font-size: inherit;
-  //   font-family: inherit;
-  //   border: 1px solid $border-color;
-  //   border-radius: $border-radius;
-  //   appearance: none;
-  //   background-color: #fff;
+  &__select {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    line-height: $line-height;
+    padding: $field-padding-vertical $field-padding-horizontal;
+    padding-right: 35px;
+    font-size: inherit;
+    font-family: inherit;
+    border: none;
+    appearance: none;
+    background-color: #fff;
 
-  //   &[multiple] {
-  //     background-image: none;
-  //     min-height: 6.8em;
-  //   }
+    &[multiple] {
+      background-image: none;
+      min-height: 6.8em;
+    }
 
-  //   &::-ms-expand {
-  //     display: none;
-  //   }
+    &::-ms-expand {
+      display: none;
+    }
 
-  //   &:active,
-  //   &:focus {
-  //     @include field-focus;
-  //   }
+    &:active,
+    &:focus {
+      @include field-focus;
+    }
 
-  //   &[disabled],
-  //   &[readonly] {
-  //     cursor: default;
-  //     background-color: $gray-lightest;
-  //   }
-  // }
+    &[disabled],
+    &[readonly] {
+      cursor: default;
+      background-color: $gray-lightest;
+    }
+  }
 
   &__help-text {
     @include field-help-text;
@@ -118,7 +117,7 @@
   }
 
   &__inner {
-    border: 1px solid $border-color;
+    border: none;
     border-radius: $border-radius;
     padding: $field-padding-vertical 40px $field-padding-vertical $field-padding-horizontal;
     background: #fff;

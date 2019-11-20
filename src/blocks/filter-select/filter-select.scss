@@ -1,0 +1,68 @@
+// В этом файле должны быть стили для БЭМ-блока filter-select, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.filter-select {
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    font-weight: 300;
+    color: $gray-darkest;
+    list-style: none;
+
+    @include desktop {
+      display: flex;
+    }
+  }
+
+  &__item {
+    position: relative;
+    display: inline-block;
+    padding-right: 20px;
+
+    @include desktop {
+      margin-right: 30px;
+      padding-right: 0;
+      cursor: pointer;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 4px;
+      right: 0;
+      width: 10px;
+      height: 9px;
+      background-image: url('../img/arrow.png');
+      background-repeat: no-repeat;
+      transform: rotate(90deg);
+
+      @include desktop {
+        display: none;
+      }
+    }
+  }
+
+  &__sublist {
+    display: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @include desktop {
+      display: flex;
+    }
+  }
+
+  &__subitem {
+
+    @include desktop {
+      margin-right: 30px;
+      cursor: pointer;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

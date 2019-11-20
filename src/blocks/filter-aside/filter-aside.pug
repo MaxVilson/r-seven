@@ -1,0 +1,201 @@
+//- Все примеси в этом файле должны начинаться c имени блока (filter-aside)
+
+mixin filter-aside(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +filter-aside('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' filter-aside--' + modsList[i].trim();
+      }
+    }
+
+  .filter-aside(class=allMods)&attributes(attributes)
+    .filter-aside__inner
+      .filter-aside__top-line
+        .filter-aside__title Фильтры
+        button.filter-aside__close 
+          svg(width="10", height="10")
+            use(xlink:href="img/sprite.svg#close")
+      .filter-aside__items
+        .filter-aside__item.filter-aside__item--active Цена
+          svg(width="10", height="6")
+            use(xlink:href="img/sprite.svg#arrow-down")
+          .filter-aside__subblock.filter-aside__subblock-price.filter-aside__subblock--active
+            .filter-aside__subblock-row
+              +field-text({val: 'от', attrs: { name: 'fieldRangeStart', id: 'fieldRangeStart' }})
+              +field-text({val: 'до', attrs: { name: 'fieldRangeEnd', id: 'fieldRangeEnd' }})
+            +input-range({ attrs: { name: 'my_range', value: '', }})
+        
+        .filter-aside__item.filter-aside__item--active Производитель
+          svg(width="10", height="6")
+            use(xlink:href="img/sprite.svg#arrow-down")
+          .filter-aside__subblock.filter-aside__subblock--active
+            +field-checkbox([{
+                title: 'Все производители',
+                attrs: {
+                  name: 'check1',
+                }
+              },
+              {
+                title: 'Asus',
+                attrs: {
+                  name: 'check2',
+                }
+              },
+              {
+                title: 'Lenovo',
+                attrs: {
+                  name: 'check3',
+                }
+              },
+              {
+                title: 'HP',
+                attrs: {
+                  name: 'check4',
+                }
+              },
+              {
+                title: 'Acer',
+                attrs: {
+                  name: 'check5',
+                }
+              },
+              {
+                title: 'HyperPC',
+                attrs: {
+                  name: 'check6',
+                }
+              },
+            ])
+            a(href='#').filter-aside__subblock-link Показать все
+
+        .filter-aside__item.filter-aside__item--active Процессор
+          svg(width="10", height="6")
+            use(xlink:href="img/sprite.svg#arrow-down")
+          .filter-aside__subblock.filter-aside__subblock--active
+            +field-checkbox([{
+                title: 'Intel',
+                attrs: {
+                  name: 'check7',
+                }
+              },
+              {
+                title: 'AMD',
+                attrs: {
+                  name: 'check8',
+                }
+              }])
+
+        .filter-aside__item Семейство процессоров
+          svg(width="10", height="6")
+            use(xlink:href="img/sprite.svg#arrow-down")
+          .filter-aside__subblock
+            +field-checkbox([{
+                title: 'i5',
+                attrs: {
+                  name: 'check9',
+                }
+              },
+              {
+                title: 'i7',
+                attrs: {
+                  name: 'check10',
+                }
+              }])
+
+        .filter-aside__item Размер оперативной памяти
+          svg(width="10", height="6")
+            use(xlink:href="img/sprite.svg#arrow-down")
+          .filter-aside__subblock
+            +field-checkbox([{
+                title: '12 гб',
+                attrs: {
+                  name: 'check11',
+                }
+              },
+              {
+                title: '16 гб',
+                attrs: {
+                  name: 'check12',
+                }
+              }])
+
+        .filter-aside__item Тип видеокарты
+          svg(width="10", height="6")
+            use(xlink:href="img/sprite.svg#arrow-down")
+          .filter-aside__subblock
+            +field-checkbox([{
+                title: 'Встроенная',
+                attrs: {
+                  name: 'check13',
+                }
+              },
+              {
+                title: 'Дискретная',
+                attrs: {
+                  name: 'check14',
+                }
+              }])
+
+        .filter-aside__item Объем SSD
+          svg(width="10", height="6")
+            use(xlink:href="img/sprite.svg#arrow-down")
+          .filter-aside__subblock
+            +field-checkbox([{
+                title: '256 гб',
+                attrs: {
+                  name: 'check15',
+                }
+              },
+              {
+                title: '512 гб',
+                attrs: {
+                  name: 'check16',
+                }
+              }])
+
+        .filter-aside__item Оптический привод
+          svg(width="10", height="6")
+            use(xlink:href="img/sprite.svg#arrow-down")
+          .filter-aside__subblock
+            +field-checkbox([{
+                title: 'да',
+                attrs: {
+                  name: 'check17',
+                }
+              },
+              {
+                title: 'нет',
+                attrs: {
+                  name: 'check18',
+                }
+              }])
+
+        .filter-aside__item Операционная система
+          svg(width="10", height="6")
+            use(xlink:href="img/sprite.svg#arrow-down")
+          .filter-aside__subblock
+            +field-checkbox([{
+                title: 'Windows',
+                attrs: {
+                  name: 'check19',
+                }
+              },
+              {
+                title: 'Linux',
+                attrs: {
+                  name: 'check20',
+                }
+              }])
+      .filter-aside__footer
+        +btn('Очистить', 'transparent').filter-aside__btn.filter-aside__btn-clear
+        +btn('Применить').filter-aside__btn.filter-aside__done

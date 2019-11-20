@@ -1,0 +1,137 @@
+// В этом файле должны быть стили для БЭМ-блока filter-panel, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.filter-panel {
+
+  @include desktop {
+    margin-top: 30px;
+  }
+
+  &__inner {
+    
+  }
+
+  &__top-wrapper {
+    @include container;
+
+    @include desktop {
+      padding-top: 30px;
+      padding-right: 20px;
+      padding-left: 20px;
+      background-color: $white;
+    }
+  }
+
+  &__title {
+    margin-top: 29px;
+    margin-bottom: 29px;
+    font-size: 30px;
+    color: $gray-darken;
+
+    @include desktop {
+      margin-top: 0;
+      margin-bottom: 19px;
+    }
+  }
+
+  &__slider {
+    margin-bottom: 50px;
+
+    @include desktop {
+      margin-bottom: 0;
+      padding-bottom: 20px;
+    }
+
+    &-wrapper {
+      @include desktop {
+        flex-wrap: wrap;
+        align-items: center;
+      }
+    }
+  }
+
+  &__slide {
+    width: auto;
+
+    @include desktop {
+      margin-top: 10px;
+      margin-right: 10px;
+    }
+
+    &-link {
+      display: none; 
+
+      @include desktop {
+        display: inline-block;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  &__bottom-wrapper {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+
+    @include desktop {
+      margin: 0 auto;
+      width: 1180px;
+      background-color: $white;
+    }
+  }
+
+  &__row {
+    @include container;
+    display: flex;
+    justify-content: space-between;
+
+    @include desktop {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+  }
+
+  &__filter-select {
+    line-height: 16px;
+  }
+
+  &__filter {
+    padding-left: 30px;
+    font-family: $font-family;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 16px;
+    border: none;
+    background-color: transparent;
+    background-image: url('../img/filter.svg');
+    background-repeat: no-repeat;
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__btn-toggle {
+
+    &-wrapper {
+      display: none;
+      @include desktop {
+        display: block;
+      }
+    }
+
+    @include desktop {
+      display: inline-block;
+      padding: 0;
+      margin-right: 10px;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

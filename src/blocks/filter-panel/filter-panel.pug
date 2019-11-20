@@ -1,0 +1,68 @@
+//- Все примеси в этом файле должны начинаться c имени блока (filter-panel)
+
+mixin filter-panel(props, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +filter-panel('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' filter-panel--' + modsList[i].trim();
+      }
+    }
+
+  .filter-panel(class=allMods)&attributes(attributes)
+    .filter-panel__inner
+      .filter-panel__top-wrapper
+        h1.filter-panel__title= props.title
+        .swiper-container.filter-panel__slider
+          .swiper-wrapper.filter-panel__slider-wrapper
+            .swiper-slide.filter-panel__slide
+              +filter-btn('Игровые компьютеры')
+            .swiper-slide.filter-panel__slide
+              +filter-btn('Офисные компьютеры')
+            .swiper-slide.filter-panel__slide
+              +filter-btn('Компьютеры для видеомонтажа')
+            .swiper-slide.filter-panel__slide
+              +filter-btn('Мини-системные блоки')
+            .swiper-slide.filter-panel__slide
+              +filter-btn('Intel core i 9')
+            .swiper-slide.filter-panel__slide
+              +filter-btn('Intel core i7')
+            .swiper-slide.filter-panel__slide
+              +filter-btn('AMD Ryzen 7')
+            .swiper-slide.filter-panel__slide
+              +filter-btn('Lenovo Legion')
+            .swiper-slide.filter-panel__slide
+              +filter-btn('Asus ROG Strix')
+            .swiper-slide.filter-panel__slide
+              +filter-btn('Компьютеры для работы')
+            .swiper-slide.filter-panel__slide
+              +filter-btn('Apple Mac Pro')
+            .swiper-slide.filter-panel__slide
+              +filter-btn('ПК с видеокартой AMD')
+            .swiper-slide.filter-panel__slide
+              +filter-btn('ПК с видеокартой Nvidia')
+            .swiper-slide.filter-panel__slide
+              +filter-btn('Компьютеры с Windows')
+            .swiper-slide.filter-panel__slide
+              +filter-btn('Компьютеры для Battlefield')
+            a.filter-panel__slide-link(href='#') Показать все
+      .filter-panel__bottom-wrapper
+        .filter-panel__row
+          +filter-select(class='filter-panel__filter-select')
+          button.filter-panel__filter#filter Фильтр
+          .filter-panel__btn-toggle-wrapper
+            button.filter-panel__btn-toggle
+              svg(width="16", height="16")
+                use(xlink:href="img/sprite.svg#burger-orange")
+            button.filter-panel__btn-toggle
+              svg(width="16", height="16")
+                use(xlink:href="img/sprite.svg#mosaic")

@@ -18,12 +18,14 @@ let config = {
     'src/scss/fonts.scss',
     '../../node_modules/swiper/css/swiper.min.css',
     '../../node_modules/mmenu-light/dist/mmenu-light.css',
+    '../../node_modules/ion-rangeslider/css/ion.rangeSlider.min.css'
     // 'somePackage/dist/somePackage.css', // для 'node_modules/somePackage/dist/somePackage.css',
   ],
   'addStyleAfter': [
     // 'src/scss/print.scss',
   ],
   'addJsBefore': [
+    // '../../node_modules/jquery/dist/jquery.min.js'
     // 'somePackage/dist/somePackage.js', // для 'node_modules/somePackage/dist/somePackage.js',
   ],
   'addJsAfter': [

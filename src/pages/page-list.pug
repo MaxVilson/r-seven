@@ -1,0 +1,30 @@
+extends ../pug/layout.pug
+
+block meta
+  title Главная
+  meta(name='description', content='')
+
+//- block append head
+//-   link(rel='stylesheet', href='css/some.css')
+
+block content
+  .page__list-content
+    .page__list-content-wrapper
+      +breadcrumbs(class='page__list-content-breadcrumbs')
+        +breadcrumbs-item('Главная', '#')
+        +breadcrumbs-item('Каталог товаров', '#')
+        +breadcrumbs-item('Компьютеры', '#')
+        +breadcrumbs-item('Игровые ноутбуки')
+      +widget-sale(class='page__list-content-widget-sale')
+      +filter-panel({title: 'Игровые ноутбуки'})
+      .page__list-content-row
+        +filter-aside()
+
+  
+
+//- block footer
+//-   p footer
+
+block append page-bottom
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.0/js/ion.rangeSlider.min.js")

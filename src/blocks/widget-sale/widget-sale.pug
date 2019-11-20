@@ -1,0 +1,33 @@
+//- Все примеси в этом файле должны начинаться c имени блока (widget-sale)
+
+mixin widget-sale(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +widget-sale('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' widget-sale--' + modsList[i].trim();
+      }
+    }
+
+  .widget-sale(class=allMods)&attributes(attributes)
+    .widget-sale__inner
+      picture
+        source(media='(min-width: 1200px)' srcset='img/listing-banner-large.jpg')
+        img(src='img/listing-banner.jpg' alt='Скидка 10%')
+      .widget-sale__close
+        svg(width="14", height="14")
+          use(xlink:href="img/sprite.svg#close")
+      .widget-sale__content
+        .widget-sale__title 
+          span Онл@йн 
+          |дешевле!
+        .widget-sale__text Скидка - 10% при оплате товара на сайте банковской картой

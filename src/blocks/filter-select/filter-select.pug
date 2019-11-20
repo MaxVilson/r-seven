@@ -1,0 +1,27 @@
+//- Все примеси в этом файле должны начинаться c имени блока (filter-select)
+
+mixin filter-select(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +filter-select('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' filter-select--' + modsList[i].trim();
+      }
+    }
+
+  .filter-select(class=allMods)&attributes(attributes)
+    .filter-select__inner
+      ul.filter-select__list
+        li.filter-select__item По названию
+        ul.filter-select__sublist
+          li.filter-select__subitem По популярности
+          li.filter-select__subitem По цене
