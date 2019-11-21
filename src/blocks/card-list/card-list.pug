@@ -1,0 +1,51 @@
+//- Все примеси в этом файле должны начинаться c имени блока (card-list)
+
+mixin card-list(props, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +card-list('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' card-list--' + modsList[i].trim();
+      }
+    }
+
+  a(href='#').card-list(class=allMods)&attributes(attributes)
+    .card-list__inner
+      picture.card-list__img
+        source(media='(min-width: 1200px)' srcset=props.imgLg)
+        img(src=props.img alt='Ноутбук')
+      .card-list__wrapper
+        .card-list__wrapper-info
+          .card-list__title= props.title
+          +stars(props.stars)(class='card-list__stars')
+          ul.card-list__list
+            li Производитель процессора: 
+              span Intel Core i5
+            li Объем оперативной памяти, в гигабайтах:  
+              span 8
+            li Видеокарта: 
+              span Nvidia MX 250
+            li Накопитель: 
+              span SSD 500 Гб
+            li Экран:  
+              span 13,3’’ UHD IPS
+        .card-list__wrapper-price
+          .card-list__sale= props.sale
+          .card-list__row-price 
+            .card-list__price= props.price
+            span.card-list__percent= props.percent
+          .card-list__row-btns
+            if(props.disabled)
+              +btn('Товар в корзине', 'disabled')(class='card-list__btn')
+            else
+              +btn('Купить', 'transparent')(class='card-list__btn')
+            +comparison(class='card-list__comprasion')

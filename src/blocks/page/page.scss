@@ -372,6 +372,7 @@ pre {
       @include desktop {
         display: flex;
         justify-content: space-between;
+        align-items: flex-start;
         padding-top: 20px;
       }
     }
@@ -392,6 +393,113 @@ pre {
       margin-top: 20px;
       @include desktop {
         margin-top: 30px;
+      }
+    }
+
+    &-items {
+      // display: flex;
+      // flex-direction: column;
+      // align-items: center;
+
+      @include tablet {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding-right: 20px;
+        padding-left: 20px;
+      }
+
+      @include desktop {
+        display: block;
+        margin-left: 20px;
+        padding: 0;
+      }
+    }
+    
+    &-item {
+      @include desktop {
+        margin-bottom: 20px;
+        width: 878px;
+      }
+    }
+
+    &-btn {
+      margin-top: 20px;
+      width: 280px;
+      height: 64px;
+
+      @include tablet {
+        width: 100%;
+      }
+
+      @include desktop {
+        width: 878px;
+      }
+
+      &-wrapper {
+        display: flex;
+        justify-content: center;
+        background-color: #f7f7f7;
+
+        @include tablet {
+          width: 100%;
+        }
+
+        @include desktop {
+          justify-content: flex-end;
+        }
+      }
+    }
+
+    &-pagination {
+      margin: 0;
+      background-color: transparent;
+
+      &-wrapper {
+        display: flex;
+        justify-content: center;
+        padding-top: 40px; 
+        background-color: #f7f7f7;
+
+        @include desktop {
+          width: 878px;
+          justify-content: flex-end;
+        }
+      }
+    }
+
+    &-text {
+      padding-top: 60px;
+      padding-bottom: 60px;
+      background-color: #f7f7f7;
+
+      @include desktop {
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      &-wrapper {
+        padding-right: 20px;
+        padding-left: 20px;
+        @include desktop {
+          padding-right: 0;
+          padding-left: 0;
+          width: 878px;
+        }
+      }
+
+      & h4 {
+        margin-top: 0;
+        margin-bottom: 20px;  
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      & p {
+        line-height: 24px;
+        color: $gray-dark;
       }
     }
   }

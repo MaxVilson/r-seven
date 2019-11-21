@@ -5,17 +5,25 @@
 .pagination {
   display: flex;
   flex-wrap: wrap;
-  margin-top: $typo-margin-vertical;
-  margin-bottom: $typo-margin-vertical;
+  align-items: center;
 
   &__item {
-    display: block;
-    min-width: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2px;
     // border: 1px solid $border-color;
-    padding: 0.3em 0.6em;
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+    font-weight: 300;
     text-decoration: none;
     text-align: center;
     color: $text-color;
+
+    &:last-child {
+      margin-right: 0;
+    }
 
     & + & {
       border-left: 0;
@@ -35,12 +43,33 @@
       }
     }
 
-    @at-root span#{&} {
-      cursor: default;
+    &--active {
+      color: $white;
+      border-radius: 50%;
+      background-color: $color-secondory;
     }
 
-    &--active {
-      background-color: $gray-lightest;
+    &-control {
+      display: flex;
+      justify-content: center;
+      align-items: center;  
+      width: 36px;
+      height: 36px;
+      font-size: 0;
+      border-radius: 50%;
+      background-color: #fff;
+      background-image: url('../img/arrow-down.svg');
+      background-repeat: no-repeat;
+
+      &:nth-child(6) {
+        & svg {
+          transform: rotate(-90deg);
+        }
+      }
+      
+      & svg {
+        transform: rotate(90deg);
+      }
     }
   }
 }

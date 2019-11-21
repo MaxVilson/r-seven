@@ -19,6 +19,38 @@ block content
       +filter-panel({title: 'Игровые ноутбуки'})
       .page__list-content-row
         +filter-aside()
+        .page__list-content-items
+          .page__list-content-item
+            +card-list({img: 'img/note1.jpg', imgLg: 'img/note1-lg.jpg', title: 'Игровой ноутбук Acer Nitro AN515-52-51K6', stars: '4', sale: '198 850', price: '172 999 ₽', percent: '-18%'})
+          .page__list-content-item
+            +card-list({img: 'img/note2.jpg', imgLg: 'img/note2-lg.jpg', title: 'Ноутбук ASUS VivoBook N552VX-FW1', stars: '4', sale: '77 490', price: '67 490 ₽', percent: '-18%'})
+          .page__list-content-item
+            +card-list({img: 'img/note3.jpg', imgLg: 'img/note3-lg.jpg', title: 'Игровой ноутбук ASUS TUF Gaming FX504GD-E41', stars: '4', sale: '89 990', price: '59 990 ₽', percent: '-18%'})
+          .page__list-content-item
+            +card-list({img: 'img/note4.jpg', imgLg: 'img/note4-lg.jpg', title: 'Игровой ноутбук HP Pavilion Gaming 7RX95EA', stars: '4', sale: '79 990', price: '69 990 ₽', percent: '-18%', disabled: true})
+          .page__list-content-item
+            +card-list({img: 'img/note5.jpg', imgLg: 'img/note5-lg.jpg', title: 'Игровой ноутбук HP Pavilion 15-cx0098ur', stars: '4', sale: '93 990', price: '83 990 ₽', percent: '-18%'})
+          .page__list-content-item
+            +card-list({img: 'img/note6.jpg', imgLg: 'img/note6-lg.jpg', title: 'Игровой ноутбук HP Omen 15-dc0062ur', stars: '4', sale: '149 990', price: '139 990 ₽', percent: '-18%'})
+          .page__list-content-item
+            +card-list({img: 'img/note7.jpg', imgLg: 'img/note7-lg.jpg', title: 'Игровой ноутбук ASUS ROG Zephyrus S', stars: '4', sale: '179 990', price: '159 990 ₽', percent: '-18%'})
+      .page__list-content-btn-wrapper
+        +btn('Показать еще 12', 'white')(class='page__list-content-btn')
+      .page__list-content-pagination-wrapper
+        +pagination(class='page__list-content-pagination')
+          +pagination-item('1', '/1')
+          +pagination-item('...')
+          +pagination-item('4', '/4')
+          +pagination-item('5', '/5', true)
+          +pagination-item('6', '/6')
+          +pagination-item('...')
+          +pagination-item('36', '/36')
+      .page__list-content-text
+        .page__list-content-text-wrapper
+          h4 Игровые ноутбуки 
+          p Игровые ноутбуки Это основа функционирования компьютера, от технических характеристик которой будет зависеть производительность и скорость выполнения задач. Чтобы не усложнять процесс покупки изучением тонкостей и особенностей компьютерной «начинки», производители предлагают готовые конфигурации. 
+
+          p Если вы точно определились, для каких целей собираетесь использовать девайс, сделать выбор будет гораздо проще. Настольные комьютеры делятся на три типа: базовые, игровые и мультимедийные. Первые подойдут для повседневной работы в офисных приложениях, учебы, просмотра и обработки изображений и видео, а также интернет-серфинга. Вторая группа моделей разрабатывается специально для геймеров, обладает высокой мощностью и справляется с «тяжелыми» играми и сложными спецэффектами. Мультимедийный тип предусматривает воспроизведение видео в лучшем качестве.
 
   
 

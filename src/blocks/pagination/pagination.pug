@@ -51,4 +51,6 @@ mixin pagination-item(text, href, active, mods)
   if(typeof(href) !== 'undefined' && href)
     a.pagination__item(class=allMods, href=href)&attributes(attributes)!= text
   else
-    span.pagination__item(class=allMods)&attributes(attributes)!= text
+    span.pagination__item.pagination__item-control(class=allMods)&attributes(attributes)!= text
+      svg(width="10", height="10")
+        use(xlink:href="img/sprite.svg#arrow-down")
