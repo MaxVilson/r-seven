@@ -7,7 +7,6 @@
   $block-name:                &; // #{$block-name}__element
 
   display: block;
-  margin-bottom: $typo-margin-vertical;
 
   &__title {
     @include field-name;
@@ -35,10 +34,13 @@
   &__name {
     display: inline-block;
     position: relative;
-    padding-left: 3.2em;
-    margin-right: 0.6em;
-    font-weight: 400;
-    line-height: $line-height;
+    padding-top: 6px;
+    padding-left: 50px;
+    font-weight: 300;
+
+    @include desktop {
+      padding-left: 64px;
+    }
   }
 
   &__name-text {
@@ -51,12 +53,16 @@
     &:before {
       content: '';
       position: absolute;
-      top: 3px;
+      top: 0;
       left: 0;
-      width: 35px;
-      height: 18px;
-      background-color: #fff;
-      border: 1px solid $border-color;
+      width: 40px;
+      height: 24px;
+      background-color: $gray-lightest;
+      border-radius: 12px;
+
+      @include desktop {
+        width: 48px;
+      }
 
       @at-root input:focus ~ & {
         @include field-focus;
@@ -71,17 +77,26 @@
     &:after {
       content: '';
       position: absolute;
-      top: 5px;
+      top: 3px;
       left: 2px;
-      width: 14px;
-      height: 14px;
-      background-color: $gray-lightest;
-      border: 1px solid $border-color;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background-color: $color-secondory;
       transition: all 0.3s;
     }
 
     @at-root input:checked ~ &:after {
+      background-color: #fff;
       transform: translate(17px, 0);
+
+      @include desktop {
+        transform: translate(25px, 0);
+      }
+    }
+
+    @at-root input:checked~&:before {
+      background-color: $color-secondory;
     }
 
     @at-root input:disabled ~ &:after {

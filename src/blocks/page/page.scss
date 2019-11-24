@@ -867,8 +867,143 @@ pre {
       }
     }
   }
+
+  &__comparison {
+
+    &-wrapper {
+      background-color: #f7f7f7;
+    }
+
+    &-breadcrumbs {
+      display: none;
+
+      &-wrapper {
+        @include container;
+        padding-top: 30px;
+        padding-bottom: 30px;
+      }
+
+      @include desktop {
+        display: block;
+        margin: 0;
+      }
+    }
+
+    &-top-line {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      background-color: #f7f7f7;
+
+      @include desktop {
+        display: none;
+      }
+
+      &-wrapper {
+        @include container;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      &-comparison {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+
+        &--active {
+
+          & svg {}
+        }
+
+        & span {
+          margin-top: 3px;
+          margin-left: 13px;
+          font-weight: 300;
+          line-height: 14px;
+          color: #212121;
+        }
+      }
+
+      &-btn {
+        width: 80px;
+        height: 30px;
+        font-size: 12px;
+        font-weight: 300;
+      }
+    }
+
+    &-title {
+      margin: 0;
+      font-size: 24px;
+
+      @include desktop {
+        font-size: 30px;
+      }
+    }
+
+    &-block {
+      background-color: #f7f7f7;
+
+      &-wrapper {
+        @include container;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        overflow: hidden;
+        background-color: #fff;
+
+        @include desktop {
+          padding: 40px;
+          overflow: inherit;
+        }
+      }
+
+      &-header {
+        margin-top: 30px;
+        padding-bottom: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        &-close {
+          line-height: 24px;
+
+          @include desktop {
+            margin-right: 156px;
+          }
+
+          &-btn { 
+            padding: 0;
+            border: none;
+            background-color: transparent;
+            vertical-align: middle;
+
+            & svg {
+              fill: $gray-dark;
+            }
+          }
+
+          &-link {
+            margin-left: 11px;
+            font-size: 14px;
+            font-weight: 300;
+            color: $gray-darkest;
+            text-decoration: none;
+          }
+        }
+      }
+
+      &-controls {
+        margin-top: 30px;
+      }
+    }
+
+    &-accordion-table {
+      margin-top: 10px;
+      background-color: #fff;
+    }
+  }
 }
 
-// .container {
-//   @include container;
-// }
+.container {
+  @include container;
+}

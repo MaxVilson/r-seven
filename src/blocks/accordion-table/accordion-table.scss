@@ -1,0 +1,82 @@
+// В этом файле должны быть стили для БЭМ-блока accordion-table, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.accordion-table {
+
+  &__inner {
+
+  }
+
+  &__list {
+    margin: 0;  
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    border-bottom: 1px solid #e6e6e6;
+
+    &-inner {
+      @include container;
+      position: relative;
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
+
+    &-text {
+      font-weight: 700;
+    }
+
+    &-icon {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      transition: all .3s;
+
+      &--active {
+        transform: rotate(180deg);
+      }
+
+      @include desktop {
+        right: 0;
+      }
+    }
+  }
+
+  &__subblocks {
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height .5s cubic-bezier(0, 1, 0, 1);
+
+    &--active {
+      max-height: 599em;
+      transition: max-height .5s ease-in-out;
+    }
+  }
+
+  &__subblock {
+    padding-top: 20px;
+    padding-bottom: 30px;
+    background-color: #fafafa;
+
+    &-inner {
+      @include container;
+    }
+
+    &-head {
+      font-size: 12px;
+      font-weight: 300;
+    }
+
+    &-items { 
+      display: flex;
+      margin-top: 20px;
+    }
+
+    &-item {
+      width: 33.3333%;
+    }
+  }
+}

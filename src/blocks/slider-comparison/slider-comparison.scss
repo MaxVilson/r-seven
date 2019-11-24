@@ -1,0 +1,95 @@
+// В этом файле должны быть стили для БЭМ-блока slider-comparison, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.slider-comparison {
+
+  $block-name:                &; // #{$block-name}__element
+  position: relative;
+
+  &__slider {
+    overflow: inherit;
+
+    @include desktop {
+      overflow: hidden;
+    }
+
+    &-wrapper {
+      // @include desktop {
+      //   display: flex;
+      //   flex-wrap: wrap;
+      //   justify-content: space-between;
+      // }
+
+      // @include desktop {
+      //   overflow: hidden;
+      // }
+    }
+  }
+
+  &__slide {
+    @include desktop {
+      width: 279px !important;
+    }
+
+    &-add {
+      display: none;
+
+      @include desktop {
+        display: block;
+      }
+
+      &-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 280px;
+        height: 450px;
+        border: 1px solid #e6e6e6;
+        text-align: center;
+        text-decoration: none;
+
+        @include desktop {
+          width: 200px;
+        }
+      }
+      
+      & svg {
+
+      }
+
+      &-text {
+        margin-top: 28px;
+        font-weight: 300;
+        line-height: 24px;
+        color: $gray-darken;
+      }
+    }
+  }
+
+  & .slider-controls {
+    margin-top: 30px;
+  }
+
+  &__mobile-controls {
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__desktop-controls {
+    display: none;
+
+    @include desktop {
+      display: block;
+      position: absolute;
+      top: -96px;
+      right: 0;
+    }
+
+    & .slider-controls__link {
+      display: none;
+    }
+  }
+}

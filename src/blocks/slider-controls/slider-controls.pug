@@ -27,3 +27,14 @@ mixin slider-controls(text, mods)
       .swiper-button-next.slider-controls__item.slider-controls__item-next
         svg(width="13", height="13")
           use(xlink:href="img/sprite.svg#arrow-down")
+
+mixin slider-controls-comparison(props)
+  .slider-controls.slider-controls-comparison&attributes(attributes)
+    .slider-controls__inner
+      .swiper-button-prev.slider-controls__item.slider-controls__item-prev
+        svg(width="13", height="13")
+          use(xlink:href="img/sprite.svg#arrow-down")
+      a(href='#').slider-controls__link 1,2 / 4
+      .swiper-button-next.slider-controls__item.slider-controls__item-next
+        svg(width="13", height="13")
+          use(xlink:href="img/sprite.svg#arrow-down")

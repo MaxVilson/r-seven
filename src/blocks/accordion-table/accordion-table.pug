@@ -1,0 +1,124 @@
+//- Все примеси в этом файле должны начинаться c имени блока (accordion-table)
+
+mixin accordion-table(props)
+
+  .accordion-table&attributes(attributes)
+    .accordion-table__inner
+      ul.accordion-table__list
+        li.accordion-table__item
+          .accordion-table__item-inner
+            .accordion-table__item-text Основные характеристики
+            svg(width="10", height="6").accordion-table__item-icon
+              use(xlink:href="img/sprite.svg#arrow-down") 
+          .accordion-table__subblocks
+            .accordion-table__subblock
+              .accordion-table__subblock-inner
+                .accordion-table__subblock-head Тип устройства
+                .accordion-table__subblock-items
+                  .accordion-table__subblock-item Ноутбук
+                  .accordion-table__subblock-item Ноутбук
+                  .accordion-table__subblock-item Ноутбук 
+        li.accordion-table__item
+          .accordion-table__item-inner
+            .accordion-table__item-text Корпус и устройства ввода
+            svg(width="10", height="6").accordion-table__item-icon
+              use(xlink:href="img/sprite.svg#arrow-down") 
+          .accordion-table__subblocks
+            .accordion-table__subblock
+              .accordion-table__subblock-inner
+                .accordion-table__subblock-head Материал
+                .accordion-table__subblock-items
+                  .accordion-table__subblock-item Металл/пластик
+                  .accordion-table__subblock-item Металл  
+                  .accordion-table__subblock-item Магниевый сплав 
+        li.accordion-table__item
+          .accordion-table__item-inner
+            .accordion-table__item-text Встроенное дополнительное оборудование
+            svg(width="10", height="6").accordion-table__item-icon
+              use(xlink:href="img/sprite.svg#arrow-down") 
+          .accordion-table__subblocks
+            .accordion-table__subblock
+              .accordion-table__subblock-inner
+                .accordion-table__subblock-head Материал
+                .accordion-table__subblock-items
+                  .accordion-table__subblock-item Металл/пластик
+                  .accordion-table__subblock-item Металл  
+                  .accordion-table__subblock-item Магниевый сплав 
+        li.accordion-table__item
+          .accordion-table__item-inner
+            .accordion-table__item-text Экран
+            svg(width="10", height="6").accordion-table__item-icon
+              use(xlink:href="img/sprite.svg#arrow-down") 
+          .accordion-table__subblocks
+            .accordion-table__subblock
+              .accordion-table__subblock-inner
+                .accordion-table__subblock-head Диагональ
+                .accordion-table__subblock-items
+                  .accordion-table__subblock-item 14’’
+                  .accordion-table__subblock-item 13’’
+            .accordion-table__subblock
+              .accordion-table__subblock-inner
+                .accordion-table__subblock-head Разрешение экрана
+                .accordion-table__subblock-items
+                  .accordion-table__subblock-item 1920х1080 FullHD
+                  .accordion-table__subblock-item 2560х1440 2К 
+            .accordion-table__subblock
+              .accordion-table__subblock-inner
+                .accordion-table__subblock-head Тип матрицы
+                .accordion-table__subblock-items
+                  .accordion-table__subblock-item MVA
+                  .accordion-table__subblock-item MVA Super  
+        li.accordion-table__item
+          .accordion-table__item-inner
+            .accordion-table__item-text Процессор
+            svg(width="10", height="6").accordion-table__item-icon
+              use(xlink:href="img/sprite.svg#arrow-down") 
+          .accordion-table__subblocks
+            .accordion-table__subblock
+              .accordion-table__subblock-inner
+                .accordion-table__subblock-head Модель процессора
+                .accordion-table__subblock-items
+                  .accordion-table__subblock-item Core i5 8250U
+                  .accordion-table__subblock-item Core i7 8250U
+            .accordion-table__subblock
+              .accordion-table__subblock-inner
+                .accordion-table__subblock-head Частота процессора
+                .accordion-table__subblock-items
+                  .accordion-table__subblock-item 3400 ГГц
+                  .accordion-table__subblock-item 3800 ГГц 
+            .accordion-table__subblock
+              .accordion-table__subblock-inner
+                .accordion-table__subblock-head Архитектура процесора
+                .accordion-table__subblock-items
+                  .accordion-table__subblock-item Kaby Lake Refresh
+                  .accordion-table__subblock-item Whiskey Lake 
+        li.accordion-table__item
+          .accordion-table__item-inner
+            .accordion-table__item-text Видеоадаптер
+            svg(width="10", height="6").accordion-table__item-icon
+              use(xlink:href="img/sprite.svg#arrow-down") 
+        li.accordion-table__item
+          .accordion-table__item-inner
+            .accordion-table__item-text Оперативная память
+            svg(width="10", height="6").accordion-table__item-icon
+              use(xlink:href="img/sprite.svg#arrow-down") 
+        li.accordion-table__item
+          .accordion-table__item-inner
+            .accordion-table__item-text Накопители данных
+            svg(width="10", height="6").accordion-table__item-icon
+              use(xlink:href="img/sprite.svg#arrow-down") 
+        li.accordion-table__item
+          .accordion-table__item-inner
+            .accordion-table__item-text Интернет/передача данных
+            svg(width="10", height="6").accordion-table__item-icon
+              use(xlink:href="img/sprite.svg#arrow-down") 
+        li.accordion-table__item
+          .accordion-table__item-inner
+            .accordion-table__item-text Интерфейсы/разъемы  
+            svg(width="10", height="6").accordion-table__item-icon
+              use(xlink:href="img/sprite.svg#arrow-down") 
+        li.accordion-table__item
+          .accordion-table__item-inner
+            .accordion-table__item-text Аккумулятор и питание
+            svg(width="10", height="6").accordion-table__item-icon
+              use(xlink:href="img/sprite.svg#arrow-down") 

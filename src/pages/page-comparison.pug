@@ -1,0 +1,36 @@
+extends ../pug/layout.pug
+
+block meta
+  title Главная
+  meta(name='description', content='')
+
+//- block append head
+//-   link(rel='stylesheet', href='css/some.css')
+
+block content
+  +page-header-active()
+  .page__comparison-wrapper
+    .page__comparison-breadcrumbs-wrapper
+      +breadcrumbs(class='page__comparison-breadcrumbs')
+        +breadcrumbs-item('Главная', '#')
+        +breadcrumbs-item('Каталог товаров', '#')
+    .page__comparison
+      .page__comparison-top-line
+        .page__comparison-top-line-wrapper
+          .page__comparison-top-line-comparison.page__comparison-top-line-comparison--active
+            svg(width="17", height="20")
+              use(xlink:href="img/sprite.svg#comparison-active")
+            span В сравнении (3)
+          +btn('Сравнить', 'color-secondory')(class='page__comparison-top-line-btn')
+      .page__comparison-block
+        .page__comparison-block-wrapper
+          h1.page__comparison-title Сравнение товаров
+          .page__comparison-block-header
+            +field-toggler([{title: 'Только различия', attrs: {name: 'check0'}}])
+            .page__comparison-block-header-close
+              button.page__comparison-block-header-close-btn
+                svg(width="12", height="12")
+                  use(xlink:href="img/sprite.svg#close")
+              a(href='#').page__comparison-block-header-close-link Очистить
+          +slider-comparison()
+        +accordion-table(class='page__comparison-accordion-table')

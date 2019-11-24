@@ -87,3 +87,20 @@
 .swiper-button-disabled {
   opacity: 1 !important;
 }
+
+.slider-controls-comparison {
+
+  & .slider-controls__link {
+    margin-right: 20px;
+    margin-left: 20px;
+    color: $gray-darkest;
+
+    &:after {
+      display: none;
+    }
+  }
+
+  & .slider-controls__item {
+    background-color: #f7f7f7;
+  }
+}
