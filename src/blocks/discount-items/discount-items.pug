@@ -1,6 +1,6 @@
 //- Все примеси в этом файле должны начинаться c имени блока (discount-items)
 
-mixin discount-items(text, mods)
+mixin discount-items(props, mods)
 
   //- Принимает:
   //-   text    {string} - текст
@@ -21,7 +21,7 @@ mixin discount-items(text, mods)
   .discount-items(class=allMods)&attributes(attributes)
     .discount-items__inner
       .discount-items__top-line
-        h2.discount-items__title Товары со скидкой
+        h2.discount-items__title= props.title
         +slider-controls(class='discount-items__desktop-controls')
       .swiper-container.discount-items__slider
         .swiper-wrapper.discount-items__slider-wrapper

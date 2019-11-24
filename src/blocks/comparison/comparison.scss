@@ -3,7 +3,16 @@
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .comparison {
+  display: flex;
+  align-items: center;
   border: none;
   background-color: transparent;
   cursor: pointer;
+  font-size: 14px;
+  font-weight: 300;
+  color: $gray-dark;
+
+  & span {
+    margin-left: 15px;
+  }
 }

@@ -19,6 +19,8 @@
 
   &__input {
     @include field-text;
+    width: 100%;
+    height: 50px;
 
     @at-root textarea#{&} {
       $textarea-height: ($line-height * 2) + ($field-padding-vertical * 2);

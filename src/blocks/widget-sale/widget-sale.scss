@@ -11,7 +11,7 @@
     position: relative;
     padding-top: 21px;
     padding-left: 20px;
-    width: 280px;
+    width: 100%;
     height: 120px;
 
     @include desktop {
@@ -34,6 +34,10 @@
     position: relative;
     z-index: 2;
     color: $white;
+
+    @include tablet {
+      padding-left: 375px;
+    }
 
     @include desktop {
       padding-left: 575px;

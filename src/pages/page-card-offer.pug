@@ -1,0 +1,130 @@
+extends ../pug/layout.pug
+
+block meta
+  title Главная
+  meta(name='description', content='')
+
+//- block append head
+//-   link(rel='stylesheet', href='css/some.css')
+
+block content
+  .page__card-offer
+    .page__card-offer-container
+      .page__card-offer-wrapper-left
+        .page__card-offer-wrapper
+          .page__card-offer-basket
+            h2.page__card-offer-basket-title Корзина
+            +card-offer({img: 'img/offer1.jpg', title: 'Системный блок Lenovo Legion T530-28ICB', article: 'Артикул: 1280451', price: '582 400 ₽'})
+            +card-offer({img: 'img/offer2.jpg', title: '960 ГБ SSD-накопитель Goodram Irdm Pro ', article: 'Артикул: 1280451', price: '582 400 ₽'})
+            +card-offer({img: 'img/offer3.jpg', title: '960 ГБ SSD-накопитель Goodram Irdm Pro ', article: 'Артикул: 1375424', price: '16 299 ₽'})
+        .page__card-offer-basket-promo
+          .page__card-offer-basket-promo-wrapper
+            .page__card-offer-basket-promo-row
+              +field-text({attrs: {placeholder: 'Я знаю промокод'}})(class='page__card-offer-basket-promo-input')
+              +btn('Применить', 'transparent')(class='page__card-offer-basket-promo-btn')
+            .page__card-offer-basket-promo-final-price итого:    
+              span  752 900 ₽
+            .page__card-offer-basket-promo-text Промокод успешно применен
+
+      .page__card-offer-wrapper-right
+        +form(action='', data-check-form='true').page__card-offer-form
+          .page__card-offer-form-title Форма заказа
+          .page__card-offer-form-fieldset-wrapper
+            +fieldset('Получатель')
+            +field-text({
+              attrs: {
+                placeholder: 'ФИО'
+              }
+            })
+            +field-text({
+              attrs: {
+                placeholder: 'Номер телефона *',
+                type: 'tel'
+              }
+            })
+            +field-text({
+              attrs: {
+                placeholder: 'Адрес *'
+              }
+            })
+            +field-text({
+              attrs: {
+                placeholder: 'Электронная почта *'
+              }
+            })
+            +field-text({
+              isTextarea: true,
+              attrs: {
+                placeholder: 'Комментарий к заказу'
+              }
+            })
+            .page__card-offer-form-necessarily * Поля обязательные к заполнению
+          .page__card-offer-form-fieldset-wrapper
+            +fieldset('Способ оплаты')
+              +field-checkbox([{
+                  title: 'Оплата наличными',
+                  attrs: {
+                    name: 'check1',
+                  }
+                },
+                {
+                  title: 'Безналичный расчет  ',
+                  attrs: {
+                    name: 'check2',
+                  }
+                }])
+              +field-file(class='page__card-offer-form-file')
+              .page__card-offer-form-subtext Прикрепите файл с реквизитами Вашей организации.
+          .page__card-offer-form-fieldset-wrapper
+            +fieldset('Способ доставки')
+              +field-checkbox([{
+                  title: 'Доставка по Москве',
+                  helpText: 'Завтра, 350 ₽ (в пределах МКАД)',
+                  attrs: {
+                    name: 'check3',
+                  }
+                },
+                {
+                  title: 'Самовывоз',
+                  helpText: 'Сегодня, бесплатно',
+                  attrs: {
+                    name: 'check4',
+                  }
+                },
+                {
+                  title: 'Доставка по России',
+                  helpText: 'По тарифам транспортной компании',
+                  attrs: {
+                    name: 'check5',
+                  }
+                }])
+        ul.page__card-offer-form-list
+          .page__card-offer-form-list-wrapper
+            li.page__card-offer-form-item
+              span.page__card-offer-form-item-text-bold Товары (4)
+              span.page__card-offer-form-item-text 752 900 ₽
+            li.page__card-offer-form-item
+              span.page__card-offer-form-item-text-bold Доставка
+              span.page__card-offer-form-item-text 500 ₽
+            li.page__card-offer-form-item
+              span.page__card-offer-form-item-text-bold Оплата
+              span.page__card-offer-form-item-text Наличными
+            li.page__card-offer-form-item
+              span.page__card-offer-form-item-text-bold Итого
+              span.page__card-offer-form-item-text-bold 753 400 ₽
+
+        .page__card-offer-agreement
+          +field-checkbox([{
+            attrs: {
+              name: 'check6 ',
+              }
+            }])
+          .page__card-offer-agreement-text 
+            |Я соглашаюсь c
+            a(href='#').page__card-offer-agreement-link  Условиями заказа и доставки, 
+            |на обработку персональных данных в соответствии с 
+            a(href='#').page__card-offer-agreement-link Условиями использования сайта, Политикой обработки персональных данных 
+            |и на получение сообщений в процессе обработки заказа.
+
+        .page__card-offer-btn-wrapper
+          +btn('Оформить заказ', '', true)(class='page__card-offer-btn')

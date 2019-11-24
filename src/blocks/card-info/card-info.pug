@@ -28,4 +28,5 @@ mixin card-info(title, profit, price, sale, list, mods)
       .card-info__price-wrapper 
         .card-info__price= price
         .card-info__sale= sale
-      +btn('Купить комплект', 'transparent')(class='card-info__btn')
+      .card-info__btn-wrapper
+        +btn('Купить комплект', 'transparent')(class='card-info__btn')

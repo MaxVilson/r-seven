@@ -45,7 +45,13 @@ mixin field-num(props)
 
   .field-num(class=allMods)&attributes(attributes)
     span.field-num__input-wrap
+      button.field-num__btn.field-num__btn--minus(type='button') -
+        svg(width="8", height="8")
+          use(xlink:href="img/sprite.svg#minus")
       input.field-num__input(type='number', value=val)&attributes(props.attrs)
+      button.field-num__btn.field-num__btn--plus(type='button') +
+        svg(width="8", height="8")
+          use(xlink:href="img/sprite.svg#plus")
       if(typeof(props.helpText) !== 'undefined' && props.helpText)
         span.field-num__help-text!= props.helpText
       block

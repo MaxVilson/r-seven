@@ -1,0 +1,101 @@
+// В этом файле должны быть стили для БЭМ-блока card-offer, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.card-offer {
+  position: relative;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-top: 1px solid #e6e6e6;
+
+  @include tablet {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  &__inner {
+    display: flex;
+  }
+
+  &__img {
+    margin-top: 12px;
+
+    @include tablet {
+      margin-top: 0;
+    }
+  }
+
+  &__text-wrapper {
+    margin-left: 20px;
+
+    @include tablet {
+      display: flex;
+      width: 100%;
+    }
+  }
+
+  &__title-wrapper {
+
+    @include tablet {
+      order: 1;
+      margin-top: 3px;
+      @include make-col(4);
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    line-height: 18px;  
+    color: $gray-darkest;
+  }
+
+  &__article {
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 24px;
+    color: $gray-dark;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+
+    @include tablet {
+      justify-content: center;
+      align-items: flex-start;
+      order: 2;
+      margin-top: 0;
+      @include make-col(4);
+    }
+  }
+
+  &__price {
+    margin-top: 15px;
+    font-weight: 700;
+
+    @include tablet {
+      order: 3;
+      margin-top: 5px;
+      @include make-col(4);
+    }
+  }
+
+  &__field-num {
+    
+  }
+
+  &__close {
+
+    @include tablet {
+      position: absolute;
+      top: 40px;
+      right: 0;
+    }
+
+    & svg {
+      fill: $gray-dark;
+    }
+  } 
+}

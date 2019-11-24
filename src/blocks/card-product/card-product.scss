@@ -1,0 +1,212 @@
+// В этом файле должны быть стили для БЭМ-блока card-product, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.card-product {
+  background-color: #fff;
+
+  &__inner {
+    padding-bottom: 15px;
+
+    @include tablet {
+      padding-bottom: 30px;
+      border-bottom: 1px solid #e6e6e6;
+    }
+
+    @include desktop {
+      padding-right: 40px;
+      padding-left: 40px;
+    }
+  }
+
+  &__header {
+    padding-top: 30px;
+
+    @include tablet {
+      padding-bottom: 30px;
+      border-bottom: 1px solid #e6e6e6;
+    }
+
+    @include desktop {
+      padding-top: 40px;
+    }
+
+    &-title {
+      margin: 0;
+      font-size: 24px;
+      line-height: 30px;
+    }
+
+    &-row {
+      padding-top: 15px;
+
+      @include tablet {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+
+    &-article {
+      font-weight: 300;
+      color: $gray-dark;
+    }
+
+    &-stars {
+      display: inline-block;
+      padding-top: 15px;
+
+      @include tablet {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 50px;
+        padding-top: 0;
+      }
+    }
+
+    &-link {
+      display: inline-block;
+      margin-left: 7px;
+      color: $gray-dark;
+
+      @include tablet {
+        margin-left: 17px;
+      }
+    }
+  }
+
+  &__wrapper {
+
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__slider {
+    margin-top: 15px;
+    padding-bottom: 40px;
+
+    @include tablet {
+      width: 400px;
+    }
+
+    &-inner {
+  
+    }
+
+    &-slide {
+      display: flex;
+      justify-content: center;
+    }
+
+    &-pagination {
+      margin-top: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      @include tablet {
+        display: none;
+      }
+
+      & span {
+        margin-right: 8px;
+        background-color: inherit;
+        box-shadow: 0 0 0 2px #ccc inset;
+        opacity: 1;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      & .swiper-pagination-bullet-active {
+        background-color: $color-secondory;
+        box-shadow: 0 0 0 2px $color-secondory inset;
+      }
+    }
+
+    &-thumbs {
+
+      &-container {
+        display: none;
+        margin-top: 25px;
+        width: 280px;
+
+        @include tablet {
+          display: block;
+        }
+      }
+
+      &-wrapper {
+        
+      }
+
+      &-slide {
+        display: flex;
+        justify-content: center;
+
+        &--active {
+          & img {
+            border: 1px solid $color-main;
+          }
+        }
+      }
+
+      &-button-next {
+        top: 0;
+        right: -10px;
+        transform: rotate(-90deg);
+
+        & svg {
+          fill: $gray-darker;
+          &:hover {
+            fill: $color-main;
+          }
+        }
+      }
+
+      &-button-prev {
+        top: 15px;
+        left: -10px;
+        transform: rotate(90deg);
+
+        & svg {
+          fill: $gray-darker;
+          &:hover {
+            fill: $color-main;
+          }
+        }
+      }
+    }
+  }
+
+  &__list {
+    display: none;
+    margin-top: 60px;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+    font-weight: 300;
+    line-height: 30px;
+    color: $gray-dark;
+
+    @include desktop {
+      display: block;
+    }
+
+    & span {
+      font-weight: 700;
+      color: $gray-darkest;
+    }
+  }
+
+  &__wrapper-details {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    @include desktop {
+      margin-top: 30px;
+    }
+  }
+}

@@ -1,6 +1,6 @@
 //- Все примеси в этом файле должны начинаться c имени блока (comparison)
 
-mixin comparison(mods)
+mixin comparison(text, mods)
 
   //- Принимает:
   //-   text    {string} - текст
@@ -21,3 +21,5 @@ mixin comparison(mods)
   button.comparison(class=allMods)&attributes(attributes)
     svg(width="17", height="20")
       use(xlink:href="img/sprite.svg#comparison")
+    if(text != undefined && text != '')
+      span= text

@@ -1,0 +1,74 @@
+//- Все примеси в этом файле должны начинаться c имени блока (card-product)
+
+mixin card-product(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +card-product('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' card-product--' + modsList[i].trim();
+      }
+    }
+
+  .card-product(class=allMods)&attributes(attributes)
+    .card-product__inner
+      .card-product__header
+        .card-product__header-wrapper
+          h1.card-product__header-title Игровой компьютер Acer Predator PO9-900
+          .card-product__header-row
+            .card-product__header-article Артикул: 2548-896
+            +stars('4')(class='card-product__header-stars')
+            a(href='#').card-product__header-link 12 отзывов
+      .card-product__wrapper
+        .card-product__slider
+          .card-product__slider-inner
+            .swiper-container.gallery-top.card-product__slider-container
+              .swiper-wrapper.card-product__slider-wrapper
+                .swiper-slide.card-product__slider-slide
+                  img(src='img/card-product.jpg' alt='Товар')
+                .swiper-slide.card-product__slider-slide
+                  img(src='img/card-product.jpg' alt='Товар')
+                .swiper-slide.card-product__slider-slide
+                  img(src='img/card-product.jpg' alt='Товар')  
+            .swiper-pagination.card-product__slider-pagination
+
+            .swiper-container.gallery-thumbs.card-product__slider-thumbs-container
+              .swiper-wrapper.card-product__slider-thumbs-wrapper
+                .swiper-slide.card-product__slider-thumbs-slide
+                  img(src='img/thumb1.jpg' alt='Товар')
+                .swiper-slide.card-product__slider-thumbs-slide
+                  img(src='img/thumb2.jpg' alt='Товар')
+                .swiper-slide.card-product__slider-thumbs-slide
+                  img(src='img/thumb3.jpg' alt='Товар')
+              .swiper-button-next.card-product__slider-thumbs-button-next
+                svg(width="20", height="20")
+                  use(xlink:href="img/sprite.svg#arrow-down")
+              .swiper-button-prev.card-product__slider-thumbs-button-prev
+                svg(width="20", height="20")
+                  use(xlink:href="img/sprite.svg#arrow-down")
+        ul.card-product__list
+          li.card-product__item Производитель процессора:
+            span  Intel
+          li.card-product__item Серия процессора:
+            span  Core i7
+          li.card-product__item Модель дискретной видеокарты:
+            span  GeForce RTX 2060
+          li.card-product__item Объем видеопамяти, в мегабайтах:
+            span  6144
+          li.card-product__item Объем оперативной памяти, в гигабайтах:
+            span  8
+          li.card-product__item Объем жесткого диска HDD, в гигабайтах:
+            span  1000
+          li.card-product__item Объем SSD, в гигабайтах:
+            span  128
+
+        .card-product__wrapper-details
+          +card-product-details(class='card-product__card-product-details')  

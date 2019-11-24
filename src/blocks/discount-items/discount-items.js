@@ -12,8 +12,12 @@ ready(function () {
       768: {
         slidesPerView: 2
       },
+      960: {
+        slidesPerView: 3
+      },
       1200: {
         slidesPerView: 4,
+        spaceBetween: 20,
         navigation: {
           nextEl: '.discount-items__desktop-controls .swiper-button-next',
           prevEl: '.discount-items__desktop-controls .swiper-button-prev',

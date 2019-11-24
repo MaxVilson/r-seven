@@ -1,0 +1,99 @@
+// В этом файле должны быть стили для БЭМ-блока card-product-details, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.card-product-details {
+  padding: 30px;
+  width: 280px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+
+  &__inner {
+
+  }
+
+  &__instock {
+    position: relative;
+    padding-left: 20px;
+    font-size: 12px;
+    font-weight: 300;
+    color: #000;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: $color-secondory;
+    }
+  }
+
+  &__sale {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 300;
+    text-decoration: line-through;
+    color: #afb1b3;
+  }
+
+  &__price {
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  &__percent {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15px;
+    width: 40px;
+    height: 24px;
+    font-size: 12px;
+    font-weight: 300;
+    vertical-align: top;
+    color: $white;
+    border-radius: 12px;
+    background-color: $color-main;
+  }
+
+  &__btn {
+    margin-top: 10px;
+    width: 220px;
+    height: 54px;
+
+    &-transparent {
+      color: $gray;
+    }
+  }
+
+  &__comparison {
+    margin-top: 25px;
+
+    &:hover {
+      color: $color-main;
+    }
+  }
+
+  &__list {
+    margin-top: 20px;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+
+    &-color {
+      color: $color-main;
+    }
+
+    &-bold {
+      font-weight: 700;
+    }
+
+    & li {
+      font-size: 12px;
+      line-height: 30px;
+      columns: #000000;
+    }
+  }
+}

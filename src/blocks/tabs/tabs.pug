@@ -36,12 +36,16 @@ mixin tabs(props, mods)
     }
 
   .tabs(class=allMods)&attributes(attributes)
-    ul.tabs__links(role='tablist')
-      each tab in props
-        -
-          var isActive = (typeof(tab.isActive) !== 'undefined' && tab.isActive) ? '  tabs__link-wrap--active' : ''
-        li.tabs__link-wrap(class=isActive, role='presentation')
-          a.tabs__link(href='#'+tab.id, data-toggle='tab', role='tab')!= tab.text
+    .tabs__inner
+      .tabs__top-wrapper
+        ul.tabs__links(role='tablist')
+          each tab in props
+            -
+              var isActive = (typeof(tab.isActive) !== 'undefined' && tab.isActive) ? '  tabs__link-wrap--active' : ''
+            li.tabs__link-wrap(class=isActive, role='presentation')
+              a.tabs__link(href='#'+tab.id, data-toggle='tab', role='tab')!= tab.text
+                if(tab.review != undefined)
+                  span.tabs__link-review= tab.review
     .tabs__content-wrapper
       block
 

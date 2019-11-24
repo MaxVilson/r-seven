@@ -35,7 +35,7 @@ mixin popular-complect(text, mods)
         .popular-complect__top-line
           h2.popular-complect__title Популярные комплекты
           +slider-controls(class='popular-complect__desktop-controls')
-        .popular-complect__desktop-slider.swiper-container
+        .popular-complect__desktop-slider.popular-complect__desktop-slider--js.swiper-container
           .popular-complect__desktop-slider-wrapper.swiper-wrapper
             .popular-complect__desktop-slide.swiper-slide
               +card-product-popular('img/popular1.jpg', 'Процессор AMD Ryzen 7 2700 BOX', '18 850', '14 999 ₽', 'plus')
@@ -52,4 +52,16 @@ mixin popular-complect(text, mods)
               +card-product-popular('img/popular2.jpg', 'Видеокарта Palit GeForce RTX 2070 Super GAMEROCK', '45 799', '40 799 ₽', 'plus')
               +card-product-popular('img/popular3.jpg', '480 ГБ SSD-накопитель Intel Optane 905P Series', '48 499', '41 499 ₽', 'arrow')
               +card-info('Игровой 007', 'Выгода 18 999 ₽', '560 280 ₽', '-18%', ['Процессор: Intel Corei9 9900R','Видеокарта: Nvidia RTX 2080Ti', 'Монитор: 32’’ Asus ROG 240 Hz', 'SSD накопитель:  Sandisk M2 1000 Gb', 'Оперативная память: Hynix Fury 64 Gb'])
+
+mixin popular-complect-static()
+  .popular-complect__desktop&attributes(attributes)
+    .popular-complect__top-line
+      h2.popular-complect__title Комплектом дешевле
+    .popular-complect__desktop-slider
+      .popular-complect__desktop-slider-wrapper.swiper-wrapper
+        .popular-complect__desktop-slide.swiper-slide
+          +card-product-popular('img/popular1.jpg', 'Процессор AMD Ryzen 7 2700 BOX', '18 850', '14 999 ₽', 'plus')
+          +card-product-popular('img/popular2.jpg', 'Видеокарта Palit GeForce RTX 2070 Super GAMEROCK', '45 799', '40 799 ₽', 'plus')
+          +card-product-popular('img/popular3.jpg', '480 ГБ SSD-накопитель Intel Optane 905P Series', '48 499', '41 499 ₽', 'arrow')
+          +card-info('Игровой 007', 'Выгода 18 999 ₽', '560 280 ₽', '-18%', ['Процессор: Intel Corei9 9900R','Видеокарта: Nvidia RTX 2080Ti', 'Монитор: 32’’ Asus ROG 240 Hz', 'SSD накопитель:  Sandisk M2 1000 Gb', 'Оперативная память: Hynix Fury 64 Gb'])
       

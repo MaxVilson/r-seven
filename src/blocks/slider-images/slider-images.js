@@ -8,7 +8,8 @@ ready(function () {
     },
     breakpoints: {
       768: {
-        slidesPerView: 2
+        slidesPerView: 2,
+        spaceBetween: 30
       }
     }
   });

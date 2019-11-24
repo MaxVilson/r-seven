@@ -43,13 +43,13 @@
         height: 100%;
         background-size: cover;
 
-        @include tablet {
-          width: auto;
-        }
+        // @include tablet {
+        //   // width: auto;
+        // }
 
-        @include desktop {
-          width: 100%;
-        }
+        // @include desktop {
+        //   width: 100%;
+        // }
       }
     }
 

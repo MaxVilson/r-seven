@@ -1,0 +1,39 @@
+//- Все примеси в этом файле должны начинаться c имени блока (card-product-details)
+
+mixin card-product-details(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +card-product-details('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' card-product-details--' + modsList[i].trim();
+      }
+    }
+
+  .card-product-details(class=allMods)&attributes(attributes)
+    .card-product-details__inner
+      .card-product-details__instock В наличии
+      .card-product-details__sale 682 400
+      .card-product-details__price 582 400 ₽
+        span.card-product-details__percent -18%
+      +btn('В корзину')(class='card-product-details__btn')
+      +btn('Купить в один клик', 'transparent')(class='card-product-details__btn card-product-details__btn-transparent')
+      +comparison('К сравнению')(class='card-product-details__comparison')
+      ul.card-product-details__list
+        li Закажите до 16:00, привезем сегодня!
+        li 
+          span.card-product-details__list-color Доставка 
+          |по Москве
+          span.card-product-details__list-bold  от 390
+        li 
+          span.card-product-details__list-color Самовывоз 
+          |через 1 час,
+          span.card-product-details__list-bold  бесплатно

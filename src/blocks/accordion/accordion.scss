@@ -1,0 +1,118 @@
+// В этом файле должны быть стили для БЭМ-блока accordion, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.accordion {
+
+  &__inner {
+    @include container;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 0;
+    font-weight: 700;
+    border-bottom: 1px solid #e6e6e6;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &--active {
+      color: $color-secondory;
+    }
+
+    &-review {
+      position: relative;
+      top: -10px;
+      margin-left: 5px;
+      font-size: 12px;
+      font-weight: 300;
+      color: $gray-dark;
+    }
+
+    &-icon {
+      position: absolute;
+      top: 34px;
+      right: 0;
+      fill: $gray-darkest;
+      transition: all .3s;
+
+      @include desktop {
+        display: none;
+      }
+
+      &--active {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__subblock {
+    color: $gray-darkest;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height .5s cubic-bezier(0, 1, 0, 1);
+
+    &--active {
+      max-height: 299em;
+      transition: max-height .5s ease-in-out;
+    }
+
+    &-title {
+      margin-top: 40px;
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    &-text {
+      font-weight: 300;
+      line-height: 24px;
+    }
+
+    &-images {
+      & img {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &-item {
+      margin-top: 20px;
+
+      &-title {
+        font-weight: 300;
+        color: $gray-dark;
+      }
+
+      &-text {
+        font-weight: 300;
+        color: $gray-darkest;
+      }
+    }
+  }
+
+  &__text {
+
+    &-gray {
+      margin-top: 30px;
+      font-size: 12px;
+      line-height: 18px;
+      font-weight: 300;
+      color: #7e7e7e;
+    }
+  }
+}

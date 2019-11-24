@@ -4,11 +4,16 @@
 
 .card-hit {
   display: block;
-  width: 280px;
+  // width: 280px;
+  width: 100%;
   border: 1px solid #e6e6e6;
   background-color: $white;
   text-decoration: none;
   color: $gray-darken;
+
+  @include tablet {
+    width: 278px;
+  }
 
   &--large {
     @include desktop {

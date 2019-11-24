@@ -1,0 +1,108 @@
+//- Все примеси в этом файле должны начинаться c имени блока (accordion)
+
+mixin accordion(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +accordion('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' accordion--' + modsList[i].trim();
+      }
+    }
+
+  .accordion(class=allMods)&attributes(attributes)
+    .accordion__inner
+      .accordion__list
+        li.accordion__item Описание
+          svg(width="10", height="6").accordion__item-icon
+            use(xlink:href="img/sprite.svg#arrow-down")
+          .accordion__subblock
+            h3.accordion__subblock-title Predator Orion 3000
+            p.accordion__subblock-text Высокая производительность для сеансов видеосвязи, мгновенное переключение между приложениями, быстрый поиск и сохранение файлов. Процессор Intel® Core™ i5 позволяет редактировать материалы и создавать видеоролики для публикации в социальных сетях, играть в ресурсоемкие игры и транслировать материалы в формате 4K UHD.
+            .accordion__subblock-images 
+              img(src='img/tab1.jpg' alt='Товар')
+              img(src='img/tab2.jpg' alt='Товар')
+              img(src='img/tab3.jpg' alt='Товар')
+            p.accordion__subblock-text ПК Acer Predator G3710 DGB1PER008 рассчитан на геймеров, проводящих много времени в современных играх с динамичным геймплеем. Производительный процессор Intel Core i5-6400 обеспечивает стабильность работы приложений, видеокарта NVIDIA GeForce GTX 970 позволяет устанавливать высокие настройки графики. 8 Гб ОЗУ DDR4 легко расширяются до 64 Гб и избавляют от лагов, гарантируя быструю прорисовку локаций.
+            p.accordion__subblock-text Системный блок можно со временем улучшать, приобретая отдельные более мощные комплектующие. Чтобы заменить детали, достаточно снять боковые панели корпуса. Жесткие диски устанавливать еще проще — на передней части предусмотрен специальный отсек. Корпус ПК обладает особой формой, которая станет ярким дополнением интерьера. Эффективность системы охлаждения дополняется широкими решетками и ножками в конструкции.
+            .accordion__subblock-banner 
+              img(src='img/tab-banner.jpg' alt='Баннер')
+            p.accordion__subblock-text Игровой компьютер Acer Predator PO3-600 (DG.E14ER.005) оснащен шестиядерным 12-поточным процессором Intel Core i5-8400, максимальная тактовая частота которого равна 9 ГГц. Благодаря встроенной оперативной памяти DDR4 объемом 16 ГБ устройство характеризуется ускоренной загрузкой операционной системы и быстрым откликом на команды пользователя. Системный блок снабжен встроенным Wi-Fi-модулем, предназначенным для беспроводного подключения к сети интернет.
+            p.accordion__subblock-text Модель Acer Predator PO3-600 (DG.E14ER.005) имеет два накопителя емкостью 1 ТБ и 256 ГБ, чего достаточно для хранения большого количества фильмов, текстовых файлов, фотографий и программ. Встроенная видеокарта nVidia RTX2070 с памятью объемом 8 ГБ позволяет проходить игры на максимальных настройках графики, а также смотреть фильмы в формате 4К. Корпус с LED-подсветкой оснащен сетчатыми вставками по бокам, которые обеспечивают дополнительное охлаждение. На задней панели системного блока имеется LAN-разъем, несколько USB-портов и входные отверстия, предназначенные для подключения микрофона и колонок.
+        li.accordion__item Характеристики
+          svg(width="10", height="6").accordion__item-icon
+            use(xlink:href="img/sprite.svg#arrow-down")
+          .accordion__subblock
+            h3.accordion__subblock-title Технические характеристики Acer Predator PO9-900
+            ul.accordion__list
+              li.accordion__list-item
+                span.accordion__list-item-title Тип:
+                span.accordion__list-item-text  Системный блок 
+              li.accordion__list-item
+                span.accordion__list-item-title Назначение:
+                span.accordion__list-item-text  игровой 
+              li.accordion__list-item
+                span.accordion__list-item-title Тип процессора:
+                span.accordion__list-item-text  Intel Core i9 
+              li.accordion__list-item
+                span.accordion__list-item-title Код процессора: 
+                span.accordion__list-item-text  7900X 
+              li.accordion__list-item
+                span.accordion__list-item-title Частота процессора:
+                span.accordion__list-item-text  3300 МГц   
+              li.accordion__list-item
+                span.accordion__list-item-title Кол-во ядер процессора:
+                span.accordion__list-item-text  10
+              li.accordion__list-item
+                span.accordion__list-item-title Объем оперативной памяти:
+                span.accordion__list-item-text  64 Гб 
+              li.accordion__list-item
+                span.accordion__list-item-title Объем жесткого диска:
+                span.accordion__list-item-text  3000+512 (SSD) Гб 
+              li.accordion__list-item
+                span.accordion__list-item-title Графический чипсет:
+                span.accordion__list-item-text  NVIDIA GeForce RTX 2080 Ti x 2  
+
+            ul.accordion__list
+              li.accordion__list-item
+                span.accordion__list-item-title Объем видеопамяти:
+                span.accordion__list-item-text  11264 Мб 
+              li.accordion__list-item
+                span.accordion__list-item-title Оптический привод:D 
+                span.accordion__list-item-text  DVD-RW 
+              li.accordion__list-item
+                span.accordion__list-item-title Интерфейсы:
+                span.accordion__list-item-text  2 x USB 2.0, RJ-45, 6 x USB 3.1, Разъем 3.5 мм для наушников с микрофоном, USB 3.0 Type-C 
+              li.accordion__list-item
+                span.accordion__list-item-title Операционная система: 
+                span.accordion__list-item-text  Windows 10 Home 
+              li.accordion__list-item
+                span.accordion__list-item-title Габариты ВхШхГ:
+                span.accordion__list-item-text  643 мм х 299 мм х 700 мм 
+              li.accordion__list-item
+                span.accordion__list-item-title Вес:
+                span.accordion__list-item-text  17 кг 
+              li.accordion__list-item
+                span.accordion__list-item-title Игровой компьютер: 
+                span.accordion__list-item-text  да 
+ 
+            p.accordion__text.accordion__text-gray Технические характеристики товара могут отличаться от указанных на сайте, уточняйте технические характеристики товара на момент покупки и оплаты. Вся информация на сайте о товарах носит справочный характер и не является публичной офертой в соответствии с пунктом 2 статьи 437 ГК РФ. Убедительно просим Вас при покупке проверять наличие желаемых функций и характеристик.
+
+        li.accordion__item Отзывы
+          svg(width="10", height="6").accordion__item-icon
+            use(xlink:href="img/sprite.svg#arrow-down") 
+          span.accordion__item-review 12
+        li.accordion__item Аксессуары
+          svg(width="10", height="6").accordion__item-icon
+            use(xlink:href="img/sprite.svg#arrow-down")
+        li.accordion__item Услуги и сервис
+          svg(width="10", height="6").accordion__item-icon
+            use(xlink:href="img/sprite.svg#arrow-down")    

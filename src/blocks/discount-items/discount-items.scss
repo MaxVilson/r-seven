@@ -42,8 +42,12 @@
     display: flex;
     justify-content: center;
     margin-top: 20px !important;
-    width: 280px;
+    width: 100%;
     height: 420px;
+
+    @include desktop {
+      width: 280px !important;
+    }
 
     &--large {
       // @include desktop {

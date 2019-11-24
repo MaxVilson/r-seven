@@ -328,6 +328,11 @@ $grid-gutter-width:           20px;
     @content;
   }
 }
+@mixin desktop-sm {
+  @media (min-width: $screen-lg) {
+    @content;
+  }
+}
 @mixin desktop {
   @media (min-width: $screen-xl) {
     @content;

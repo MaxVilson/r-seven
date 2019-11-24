@@ -1,0 +1,34 @@
+//- Все примеси в этом файле должны начинаться c имени блока (card-offer)
+
+mixin card-offer(props, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +card-offer('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' card-offer--' + modsList[i].trim();
+      }
+    }
+
+  .card-offer(class=allMods)&attributes(attributes)
+    .card-offer__inner
+      .card-offer__img
+        img(src=props.img alt='Товар') 
+      .card-offer__text-wrapper
+        .card-offer__title-wrapper
+          .card-offer__title= props.title
+          .card-offer__article= props.article
+        .card-offer__price= props.price
+        .card-offer__row
+          +field-num({attrs: {name: 'counter', step: 1, min: 0,}})(class='card-offer__field-num')
+          .card-offer__close
+            svg(width="10", height="10")
+              use(xlink:href="img/sprite.svg#close")

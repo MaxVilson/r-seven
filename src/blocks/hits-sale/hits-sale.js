@@ -12,6 +12,9 @@ ready(function () {
       768: {
         slidesPerView: 2
       },
+      960: {
+        slidesPerView: 3
+      },
 
       1200: {
         slidesPerView: 'auto',

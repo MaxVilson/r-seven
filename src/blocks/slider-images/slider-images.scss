@@ -13,6 +13,11 @@
   &__slide {
     display: flex;
     justify-content: center;
+
+    & img {
+      width: 100%;
+      background-size: cover;
+    }
   }
 
   &__pagination {
