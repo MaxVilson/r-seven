@@ -1449,6 +1449,139 @@ pre {
       }
     }
   }
+
+  &__delivery {
+    
+    &-wrapper {
+      @include desktop {
+        background-color: #f7f7f7;
+      }
+    }
+
+    &-breadcrumbs {
+      display: none;
+
+      &-wrapper {
+
+        @include desktop {
+          @include container;
+          padding-top: 30px;
+          padding-bottom: 30px;
+        }
+      }
+    }
+
+    &-container {
+      @include container;
+    }
+
+    &-inner {
+      background-color: #fff;
+
+      @include desktop {
+        padding-left: 40px;
+      }
+    }
+
+    &-section {
+      padding-top: 30px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #e6e6e6;
+
+      @include desktop {
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
+
+      &-title {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        font-size: 18px;  
+        font-weight: 700;
+        line-height: 24px;
+      }
+    }
+
+    &-title {
+      margin-top: 0;
+      margin-bottom: 25px;
+      font-size: 30px;
+
+      &-color {
+        margin-top: 30px;
+        // margin-bottom: 30px;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 24px;
+        color: $color-secondory;
+      }
+    }
+
+    &-text {
+      // margin-top: 25px;
+      margin-bottom: 0;
+      line-height: 24px;
+      
+      &-bold {
+        font-weight: 700;
+        line-height: 24px;
+      }
+
+      &-color {
+        font-weight: 700;
+        line-height: 24px;
+        color: $color-secondory;
+      }
+    }
+
+    &-list {
+      margin-top: 30px;
+      margin-bottom: 30px;
+      padding: 0;
+      list-style: none;
+    }
+
+    &-item {
+      position: relative;
+      margin-bottom: 30px;
+      padding-left: 20px;
+      line-height: 24px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 7px;
+        left: 0;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: $color-secondory;
+      }
+    }
+
+    &-link {
+      text-decoration: none;
+      color: $color-secondory;
+
+      &-sm {
+        text-decoration: none;
+        color: $color-secondory;
+      }
+    }
+
+    &-img {
+      margin-top: 30px;
+      margin-bottom: 20px;
+
+      @include desktop {
+        margin-top: 50px;
+      }
+    }
+  }
 }
 
 .container {
