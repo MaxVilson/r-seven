@@ -3,6 +3,12 @@
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .map {
+  margin-top: 30px;
+  width: 100%;
+  height: 280px;
 
-  $block-name:                &; // #{$block-name}__element
+  @include desktop {
+    margin-top: 0;
+    height: 448px;
+  }
 }
