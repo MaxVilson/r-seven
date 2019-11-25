@@ -1000,6 +1000,10 @@ pre {
     &-accordion-table {
       margin-top: 10px;
       background-color: #fff;
+
+      @include desktop {
+        margin-top: 50px;
+      }
     }
   }
 
