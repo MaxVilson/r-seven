@@ -1,0 +1,76 @@
+extends ../pug/layout.pug
+
+block meta
+  title Главная
+  meta(name='description', content='')
+
+//- block append head
+//-   link(rel='stylesheet', href='css/some.css')
+
+block content
+  +page-header()
+  .page__configurator-wrapper
+    .page__configurator-container
+      .page__configurator-inner
+        .page__configurator-main
+          +configurator()
+        .page__configurator-sidebar
+          .page__configurator-sidebar-top-block
+            .page__configurator-sidebar-top-block-title Стоимость компьютера
+            .page__configurator-sidebar-top-block-price 582 400 ₽
+            .page__configurator-sidebar-top-block-btn-wrapper
+              +btn('Собрать')(class='page__configurator-sidebar-top-block-btn')
+              +btn('Очистить', 'transparent')(class='page__configurator-sidebar-top-block-btn page__configurator-sidebar-top-block-btn-transparent')
+          ul.page__configurator-sidebar-list
+            li.page__configurator-sidebar-list-item
+              a(href='#').page__configurator-sidebar-list-link
+                svg(width="16", height="16")
+                  use(xlink:href="img/sprite.svg#print")
+                |Распечатать
+            li.page__configurator-sidebar-item
+              a(href='#').page__configurator-sidebar-list-link
+                svg(width="16", height="16")
+                  use(xlink:href="img/sprite.svg#help")
+                |Узнать мнение эксперта магазина
+            li.page__configurator-sidebar-item
+              a(href='#').page__configurator-sidebar-list-link
+                svg(width="17", height="17")
+                  use(xlink:href="img/sprite.svg#link")
+                |Ссылка на конфигуратор
+          .page__configurator-sidebar-links
+            .page__configurator-sidebar-links-title Готовые конфиругации  
+            a(href='#').page__configurator-sidebar-link Офисный "Эконом"
+            a(href='#').page__configurator-sidebar-link  Офисный "Стандарт"
+            a(href='#').page__configurator-sidebar-link  Офисный "Профи"
+            a(href='#').page__configurator-sidebar-link  Игровой intel AMD
+            a(href='#').page__configurator-sidebar-link  Игровой intel&Nvidia
+            a(href='#').page__configurator-sidebar-link  Игровой AMD&Radeon
+            a(href='#').page__configurator-sidebar-link  Игровой AMD&Vega11
+            a(href='#').page__configurator-sidebar-link  Игровой intel&AMD Radeon
+            a(href='#').page__configurator-sidebar-link  Игровой intel&Nvidia
+            a(href='#').page__configurator-sidebar-link  Игровой AMD&Radeon
+            a(href='#').page__configurator-sidebar-link  Профи intel&Nvidia 
+            a(href='#').page__configurator-sidebar-link  Профи intel&Radeon
+            a(href='#').page__configurator-sidebar-link  Профи игровой AMD&Nvidia
+            a(href='#').page__configurator-sidebar-link  Профи игровой AMD&Radeon
+            a(href='#').page__configurator-sidebar-link  Видеопродакшен AMD&Vega11
+            a(href='#').page__configurator-sidebar-link  Видеопродакшен intel&AMD Radeon
+            a(href='#').page__configurator-sidebar-link  Видеопродакшен intel&Nvidia
+            a(href='#').page__configurator-sidebar-link  Видеопродакшен AMD&Radeon
+            a(href='#').page__configurator-sidebar-link  Дизайн intel&Nvidia
+            a(href='#').page__configurator-sidebar-link  Дизайн intel&Radeon
+            a(href='#').page__configurator-sidebar-link  Дизайн AMD&Nvidia
+            a(href='#').page__configurator-sidebar-link  Дизайн AMD&Radeon 
+          .page__configurator-sidebar-bottom-block 
+            .page__configurator-sidebar-bottom-block-title Сборка компьютера онлайн
+            .page__configurator-sidebar-bottom-block-text В наше время, как и многие годы до этого, популярностью пользуется сборка компьютера из самостоятельно подобранных комплектующих. Это хорошая возможность подобрать то, что хотите именно вы. Вас ничего не ограничивает, для сборки доступны сотни вариантов, среди которых обязательно найдётся тот, который вам по душе.
+            a(href='#').page__configurator-sidebar-bottom-block-link Читать полностью
+    .page__configurator-desktop-text
+      .page__configurator-desktop-text-title Сборка компьютера онлайн
+      p В наше время, как и многие годы до этого, популярностью пользуется сборка компьютера из самостоятельно подобранных комплектующих. Это хорошая возможность подобрать то, что хотите именно вы. Вас ничего не ограничивает, для сборки доступны сотни вариантов, среди которых обязательно найдётся тот, что вам по душе.
+      p Наш интернет-магазин предлагает такую возможность, как сборка компьютера онлайн, через конфигуратор. В нём данный процесс представлен в виде категорий комплектующих, от процессора до блока питания. Каждая категория содержит расширенный ассортимент по моделям с описанием характеристик для удобства выбора.
+      p Для упрощения подбора комплектующих, в конфигураторе настроен фильтр совместимости по основным компонентам сборки. Например, выбрав определенный процессор, следующие комплектующие фильтруются автоматически по совместимости. Также, вам будет представлен выбор на установку операционной системы. После завершения процесса сборки, вы получаете итоговый результат по трём параметрам: цена, технические данные, визуализированное изображение. После оформления заказа и подтверждения его по телефону, наши специалисты собирают данную комплектацию, проверяют работоспособность.
+      p Преимуществом такого способа покупки системного блока является то, что вы не только выбираете комплектующие, которые хотите, но и имеете возможность выбрать бренд или фирму производителя детали.
+      p Собрав определенную конфигурацию, завершив нажатием кнопок собрать/купить, сборке присваивается определенный порядковый номер, набрав который в строке поиска товара, вы сможете найти данный ПК и отправлять ссылку на него друзьям или знакомым для консультации или рекомендации им к покупке.
+      p Важной особенностью нашего конфигуратора является функция «узнать мнение эксперта» Отправив свой запрос через данную форму, Вы получите развернутый ответ с рекомендацией на электронную почту, указанную вами.
+      p Попробуйте и убедитесь сами — сборка компьютера онлайн — это легко и просто! В случае затруднений, вы всегда можете получить консультации наших специалистов по всем интересующим вас вопросам. 

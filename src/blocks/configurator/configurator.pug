@@ -1,0 +1,215 @@
+//- Все примеси в этом файле должны начинаться c имени блока (configurator)
+
+mixin configurator(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +configurator('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' configurator--' + modsList[i].trim();
+      }
+    }
+
+  .configurator(class=allMods)&attributes(attributes)
+    .configurator__inner
+      h1.configurator__title Конфигуратор компьютера
+      .configurator__subtext * - Обязательные комплектующие
+      ul.configurator__list
+        li.configurator__item
+          .configurator__item-inner
+            .configurator__item-text Процессор *
+            svg(width="22", height='22').configurator__item-icon.configurator__item-icon-plus
+              use(xlink:href="img/sprite.svg#plus_configuration") 
+            svg(width="22", height='22').configurator__item-icon.configurator__item-icon-minus
+              use(xlink:href="img/sprite.svg#minus_configuration") 
+          .configurator__subblocks.configurator__subblocks--vision
+            .configurator__subblock
+              +baron('baron1')(class='page__configurator-baron')
+                .configurator__subblock-item
+                  img(src='img/culer1.jpg' alt='кулер')
+                  .configurator__subblock-item-block-text
+                    .configurator__subblock-item-name Кулер для процессора DeepCool MasterAir MA410M
+                    .configurator__subblock-item-price 2 400 ₽
+                  input(type='radio' id='culer1' name='culer' value='culer1').configurator__subblock-item-radio
+                  label.configurator__subblock-item-label(for='culer1')
+                .configurator__subblock-item
+                  img(src='img/culer1.jpg' alt='кулер')
+                  .configurator__subblock-item-block-text
+                    .configurator__subblock-item-name Кулер для процессора DeepCool MasterAir MA410M
+                    .configurator__subblock-item-price 2 400 ₽
+                  input(type='radio' id='culer2' name='culer' value='culer2').configurator__subblock-item-radio
+                  label.configurator__subblock-item-label(for='culer2')
+                .configurator__subblock-item
+                  img(src='img/culer1.jpg' alt='кулер')
+                  .configurator__subblock-item-block-text
+                    .configurator__subblock-item-name Кулер для процессора DeepCool MasterAir MA410M
+                    .configurator__subblock-item-price 2 400 ₽
+                  input(type='radio' id='culer3' name='culer' value='culer3').configurator__subblock-item-radio
+                  label.configurator__subblock-item-label(for='culer3')
+                .configurator__subblock-item
+                  img(src='img/culer1.jpg' alt='кулер')
+                  .configurator__subblock-item-block-text
+                    .configurator__subblock-item-name Кулер для процессора DeepCool MasterAir MA410M
+                    .configurator__subblock-item-price 2 400 ₽
+                  input(type='radio' id='culer4' name='culer' value='culer4').configurator__subblock-item-radio
+                  label.configurator__subblock-item-label(for='culer4')
+                .configurator__subblock-item
+                  img(src='img/culer1.jpg' alt='кулер')
+                  .configurator__subblock-item-block-text
+                    .configurator__subblock-item-name Кулер для процессора DeepCool MasterAir MA410M
+                    .configurator__subblock-item-price 2 400 ₽
+                  input(type='radio' id='culer5' name='culer' value='culer5').configurator__subblock-item-radio
+                  label.configurator__subblock-item-label(for='culer5')
+                .configurator__subblock-item
+                  img(src='img/culer1.jpg' alt='кулер')
+                  .configurator__subblock-item-block-text
+                    .configurator__subblock-item-name Кулер для процессора DeepCool MasterAir MA410M
+                    .configurator__subblock-item-price 2 400 ₽
+                  input(type='radio' id='culer6' name='culer' value='culer6').configurator__subblock-item-radio
+                  label.configurator__subblock-item-label(for='culer6')
+                .configurator__subblock-item
+                  img(src='img/culer1.jpg' alt='кулер')
+                  .configurator__subblock-item-block-text
+                    .configurator__subblock-item-name Кулер для процессора DeepCool MasterAir MA410M
+                    .configurator__subblock-item-price 2 400 ₽
+                  input(type='radio' id='culer7' name='culer' value='culer7').configurator__subblock-item-radio
+                  label.configurator__subblock-item-label(for='culer7')
+        li.configurator__item
+          .configurator__item-inner
+            .configurator__item-text Охлаждение *
+            svg(width="22", height='22').configurator__item-icon.configurator__item-icon-plus
+              use(xlink:href="img/sprite.svg#plus_configuration") 
+            svg(width="22", height='22').configurator__item-icon.configurator__item-icon-minus
+              use(xlink:href="img/sprite.svg#minus_configuration") 
+          .configurator__subblocks
+            .configurator__subblock
+              +baron('baron2')(class='page__configurator-baron')
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dicta aliquid nemo, sit possimus,eveniet tempore minus, doloremque incidunt, nihil quos aperiam ab iure quia. Ipsa sit porro incidunt,sed!
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dicta aliquid nemo, sit possimus,eveniet tempore minus, doloremque incidunt, nihil quos aperiam ab iure quia. Ipsa sit porro incidunt,sed! 
+        li.configurator__item
+          .configurator__item-inner
+            .configurator__item-text Материнская плата *
+            svg(width="22", height='22').configurator__item-icon.configurator__item-icon-plus
+              use(xlink:href="img/sprite.svg#plus_configuration") 
+            svg(width="22", height='22').configurator__item-icon.configurator__item-icon-minus
+              use(xlink:href="img/sprite.svg#minus_configuration") 
+          .configurator__subblocks
+            .configurator__subblock
+              +baron('baron3')(class='page__configurator-baron')
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dicta aliquid nemo, sit possimus,eveniet tempore minus, doloremque incidunt, nihil quos aperiam ab iure quia. Ipsa sit porro incidunt,sed!
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dicta aliquid nemo, sit possimus,eveniet tempore minus, doloremque incidunt, nihil quos aperiam ab iure quia. Ipsa sit porro incidunt,sed! 
+        li.configurator__item
+          .configurator__item-inner
+            .configurator__item-text Оперативная память *
+            svg(width="22", height='22').configurator__item-icon.configurator__item-icon-plus
+              use(xlink:href="img/sprite.svg#plus_configuration") 
+            svg(width="22", height='22').configurator__item-icon.configurator__item-icon-minus
+              use(xlink:href="img/sprite.svg#minus_configuration") 
+          .configurator__subblocks
+            .configurator__subblock
+              +baron('baron4')(class='page__configurator-baron')
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dicta aliquid nemo, sit possimus,eveniet tempore minus, doloremque incidunt, nihil quos aperiam ab iure quia. Ipsa sit porro incidunt,sed!
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dicta aliquid nemo, sit possimus,eveniet tempore minus, doloremque incidunt, nihil quos aperiam ab iure quia. Ipsa sit porro incidunt,sed! 
+        li.configurator__item
+          .configurator__item-inner
+            .configurator__item-text Жёсткий диск *
+            svg(width="22", height='22').configurator__item-icon.configurator__item-icon-plus
+              use(xlink:href="img/sprite.svg#plus_configuration") 
+            svg(width="22", height='22').configurator__item-icon.configurator__item-icon-minus
+              use(xlink:href="img/sprite.svg#minus_configuration") 
+          .configurator__subblocks
+            .configurator__subblock
+              +baron('baron5')(class='page__configurator-baron')
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dicta aliquid nemo, sit possimus,eveniet tempore minus, doloremque incidunt, nihil quos aperiam ab iure quia. Ipsa sit porro incidunt,sed!
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dicta aliquid nemo, sit possimus,eveniet tempore minus, doloremque incidunt, nihil quos aperiam ab iure quia. Ipsa sit porro incidunt,sed! 
+        li.configurator__item
+          .configurator__item-inner
+            .configurator__item-text Твердотельный накопитель (SSD)
+            svg(width="22", height='22').configurator__item-icon.configurator__item-icon-plus
+              use(xlink:href="img/sprite.svg#plus_configuration") 
+            svg(width="22", height='22').configurator__item-icon.configurator__item-icon-minus
+              use(xlink:href="img/sprite.svg#minus_configuration") 
+          .configurator__subblocks
+            .configurator__subblock
+              +baron('baron6')(class='page__configurator-baron')
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dicta aliquid nemo, sit possimus,eveniet tempore minus, doloremque incidunt, nihil quos aperiam ab iure quia. Ipsa sit porro incidunt,sed!
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dicta aliquid nemo, sit possimus,eveniet tempore minus, doloremque incidunt, nihil quos aperiam ab iure quia. Ipsa sit porro incidunt,sed! 
+        li.configurator__item
+          .configurator__item-inner
+            .configurator__item-text Видео-карта *
+            svg(width="22", height='22').configurator__item-icon.configurator__item-icon-plus
+              use(xlink:href="img/sprite.svg#plus_configuration") 
+            svg(width="22", height='22').configurator__item-icon.configurator__item-icon-minus
+              use(xlink:href="img/sprite.svg#minus_configuration") 
+          .configurator__subblocks
+            .configurator__subblock
+              +baron('baron7')(class='page__configurator-baron')
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dicta aliquid nemo, sit possimus,eveniet tempore minus, doloremque incidunt, nihil quos aperiam ab iure quia. Ipsa sit porro incidunt,sed!
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dicta aliquid nemo, sit possimus,eveniet tempore minus, doloremque incidunt, nihil quos aperiam ab iure quia. Ipsa sit porro incidunt,sed! 
+        li.configurator__item
+          .configurator__item-inner
+            .configurator__item-text Оптический привод
+            svg(width="22", height='22').configurator__item-icon.configurator__item-icon-plus
+              use(xlink:href="img/sprite.svg#plus_configuration") 
+            svg(width="22", height='22').configurator__item-icon.configurator__item-icon-minus
+              use(xlink:href="img/sprite.svg#minus_configuration") 
+          .configurator__subblocks
+            .configurator__subblock
+              +baron('baron8')(class='page__configurator-baron')
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dicta aliquid nemo, sit possimus,eveniet tempore minus, doloremque incidunt, nihil quos aperiam ab iure quia. Ipsa sit porro incidunt,sed!
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dicta aliquid nemo, sit possimus,eveniet tempore minus, doloremque incidunt, nihil quos aperiam ab iure quia. Ipsa sit porro incidunt,sed! 
+        li.configurator__item
+          .configurator__item-inner
+            .configurator__item-text Кард-ридер
+            svg(width="22", height='22').configurator__item-icon.configurator__item-icon-plus
+              use(xlink:href="img/sprite.svg#plus_configuration") 
+            svg(width="22", height='22').configurator__item-icon.configurator__item-icon-minus
+              use(xlink:href="img/sprite.svg#minus_configuration") 
+          .configurator__subblocks
+            .configurator__subblock
+              +baron('baron9')(class='page__configurator-baron')
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dicta aliquid nemo, sit possimus,eveniet tempore minus, doloremque incidunt, nihil quos aperiam ab iure quia. Ipsa sit porro incidunt,sed!
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dicta aliquid nemo, sit possimus,eveniet tempore minus, doloremque incidunt, nihil quos aperiam ab iure quia. Ipsa sit porro incidunt,sed! 
+        li.configurator__item
+          .configurator__item-inner
+            .configurator__item-text Корпус *
+            svg(width="22", height='22').configurator__item-icon.configurator__item-icon-plus
+              use(xlink:href="img/sprite.svg#plus_configuration") 
+            svg(width="22", height='22').configurator__item-icon.configurator__item-icon-minus
+              use(xlink:href="img/sprite.svg#minus_configuration") 
+          .configurator__subblocks
+            .configurator__subblock
+              +baron('baron10')(class='page__configurator-baron')
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dicta aliquid nemo, sit possimus,eveniet tempore minus, doloremque incidunt, nihil quos aperiam ab iure quia. Ipsa sit porro incidunt,sed!
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dicta aliquid nemo, sit possimus,eveniet tempore minus, doloremque incidunt, nihil quos aperiam ab iure quia. Ipsa sit porro incidunt,sed! 
+        li.configurator__item
+          .configurator__item-inner
+            .configurator__item-text Блок питания *
+            svg(width="22", height='22').configurator__item-icon.configurator__item-icon-plus
+              use(xlink:href="img/sprite.svg#plus_configuration") 
+            svg(width="22", height='22').configurator__item-icon.configurator__item-icon-minus
+              use(xlink:href="img/sprite.svg#minus_configuration") 
+          .configurator__subblocks
+            .configurator__subblock
+              +baron('baron11')(class='page__configurator-baron')
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dicta aliquid nemo, sit possimus,eveniet tempore minus, doloremque incidunt, nihil quos aperiam ab iure quia. Ipsa sit porro incidunt,sed!
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dicta aliquid nemo, sit possimus,eveniet tempore minus, doloremque incidunt, nihil quos aperiam ab iure quia. Ipsa sit porro incidunt,sed! 
+        li.configurator__item
+          .configurator__item-inner
+            .configurator__item-text Операционная система
+            svg(width="22", height='22').configurator__item-icon.configurator__item-icon-plus
+              use(xlink:href="img/sprite.svg#plus_configuration") 
+            svg(width="22", height='22').configurator__item-icon.configurator__item-icon-minus
+              use(xlink:href="img/sprite.svg#minus_configuration") 
+          .configurator__subblocks
+            .configurator__subblock
+              +baron('baron12')(class='page__configurator-baron')
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dicta aliquid nemo, sit possimus,eveniet tempore minus, doloremque incidunt, nihil quos aperiam ab iure quia. Ipsa sit porro incidunt,sed!

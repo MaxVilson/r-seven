@@ -1,0 +1,155 @@
+// В этом файле должны быть стили для БЭМ-блока configurator, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.configurator {
+
+  &__inner {
+    
+  }
+
+  &__title {
+    padding-left: 20px;
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  &__subtext {
+    margin-bottom: 25px;
+    padding-left: 20px;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    border-top: 1px solid #e6e6e6;
+    
+    &-inner {
+      position: relative;
+      padding: 25px 20px;
+
+      &--active {
+
+        & .configurator__item-icon-plus {
+          opacity: 0;
+        }
+
+        & .configurator__item-icon-minus {
+          opacity: 1;
+        }
+      }
+    }
+
+    &-text {
+      font-weight: 700;
+    }
+
+    &-icon {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      transition: all .3s;
+
+      &-plus {
+
+      }
+
+      &-minus {
+        opacity: 0;
+      }
+    }
+  }
+
+  &__subblocks {
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height .5s cubic-bezier(0, 1, 0, 1);
+
+    &--active {
+      max-height: 599em;
+      transition: max-height .5s ease-in-out;
+    }
+  }
+
+  &__subblock {
+    padding-left: 25px;
+
+    &-item {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-top: 20px;
+      padding-bottom: 25px;
+      padding-right: 20px;
+      border-bottom: 1px solid #e6e6e6;
+      &:last-child {
+        border: none;
+      }
+
+      @include tablet {
+        justify-content: flex-start;
+        align-items: center;
+      }
+
+      &-block-text {
+        width: 160px;
+
+        @include tablet {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          margin-left: 30px;
+          width: auto;
+        }
+      }
+
+      &-name {
+        font-size: 12px;
+        line-height: 18px;
+
+        @include tablet {
+          width: 360px;
+          font-size: 14px;
+        }
+      }
+
+      &-price {
+        margin-top: 14px;
+        font-weight: 700;
+
+        @include tablet {
+          margin-top: 0;
+          margin-left: 160px;
+        }
+      }
+
+      &-label {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        border: 1px solid #e6e6e6;
+
+        @include tablet {
+          margin-left: auto;
+        }
+      }
+
+      &-radio {
+        display: none;
+
+        &:checked+.configurator__subblock-item-label {
+          background-color: $color-secondory;
+          background-image: url('../img/conf-check.png');
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+      }
+    }
+  }
+}
