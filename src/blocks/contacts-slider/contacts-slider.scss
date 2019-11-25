@@ -1,0 +1,81 @@
+// В этом файле должны быть стили для БЭМ-блока contacts-slider, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.contacts-slider {
+  padding-bottom: 40px;
+
+  @include desktop {
+    padding-bottom: 0;
+  }
+
+  &__slider {
+
+    &-wrapper {
+
+      @include desktop {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+  }
+
+  &__slide {
+    text-align: center;
+
+    @include desktop {
+      margin-right: 10px;
+      margin-bottom: 20px;
+      width: 200px;
+
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+    }
+
+    & img {
+      width: 100%;
+      height: 273px;
+      background-size: cover;
+
+      @include desktop {
+        height: 145px;
+      }
+    }
+
+    &-text {
+      padding-right: 42px;
+      padding-left: 42px;
+      margin-top: 20px;
+      line-height: 18px;
+
+      @include desktop {
+        margin-top: 6px;
+        padding-right: 15px;
+        padding-left: 15px;
+      }
+    }
+  }
+
+  &__pagination {
+    margin-top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    & span {
+      margin-right: 8px;
+      background-color: inherit;
+      box-shadow: 0 0 0 2px #ccc inset;
+      opacity: 1;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    & .swiper-pagination-bullet-active {
+      background-color: $color-secondory;
+      box-shadow: 0 0 0 2px $color-secondory inset;
+    }
+  }
+}

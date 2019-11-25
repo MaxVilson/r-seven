@@ -1002,6 +1002,156 @@ pre {
       background-color: #fff;
     }
   }
+
+  &__contacts {
+
+    &-wrapper {
+      @include desktop {
+        background-color: #f7f7f7;
+      }
+    }
+
+    &-container {
+      @include container;
+    }
+
+    &-inner {
+      padding-top: 24px;
+      background-color: #fff;
+
+      @include desktop {
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 0;
+      }
+    }
+
+    &-breadcrumbs {
+      display: none;
+      margin: 0;  
+      padding-top: 30px;
+      padding-bottom: 30px;
+
+      @include desktop {
+        display: block;
+      }
+      
+      &-wrapper {
+        @include container;
+      }
+    }
+
+    &-sidebar {
+      padding-bottom: 30px;
+
+      @include desktop {
+        padding-top: 40px;
+        padding-right: 60px;
+        padding-left: 60px;
+        padding-bottom: 0;
+        width: 450px;
+        border-right: 1px solid #e6e6e6;
+      }
+
+      &-title {
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 30px;  
+      }
+
+      &-block {
+        margin-top: 30px;
+        font-weight: 300;
+
+        &-head {
+          margin-bottom: 30px;
+          font-size: 18px;
+          font-weight: 700;
+        }
+
+        &-text {
+          line-height: 24px;
+        }
+
+        &-phone {
+          font-size: 18px;
+          font-weight: 700;
+          text-decoration: none;
+          color: $gray-darkest;
+        }
+
+        &-mail {
+          color: $color-secondory;
+        }
+
+        &-row {
+          display: flex;
+          flex-wrap: wrap;
+          margin-bottom: 10px;
+
+          &-head  {
+            min-width: 70px;
+            font-weight: 700;
+            line-height: 24px;
+          }
+
+          &-text {
+            margin-left: 20px;
+            line-height: 24px;
+          }
+        }
+
+        &-text-bold {
+          font-weight: 700;
+          line-height: 24px;  
+        }
+
+        &-list {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+        }
+
+        &-item {
+          line-height: 24px;
+        }
+      }
+    }
+
+    &-main {
+      padding-top: 30px;
+      border-top: 1px solid #e6e6e6;
+
+      @include desktop {
+        padding-top: 40px;
+        padding-bottom: 100px;
+        padding-left: 60px;
+        width: 730px;
+        border-top: none;
+      }
+
+      &-title {
+        font-size: 30px;
+        font-weight: 700;
+      }
+
+      &-subtitle {
+        margin-top: 30px;
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      &-text {
+        margin-top: 30px;
+        line-height: 24px;
+      }
+
+      &-map {
+        width: 100%;
+        height: 448px;
+      }
+    }
+  }
 }
 
 .container {

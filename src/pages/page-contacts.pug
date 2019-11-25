@@ -1,0 +1,62 @@
+extends ../pug/layout.pug
+
+block meta
+  title Главная
+  meta(name='description', content='')
+
+//- block append head
+//-   link(rel='stylesheet', href='css/some.css')
+
+block content
+  +page-header()
+  .page__contacts-wrapper
+    .page__contacts-breadcrumbs-wrapper
+      +breadcrumbs(class='page__contacts-breadcrumbs')
+        +breadcrumbs-item('Главная', '#')
+        +breadcrumbs-item('Контакты', '#')
+    .page__contacts-container
+      .page__contacts-inner
+        .page__contacts-sidebar
+          h1.page__contacts-sidebar-title Контакты
+          .page__contacts-sidebar-block
+            .page__contacts-sidebar-block-head Адрес:
+            .page__contacts-sidebar-block-text 127018, г. Москва, ул. Сущевский вал, д.5, стр. 20, 1этаж,Павильон L-4, ТД Савеловский
+          .page__contacts-sidebar-block
+            .page__contacts-sidebar-block-head Телефон:
+            a(href='tel:+74955182175').page__contacts-sidebar-block-phone +7(495) 518-21-75
+          .page__contacts-sidebar-block
+            .page__contacts-sidebar-block-head Почта:
+            a(href='malito:info@r-seven.ru').page__contacts-sidebar-block-mail info@r-seven.ru
+          .page__contacts-sidebar-block
+            .page__contacts-sidebar-block-head График работы:
+            .page__contacts-sidebar-block-row 
+              .page__contacts-sidebar-block-row-head Доставка:
+              .page__contacts-sidebar-block-row-text 10:00 до 22:00
+            .page__contacts-sidebar-block-row 
+              .page__contacts-sidebar-block-row-head Магазин: 
+              .page__contacts-sidebar-block-row-text Пн.-Пт. с 10:00 до 19:00 <br> Сб.-Вс. с 10:00 до 18:00
+            .page__contacts-sidebar-block-text-bold Круглосуточно на сайте <br> (через корзину)
+          .page__contacts-sidebar-block
+            .page__contacts-sidebar-block-head Реквизиты:
+            ul.page__contacts-sidebar-block-list
+              li.page__contacts-sidebar-block-item — ООО "Ди-Трейд"
+              li.page__contacts-sidebar-block-item — ИНН 7715909319
+              li.page__contacts-sidebar-block-item — КПП 771501001
+              li.page__contacts-sidebar-block-item — р/с 40702810820060000429
+              li.page__contacts-sidebar-block-item — к/с 30101810800000000388
+              li.page__contacts-sidebar-block-item — в ОАО "ТКБ", г. Москва
+              li.page__contacts-sidebar-block-item — БИК 044525388
+              li.page__contacts-sidebar-block-item — ОКПО 09146917
+              li.page__contacts-sidebar-block-item — ОГРН 1127746191176
+        .page__contacts-main
+          .page__contacts-main-title Как проехать в магазин:
+          .page__contacts-main-subtitle На метро:
+          p.page__contacts-main-text Выходите на станции "Савеловская" ( третий вагон из центра, последний вагон со стороны метро "Алтуфьево"), поднимаетесь по экскалатору
+          +contacts-slider(class='page__contacts-slider')
+          .page__contacts-main-subtitle На автомобиле:
+          p.page__contacts-main-text Двигаясь по ТТК со стороны Шереметьевской улицы в направлении Савеловской эстакады, не доезжая до нее, справа видите заправку "ГАЗПРОМ НЕФТЬ". За ней совершаете поворот направо на улицу с односторонним движением "Савеловский проезд". Проехав 200 метров, слева видите ворота с надписью ТД "Савеловский" Сущевский вал д.5, стр. 20. Это въезд на парковку торгового центра. Мы находимся в 4-х этажном здании, 1 этаж, павильон L-4.
+          p.page__contacts-main-text Двигаясь по ТТК со стороны Дмитровского шоссе, проехав Савеловскую эстакаду совершаете разворот на Шереметьевской улице. Далее в направлении Савеловской эстакады, не доезжая до нее, справа видите заправку "ГАЗПРОМ НЕФТЬ". За ней совершаете поворот направо на улицу с односторонним движением "Савеловский проезд". Проехав 200 метров, слева видите ворота с надписью ТД "Савеловский" Сущевский вал д.5, стр. 20. Это въезд на парковку торгового центра. Мы находимся в 4-х этажном здании, 1 этаж, павильон L-4.
+          +map(class='page__contacts-main-map')
+
+block append page-bottom
+  script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXWeiN-CRqHIhzfmIwfKJxRpivvF-OtDI")

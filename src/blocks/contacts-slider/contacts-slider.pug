@@ -1,0 +1,52 @@
+//- Все примеси в этом файле должны начинаться c имени блока (contacts-slider)
+
+mixin contacts-slider(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +contacts-slider('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' contacts-slider--' + modsList[i].trim();
+      }
+    }
+
+  .contacts-slider(class=allMods)&attributes(attributes)
+    .contacts-slider__inner
+      .swiper-container.contacts-slider__slider
+        .swiper-wrapper.contacts-slider__slider-wrapper
+          .swiper-slide.contacts-slider__slide
+            img(src='img/tab3.jpg' alt='promo')
+            .contacts-slider__slide-text выходя из стеклянных дверей поверните направо
+          .swiper-slide.contacts-slider__slide
+            img(src='img/tab3.jpg' alt='promo')
+            .contacts-slider__slide-text по переходу все время прямо
+          .swiper-slide.contacts-slider__slide
+            img(src='img/tab3.jpg' alt='promo')
+            .contacts-slider__slide-text в конце поворачиваем налево и поднимаемся по лестнице
+          .swiper-slide.contacts-slider__slide
+            img(src='img/tab3.jpg' alt='promo')
+            .contacts-slider__slide-text поднявшись сразу направо
+          .swiper-slide.contacts-slider__slide
+            img(src='img/tab3.jpg' alt='promo')
+            .contacts-slider__slide-text двигаемся прямо 200 метров
+          .swiper-slide.contacts-slider__slide
+            img(src='img/tab3.jpg' alt='promo')
+            .contacts-slider__slide-text проходим шлагбаум и сразу поворачиваем налево
+          .swiper-slide.contacts-slider__slide
+            img(src='img/tab3.jpg' alt='promo')
+            .contacts-slider__slide-text выидите 4-х этажное здание
+          .swiper-slide.contacts-slider__slide
+            img(src='img/tab3.jpg' alt='promo')
+            .contacts-slider__slide-text заходим
+          .swiper-slide.contacts-slider__slide
+            img(src='img/tab3.jpg' alt='promo')
+            .contacts-slider__slide-text мы находимся напротив лифта
+      .swiper-pagination.contacts-slider__pagination
