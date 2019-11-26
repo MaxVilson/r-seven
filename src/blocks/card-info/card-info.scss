@@ -3,16 +3,67 @@
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .card-info {
+  position: relative;
   padding-top: 30px;
   padding-bottom: 30px;
   padding-left: 30px;
   width: 100%;
+  min-height: 420px;
   // max-width: 280px;
   background-color: $color-secondory;
   color: $white;
 
+  &--white {
+    // max-width: 100% !important;
+    background-color: #fff;
+    color: $gray-darkest;
+
+    & .card-info__sale {
+      color: $white;
+      background-color: $color-main;
+    }
+
+    & .btn {
+      color: $gray-darkest;
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+
   @include tablet {
-    max-width: 250px;
+    width: 280px;
+  }
+
+  &__icon {
+    display: none;
+
+    @include desktop {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: -27px;
+      z-index: 5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 2px solid #ffffff;
+      background-color: $color-main;
+      cursor: initial;
+      transform: translateY(-50%);
+    }
+
+    & svg {
+      position: absolute;
+      top: 10px;
+      left: 8px;
+      fill: $white;
+      transform: rotate(-90deg);
+    }
   }
 
   &__title {

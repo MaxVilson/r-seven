@@ -4,12 +4,73 @@
 
 .card-product-popular {
   position: relative;
-  padding-top: 56px;
-  padding-bottom: 49px;
+  display: inline-block;
+  padding-top: 40px;
+  padding-bottom: 40px;
   width: 280px;
+  min-height: 420px;
   background-color: $white;
   text-decoration: none;  
   color: $gray-darker;
+
+  &--long {
+    padding: 20px 20px;
+    width: 580px;
+    min-height: auto;
+
+    & .card-product-popular__inner {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+  }
+
+  &--small {
+    padding: 0;
+    min-height: auto;
+
+    & .card-product-popular__img {
+      height: auto;
+    }
+
+    & .card-product-popular__title {
+      margin-top: 10px; 
+    }
+
+    & .card-product-popular__price-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    & .card-product-popular__sale {
+      order: 2;
+      margin-top: 0;
+      margin-left: 10px;
+    }
+
+    & .card-product-popular__price {
+      margin-top: 0;
+    }
+  }
+
+  &--big {
+    width: 430px;
+  }
+
+  &--icon-hidden {
+    & .card-product-popular__plus {
+      display: none;
+    }
+  }
+
+  &--icon-top-right {
+    & .card-product-popular__plus {
+      top: -10px;
+      right: -26px;
+    }
+  }
 
   &:hover {
     color: inherit;
@@ -53,33 +114,48 @@
   &__plus {
     position: absolute;
     top: 50%;
-    right: -27px;
+    right: -28px;
     z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 32px;
     height: 32px;
-    transform: translateY(-50%);
-    cursor: initial;
-  }
-
-  &__arrow {
-    position: absolute;
-    top: 50%;
-    right: -27px;
-    z-index: 5;
-    width: 28px;
-    height: 28px;
+    background-color: $color-secondory;
     border-radius: 50%;
     border: 2px solid #ffffff;
-    background-color: $color-main;
     transform: translateY(-50%);
     cursor: initial;
 
-    & svg {
-      position: absolute;
-      top: 10px;
-      left: 9px;
-      fill: $white;
-      transform: rotate(-90deg);
-    }
+    // & svg {
+    //  position: absolute;
+    //  top: 12px;
+    //  left: 12px;
+    // }
   }
+
+  // &__arrow {
+  //   position: absolute;
+  //   top: 50%;
+  //   right: -27px;
+  //   z-index: 5;
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  //   width: 36px;
+  //   height: 36px;
+  //   border-radius: 50%;
+  //   border: 2px solid #ffffff;
+  //   background-color: $color-main;
+  //   transform: translateY(-50%);
+  //   cursor: initial;
+
+  //   & svg {
+  //     position: absolute;
+  //     top: 12px;
+  //     left: 11px;
+  //     fill: $white;
+  //     transform: rotate(-90deg);
+  //   }
+  // }
 }

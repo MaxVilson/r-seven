@@ -35,13 +35,13 @@
       color: $text-color;
     }
 
-    @at-root a#{&} {
+    // @at-root a#{&} {
 
-      &:hover,
-      &:focus {
-        background-color: $gray-lightest;
-      }
-    }
+    //   &:hover,
+    //   &:focus {
+    //     background-color: $gray-lightest;
+    //   }
+    // }
 
     &--active {
       color: $white;

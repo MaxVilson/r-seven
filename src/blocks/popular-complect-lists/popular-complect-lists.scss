@@ -1,0 +1,44 @@
+// В этом файле должны быть стили для БЭМ-блока popular-complect-lists, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.popular-complect-lists {
+
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    &-row2 {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 880px;
+
+      &-sm {
+        width: 280px;
+      }
+
+      & .popular-complect-lists__item {
+        margin-bottom: 20px;
+        &:nth-child(1n + 3) {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  &__item {
+    // width: 280px;
+    background-color: #fff;
+
+    &--long {
+      height: 200px;
+    }
+
+    &--small {
+      height: 200px;
+    }
+  }
+}

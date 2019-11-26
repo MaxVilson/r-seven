@@ -1,0 +1,51 @@
+mixin popular-complect-lists(props)
+
+  .popular-complect-lists&attributes(attributes)
+    .popular-complect-lists__inner
+      .popular-complect-lists__item
+        +card-product-popular('img/popular1.jpg', 'Процессор AMD Ryzen 7 2700 BOX', '18 850', '14 999 ₽', 'plus')
+      .popular-complect-lists__item
+        +card-product-popular('img/popular2.jpg', 'Видеокарта Palit GeForce RTX 2070 Super GAMEROCK', '45 799', '40 799 ₽', 'plus')
+      .popular-complect-lists__item
+        +card-product-popular('img/popular3.jpg', '480 ГБ SSD-накопитель Intel Optane 905P Series', '48 499', '41 499 ₽', 'arrow')
+      .popular-complect-lists__item
+        +card-info('Игровой 007', 'Выгода 18 999 ₽', '560 280 ₽', '-18%', ['Процессор: Intel Corei9 9900R','Видеокарта: Nvidia RTX 2080Ti', 'Монитор: 32’’ Asus ROG 240 Hz', 'SSD накопитель:  Sandisk M2 1000 Gb', 'Оперативная память: Hynix Fury 64 Gb'])(class='card-info--white')
+
+  .popular-complect-lists&attributes(attributes)
+    .popular-complect-lists__inner
+      .popular-complect-lists__inner-row2
+        .popular-complect-lists__item.popular-complect-lists__item--long
+          +card-product-popular('img/popular1.jpg', 'Процессор AMD Ryzen 7 2700 BOX', '18 850', '14 999 ₽', 'plus')(class='card-product-popular--long card-product-popular--icon-hidden')
+        .popular-complect-lists__item.popular-complect-lists__item--small
+          +card-product-popular('img/popular-sm.jpg', 'Видеокарта Palit GeForce RTX 2070 Super GAMEROCK', '45 799', '40 799 ₽', 'plus')(class='card-product-popular--small card-product-popular--icon-hidden')
+        .popular-complect-lists__item.popular-complect-lists__item--small
+          +card-product-popular('img/popular-sm.jpg', 'Видеокарта Palit GeForce RTX 2070 Super GAMEROCK', '45 799', '40 799 ₽', 'plus')(class='card-product-popular--small card-product-popular--icon-top-right')
+        .popular-complect-lists__item.popular-complect-lists__item--small
+          +card-product-popular('img/popular-sm.jpg', 'Видеокарта Palit GeForce RTX 2070 Super GAMEROCK', '45 799', '40 799 ₽', 'plus')(class='card-product-popular--small card-product-popular--icon-top-right')
+        .popular-complect-lists__item.popular-complect-lists__item--small
+          +card-product-popular('img/popular-sm.jpg', 'Видеокарта Palit GeForce RTX 2070 Super GAMEROCK', '45 799', '40 799 ₽', 'plus')(class='card-product-popular--small card-product-popular--icon-hidden')
+      .popular-complect-lists__item
+        +card-info('Игровой 007', 'Выгода 18 999 ₽', '560 280 ₽', '-18%', ['Процессор: Intel Corei9 9900R','Видеокарта: Nvidia RTX 2080Ti', 'Монитор: 32’’ Asus ROG 240 Hz', 'SSD накопитель:  Sandisk M2 1000 Gb', 'Оперативная память: Hynix Fury 64 Gb'])(class='card-info--white')
+
+  .popular-complect-lists&attributes(attributes)
+    .popular-complect-lists__inner
+      .popular-complect-lists__item
+        +card-product-popular('img/popular1.jpg', 'Процессор AMD Ryzen 7 2700 BOX', '18 850', '14 999 ₽', 'plus')(class='card-product-popular--big')
+      .popular-complect-lists__item
+        +card-product-popular('img/popular2.jpg', 'Видеокарта Palit GeForce RTX 2070 Super GAMEROCK', '45 799', '40 799 ₽', 'plus')(class='card-product-popular--big card-product-popular--icon-hidden')
+      .popular-complect-lists__item
+        +card-info('Игровой 007', 'Выгода 18 999 ₽', '560 280 ₽', '-18%', ['Процессор: Intel Corei9 9900R','Видеокарта: Nvidia RTX 2080Ti', 'Монитор: 32’’ Asus ROG 240 Hz', 'SSD накопитель:  Sandisk M2 1000 Gb', 'Оперативная память: Hynix Fury 64 Gb'])(class='card-info--white')
+
+  .popular-complect-lists&attributes(attributes)
+    .popular-complect-lists__inner
+      .popular-complect-lists__inner-row2.popular-complect-lists__inner-row2-sm
+        .popular-complect-lists__item.popular-complect-lists__item--small
+          +card-product-popular('img/popular-sm.jpg', 'Видеокарта Palit GeForce RTX 2070 Super GAMEROCK', '45 799', '40 799 ₽', 'plus')(class='card-product-popular--small card-product-popular--icon-hidden')
+        .popular-complect-lists__item.popular-complect-lists__item--small
+          +card-product-popular('img/popular-sm.jpg', 'Видеокарта Palit GeForce RTX 2070 Super GAMEROCK', '45 799', '40 799 ₽', 'plus')(class='card-product-popular--small card-product-popular--icon-top-right')
+      .popular-complect-lists__item
+        +card-product-popular('img/popular1.jpg', 'Процессор AMD Ryzen 7 2700 BOX', '18 850', '14 999 ₽', 'plus')
+      .popular-complect-lists__item
+        +card-product-popular('img/popular2.jpg', 'Видеокарта Palit GeForce RTX 2070 Super GAMEROCK', '45 799', '40 799 ₽', 'plus')(class='card-product-popular--icon-hidden')
+      .popular-complect-lists__item
+        +card-info('Игровой 007', 'Выгода 18 999 ₽', '560 280 ₽', '-18%', ['Процессор: Intel Corei9 9900R','Видеокарта: Nvidia RTX 2080Ti', 'Монитор: 32’’ Asus ROG 240 Hz', 'SSD накопитель:  Sandisk M2 1000 Gb', 'Оперативная память: Hynix Fury 64 Gb'])(class='card-info--white')

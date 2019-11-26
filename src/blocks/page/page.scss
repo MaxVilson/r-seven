@@ -27,7 +27,7 @@
 *,
 *:before,
 *:after {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 * {
@@ -1580,6 +1580,54 @@ pre {
       @include desktop {
         margin-top: 50px;
       }
+    }
+  }
+
+  &__listing-complectations {
+
+    &-wrapper {
+      background-color: #f7f7f7;
+    }
+
+    &-breadcrumbs {
+      margin: 0;
+      
+      &-wrapper {
+        display: none;
+
+        @include desktop {
+          @include container;
+          padding-top: 30px;
+          padding-bottom: 30px;
+        }
+      }
+    }
+
+    &-container {
+      @include container;
+    }
+
+    &-inner {
+      padding-bottom: 100px;
+    }
+
+    &-item {
+      margin-top: 20px;
+    }
+
+    &-btn-wrapper {
+      margin-top: 50px;
+
+      & .btn {
+        width: 100%;
+        height: 64px;
+      }
+    }
+
+    &-pagination-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
     }
   }
 }

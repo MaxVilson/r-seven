@@ -22,14 +22,12 @@ mixin card-product-popular(img, title, sale, price, icon, mods)
     .card-product-popular__inner
       .card-product-popular__img 
         img(src=img alt='Товар') 
-      .card-product-popular__title= title
-      .card-product-popular__sale= sale
-      .card-product-popular__price= price
+      .card-product-popular__wrapper-text
+        .card-product-popular__title= title
+        .card-product-popular__price-wrapper
+          .card-product-popular__sale= sale
+          .card-product-popular__price= price
       if(icon == 'plus')
         .card-product-popular__plus 
-          svg.popular-complect__mobile-nav-icon-prev(width="31", height="31")
-            use(xlink:href="img/sprite.svg#plus")
-      if(icon == 'arrow')
-        .card-product-popular__arrow 
-          svg.popular-complect__mobile-nav-icon-next(width="13", height="8")
-            use(xlink:href="img/sprite.svg#arrow-down")
+          svg(width="12", height="12")
+            use(xlink:href="img/sprite.svg#plus-white")

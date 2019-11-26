@@ -1,0 +1,38 @@
+extends ../pug/layout.pug
+
+block meta
+  title Главная
+  meta(name='description', content='')
+
+//- block append head
+//-   link(rel='stylesheet', href='css/some.css')
+
+block content
+  +page-header()
+  .page__listing-complectations-wrapper
+    .page__listing-complectations-breadcrumbs-wrapper
+      +breadcrumbs(class='page__listing-complectations-breadcrumbs')
+        +breadcrumbs-item('Главная', '#')
+        +breadcrumbs-item('Каталог товаров', '#')
+        +breadcrumbs-item('Выгодные комплекты', '#')
+    .page__listing-complectations-container
+      .page__listing-complectations-inner
+        +widget-sale(class='page__listing-complectations-widget-sale')
+        +filter-panel({title: 'Игровые ноутбуки'})
+        +popular-complect-lists(class='page__listing-complectations-item')
+        .page__listing-complectations-btn-wrapper
+          +btn('Показать еще 12', 'white')(class='page__listing-complectations-btn')
+        .page__listing-complectations-pagination-wrapper
+          +pagination(class='page__listing-complectations-pagination')
+            +pagination-item('1', '/1')
+            +pagination-item('...')
+            +pagination-item('4', '/4')
+            +pagination-item('5', '/5', true)
+            +pagination-item('6', '/6')
+            +pagination-item('...')
+            +pagination-item('36', '/36')
+
+  
+
+//- block footer
+//-   p footer

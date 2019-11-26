@@ -19,6 +19,9 @@ mixin card-info(title, profit, price, sale, list, mods)
     }
 
   .card-info(class=allMods)&attributes(attributes)
+    .card-info__icon
+      svg(width="13", height="8")
+        use(xlink:href="img/sprite.svg#arrow-down")
     .card-info__wrapper
       .card-info__title= title
       ul.card-info__list
