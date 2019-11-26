@@ -1591,7 +1591,7 @@ pre {
 
     &-breadcrumbs {
       margin: 0;
-      
+
       &-wrapper {
         display: none;
 
@@ -1628,6 +1628,108 @@ pre {
       display: flex;
       justify-content: center;
       margin-top: 40px;
+    }
+  }
+
+  &__method {
+
+    &-wrapper {
+      background-color: #f7f7f7;
+
+      @include desktop {
+        padding-bottom: 100px;
+      }
+    }
+
+    &-breadcrumbs {
+      display: none;
+
+      &-wrapper {
+        @include desktop {
+          @include container;
+          padding-top: 30px;
+          padding-bottom: 30px;
+        }
+      }
+    }
+
+    &-container {
+      @include container;
+    }
+
+    &-inner {
+      padding-top: 30px;
+      padding-bottom: 30px;
+      background-color: #fff;
+
+      @include desktop {
+        padding-top: 40px;
+        padding-bottom: 70px;
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+    }
+
+    &-title {
+      margin-top: 0;
+      margin-bottom: 0;
+      font-size: 30px;
+    }
+
+    &-section {
+      padding-top: 30px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #e6e6e6;
+      &:last-child {
+        border: none;
+      }
+
+      &-title {
+        margin-top: 30px;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 24px;
+      }
+
+      &-subtitle {
+        margin-top: 30px;
+        font-weight: 700;
+      }
+
+      &-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      &-item {
+        position: relative;
+        margin-top: 30px;
+        padding-left: 20px;
+        line-height: 24px;
+
+        &-small {
+          font-size: 12px;  
+        }
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: 8px;
+          left: 0;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background-color: $color-secondory;
+        }
+      }
+
+      &-text-color {
+        margin-top: 30px;
+        font-weight: 700;
+        line-height: 24px;
+        color: $color-secondory;
+      }
     }
   }
 }
