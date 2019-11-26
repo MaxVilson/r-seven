@@ -1451,10 +1451,11 @@ pre {
     }
   }
 
-  &__delivery {
+  &__info {
     
     &-wrapper {
       @include desktop {
+        padding-bottom: 100px;
         background-color: #f7f7f7;
       }
     }
@@ -1480,6 +1481,7 @@ pre {
       background-color: #fff;
 
       @include desktop {
+        padding-right: 40px;
         padding-left: 40px;
       }
     }
@@ -1488,6 +1490,9 @@ pre {
       padding-top: 30px;
       padding-bottom: 30px;
       border-bottom: 1px solid #e6e6e6;
+      &:last-child {
+        border-bottom: none;
+      }
 
       @include desktop {
         padding-top: 50px;
