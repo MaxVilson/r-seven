@@ -1,0 +1,56 @@
+extends ../pug/layout.pug
+
+block meta
+  title Главная
+  meta(name='description', content='')
+
+//- block append head
+//-   link(rel='stylesheet', href='css/some.css')
+
+block content
+  +page-header()
+  .page__search-result-wrapper
+    .page__search-result-top-line
+      .page__search-result-top-line-inner
+        .page__search-result-top-line-title Найденные <b>138</b> товаров по запросу <b>«системный блок»</b>
+      +filter-panel-bottom()
+
+    .page__search-result-container
+
+      .page__search-result-inner
+        .page__search-result-row
+          .page__search-result-item
+            +card-hit('img/hit1.png', 'Наушники игровые Asus ROG Strix Big Bass', '3', '18 850', '14 999 ₽', '-18%')
+          .page__search-result-item
+            +card-hit('img/hit2.png', 'Видеокарта MSI GeForce RTX 2080 Ti VENTUS', '5', '95 999', '80 999 ₽', '-28%')
+          .page__search-result-item
+            +card-hit('img/hit3.png', 'Ультрабук 14’’ HP Pavilion 14-ce0068ur красный', '4', '48 860', '34 999 ₽', '-15%')
+          .page__search-result-item
+            +card-hit('img/hit4.png', 'Мышь проводная A4Tech Bloody Winner T6/T60 черный', '4', '1 899', '1 599 ₽', '-11%')
+          .page__search-result-item
+            +card-hit('img/hit5.png', 'Блок питания Thermaltake ToughPower 1200W', '4', '17 860', '16 999 ₽', '-33%')
+          .page__search-result-item
+            +card-hit('img/hit6.png', 'Кулер для процессора Noctua NH-U12S DX-3647', '3', '10 200', '8 399  ₽', '-42%')
+          .page__search-result-item
+            +card-hit('img/hit7.png', 'Игровой монитор 49’’ Samsung QLED C49HG90DMIg', '4', '67 580', '58 499 ₽', '-15%', 'Подарок: портативный SSD Thunderbolt™3 X5 500ГБ')
+          .page__search-result-item
+            +card-hit('img/hit2.png', 'Видеокарта MSI GeForce RTX 2080 Ti VENTUS', '5', '95 999', '80 999 ₽', '-28%')
+          .page__search-result-item
+            +card-hit('img/hit3.png', 'Ультрабук 14’’ HP Pavilion 14-ce0068ur красный', '4', '48 860', '34 999 ₽', '-15%')
+          .page__search-result-item
+            +card-hit('img/hit4.png', 'Мышь проводная A4Tech Bloody Winner T6/T60 черный', '4', '1 899', '1 599 ₽', '-11%')
+          .page__search-result-item
+            +card-hit('img/hit5.png', 'Блок питания Thermaltake ToughPower 1200W', '4', '17 860', '16 999 ₽', '-33%')
+          .page__search-result-item
+            +card-hit('img/hit6.png', 'Кулер для процессора Noctua NH-U12S DX-3647', '3', '10 200', '8 399  ₽', '-42%')
+        .page__search-result-btn-wrapper
+          +btn('Показать еще 12', 'white')(class='page__search-result-btn')
+        .page__search-result-pagination-wrapper
+          +pagination(class='page__search-result-pagination')
+            +pagination-item('1', '/1')
+            +pagination-item('...')
+            +pagination-item('4', '/4')
+            +pagination-item('5', '/5', true)
+            +pagination-item('6', '/6')
+            +pagination-item('...')
+            +pagination-item('36', '/36')

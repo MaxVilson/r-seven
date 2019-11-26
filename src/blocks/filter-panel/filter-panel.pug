@@ -66,3 +66,16 @@ mixin filter-panel(props, mods)
             button.filter-panel__btn-toggle
               svg(width="16", height="16")
                 use(xlink:href="img/sprite.svg#mosaic")
+
+mixin filter-panel-bottom()
+  .filter-panel.filter-panel-bottom()(class=allMods)&attributes(attributes)
+    .filter-panel__bottom-wrapper
+        .filter-panel__row
+          +filter-select(class='filter-panel__filter-select')
+          .filter-panel__btn-toggle-wrapper
+            button.filter-panel__btn-toggle
+              svg(width="16", height="16")
+                use(xlink:href="img/sprite.svg#burger-orange")
+            button.filter-panel__btn-toggle
+              svg(width="16", height="16")
+                use(xlink:href="img/sprite.svg#mosaic")
