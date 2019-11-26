@@ -74,6 +74,13 @@
     background-color: transparent;
   }
 
+  &--blue {
+    background-color: $color-secondory;
+    &:hover {
+      background-color: #6859de;
+    }
+  }
+
   &--sm {
     min-width: 130px;
   }
