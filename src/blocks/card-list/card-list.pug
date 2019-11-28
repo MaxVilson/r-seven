@@ -18,14 +18,14 @@ mixin card-list(props, mods)
       }
     }
 
-  a(href='#').card-list(class=allMods)&attributes(attributes)
+  .card-list(class=allMods)&attributes(attributes)
     .card-list__inner
       picture.card-list__img
         source(media='(min-width: 1200px)' srcset=props.imgLg)
         img(src=props.img alt='Ноутбук')
       .card-list__wrapper
         .card-list__wrapper-info
-          .card-list__title= props.title
+          a(href='#').card-list__title= props.title
           +stars(props.stars)(class='card-list__stars')
           ul.card-list__list
             li Производитель процессора: 
@@ -45,7 +45,7 @@ mixin card-list(props, mods)
             span.card-list__percent= props.percent
           .card-list__row-btns
             if(props.disabled)
-              +btn('Товар в корзине', 'disabled')(class='card-list__btn')
+              +btn('Товар в корзине', 'disabled')(class='card-list__btn card-list__btn--disabled')
             else
-              +btn('Купить', 'transparent')(class='card-list__btn')
+              +btn('Купить', 'transparent')(class='card-list__btn' data-target='#modal-add-cart' data-toggle='modal')
             +comparison(class='card-list__comprasion')

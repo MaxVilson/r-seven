@@ -148,7 +148,7 @@ if(~navigator.appVersion.indexOf("Linux"))cth('linux');
                     <div class="card-product-details__inner">
                       <div class="card-product-details__instock">В наличии</div>
                       <div class="card-product-details__sale">682 400</div>
-                      <div class="card-product-details__price">582 400 ₽<span class="card-product-details__percent">-18%</span></div><button class="btn card-product-details__btn">В корзину</button><button class="btn  btn--transparent card-product-details__btn card-product-details__btn-transparent">Купить в один клик</button><button class="comparison card-product-details__comparison"><svg width="17" height="20">
+                      <div class="card-product-details__price">582 400 ₽<span class="card-product-details__percent">-18%</span></div><button class="btn card-product-details__btn">В корзину</button><button class="btn  btn--transparent card-product-details__btn card-product-details__btn-transparent" data-target="#modal-bye-one-click" data-toggle="modal">Купить в один клик</button><button class="comparison card-product-details__comparison"><svg width="17" height="20">
                           <use xlink:href="img/sprite.svg#comparison"></use>
                         </svg><span>К сравнению</span></button>
                       <ul class="card-product-details__list">
@@ -584,6 +584,21 @@ if(~navigator.appVersion.indexOf("Linux"))cth('linux');
                   <div class="swiper-button-next slider-controls__item slider-controls__item-next"><svg width="13" height="13">
                       <use xlink:href="img/sprite.svg#arrow-down"></use>
                     </svg></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-bye-one-click">
+          <div class="modal  modal--some" id="modal-bye-one-click" tabindex="-1" role="dialog">
+            <div class="modal__dialog" role="document">
+              <div class="modal__content">
+                <div class="modal__header"><span class="close modal__close" data-dismiss="modal" aria-label="Закрыть"><span></span></span>
+                  <h4 class="modal__title">Быстрый заказ</h4>
+                </div>
+                <div class="modal__body">
+                  <div class="modal-bye-one-click__text">Для оформления заказа укажите Ваш контактный телефон и имя. Менеджер магазина свяжется с Вами для уточнения деталей заказа.</div>
+                  <form class="modal-bye-one-click__form" action=""><label class="field-text modal-bye-one-click__input"><span class="field-text__input-wrap"><input class="field-text__input" type="tel" placeholder="+7 (___) ___ - __ - __"/></span></label><label class="field-text modal-bye-one-click__input"><span class="field-text__input-wrap"><input class="field-text__input" type="text" placeholder="Ваше имя"/></span></label><input class="btn  btn--transparent modal-bye-one-click__btn" value="Отправить" type="button" /></form>
                 </div>
               </div>
             </div>

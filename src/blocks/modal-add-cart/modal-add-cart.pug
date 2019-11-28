@@ -1,0 +1,34 @@
+//- Все примеси в этом файле должны начинаться c имени блока (modal-add-cart)
+
+mixin modal-add-cart(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +modal-add-cart('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' modal-add-cart--' + modsList[i].trim();
+      }
+    }
+
+  .modal-add-cart(class=allMods)&attributes(attributes)
+    +modal('modal-add-cart', 'Товар добавлен в корзину', 'some')
+      .modal__body
+        .modal-add-cart__product 
+          .modal-add-cart__row
+            .modal-add-cart__img 
+              img(src='img/modal-item.jpg' alt='товар')
+            .modal-add-cart__text-wrapper
+              .modal-add-cart__text Видеокарта Gigabyte GeForce RTX 2080 Ti XTREME 
+              .modal-add-cart__article Артикул: 1314897
+            .modal-add-cart__price 94 999 ₽
+        .modal-add-cart__footer
+          +btn('Оформить заказ', 'transparent', true)(class='modal-add-cart__btn')
+          +btn('Продолжить покупки', 'transparent', true)(class='modal-add-cart__btn-transparent') 

@@ -1,0 +1,38 @@
+//- Все примеси в этом файле должны начинаться c имени блока (modal-bye-one-click)
+
+mixin modal-bye-one-click(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +modal-bye-one-click('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' modal-bye-one-click--' + modsList[i].trim();
+      }
+    }
+
+  .modal-bye-one-click(class=allMods)&attributes(attributes)
+    +modal('modal-bye-one-click', 'Быстрый заказ', 'some')
+      .modal__body
+        .modal-bye-one-click__text Для оформления заказа укажите Ваш контактный телефон и имя. Менеджер магазина свяжется с Вами для уточнения деталей заказа.
+        form.modal-bye-one-click__form(action='')
+          +field-text({
+              attrs: {
+                placeholder: '+7 (___) ___ - __ - __',
+                type: 'tel'
+              }
+            })(class='modal-bye-one-click__input')
+          +field-text({
+              attrs: {
+                placeholder: 'Ваше имя'
+              }
+            })(class='modal-bye-one-click__input')
+          +btn('Отправить', 'transparent', true)(class='modal-bye-one-click__btn')
+

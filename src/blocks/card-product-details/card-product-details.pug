@@ -25,7 +25,7 @@ mixin card-product-details(text, mods)
       .card-product-details__price 582 400 ₽
         span.card-product-details__percent -18%
       +btn('В корзину')(class='card-product-details__btn')
-      +btn('Купить в один клик', 'transparent')(class='card-product-details__btn card-product-details__btn-transparent')
+      +btn('Купить в один клик', 'transparent')(class='card-product-details__btn card-product-details__btn-transparent' data-target='#modal-bye-one-click' data-toggle='modal')
       +comparison('К сравнению')(class='card-product-details__comparison')
       ul.card-product-details__list
         li Закажите до 16:00, привезем сегодня!

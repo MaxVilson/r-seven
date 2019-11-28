@@ -6,10 +6,10 @@
   display: inline-block;
   position: relative;
   z-index: 1;
-  width: 30px;
+  width: 15px;
   border: none;
   padding: 0;
-  line-height: 30px;
+  line-height: 15px;
   background: transparent;
   user-select: none;
   cursor: pointer;
@@ -32,7 +32,8 @@
       left: 0;
       width: 100%;
       height: $toggler-part-height;
-      background: $toggler-part-bg-color;
+      background: $gray-dark;
+      border-radius: 8px;
       transform-origin: 50% 50%;
     }
 
