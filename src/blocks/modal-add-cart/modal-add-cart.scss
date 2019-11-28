@@ -108,6 +108,20 @@
     }
   }
 
+  &__link {
+    margin-top: 30px;
+    color: $gray-dark;
+    outline: none;
+    text-decoration: none;
+
+    @include tablet {
+      margin-top: 0;
+      width: 220px;
+      order: -1;
+      text-align: center;
+    }
+  }
+
   &__btn {
     margin-top: 30px;
     width: 100%;
@@ -118,18 +132,6 @@
     @include tablet {
       margin-top: 0;
       width: 220px;
-    }
-
-    &-transparent {
-      margin-top: 20px;
-      border: none;
-      color: $gray-dark;
-
-      @include tablet {
-        margin-top: 0;
-        width: 220px;
-        order: -1;
-      }
     }
   }
 }
