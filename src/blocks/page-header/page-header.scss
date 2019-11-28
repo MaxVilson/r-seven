@@ -161,9 +161,18 @@
       @include desktop {
         display: none;
       }
+      
+      & svg {
+        fill: $gray-darkest;
+      }
     }
 
     &-cart {
+
+      & svg {
+        fill: $gray-darkest;
+      }
+      
       @include desktop {
         margin-top: 14px;
         margin-left: 74px;
