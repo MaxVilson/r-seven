@@ -145,6 +145,10 @@
         display: flex;
         justify-content: center;
 
+        & img {
+          padding-bottom: 1px;
+        }
+
         &--active {
           & img {
             border: 1px solid $color-main;
