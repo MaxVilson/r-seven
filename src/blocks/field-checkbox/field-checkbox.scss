@@ -4,7 +4,7 @@
 
 .field-checkbox {
 
-  $block-name:                &; // #{$block-name}__element
+  $block-name: &; // #{$block-name}__element
 
   display: block;
   // margin-bottom: $typo-margin-vertical;
@@ -15,7 +15,7 @@
 
   &__input-wrap {
 
-    & + & {
+    &+& {
       margin-top: 20px;
     }
 
@@ -62,7 +62,7 @@
 
     // свой чекбокс без картинок
 
-    @at-root input:disabled ~ & {
+    @at-root input:disabled~& {
       cursor: not-allowed;
     }
 
@@ -77,40 +77,41 @@
       border-radius: $border-radius;
     }
 
-    @at-root input:focus ~ &:before {
-      // @include field-focus;
-      background-color: $color-main;
-      border: none;
-    }
+    // @at-root input:focus ~ &:before {
+    //   // @include field-focus;
+    //   background-color: $color-main;
+    //   border: none;
+    // }
 
-    @at-root input:disabled ~ &:before {
+    @at-root input:disabled~&:before {
       border-color: $gray-light;
       background: $gray-lighter;
     }
 
-    &:after {
-      content: '';
-      position: absolute;
-      top: 7px;
-      left: 5px;
-      width: 8px;
-      height: 6px;
-      background-image: url('../img/check.png');
-      background-repeat: no-repeat;
+    // &:after {
+    //   content: '';
+    //   position: absolute;
+    //   top: 7px;
+    //   left: 5px;
+    //   width: 8px;
+    //   height: 6px;
+    //   background-image: url('../img/check.png');
+    //   background-repeat: no-repeat;
 
-      @at-root input:checked ~ & {
-        opacity: 1;
-      }
+    //   @at-root input:checked ~ & {
+    //     opacity: 1;
+    //   }
 
-      @at-root input:checked:disabled ~ & {
-        border-color: $gray-light;
-      }
-    }
+    //   @at-root input:checked:disabled ~ & {
+    //     border-color: $gray-light;
+    //   }
+    // }
 
     // / свой чекбокс без картинок
   }
 
   &__input {
+    display: none;
     position: absolute;
     top: 0.7em;
     left: 0;
@@ -123,8 +124,32 @@
       @include field-focus;
     }
 
-    // сокрытие инпута в случае использования своего чекбокса
-    opacity: 0;
+    &:checked+.field-checkbox__name-text {
+
+      &:before {
+        background-color: $color-main;
+        border: none;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 7px;
+        left: 5px;
+        width: 8px;
+        height: 6px;
+        background-image: url('../img/check.png');
+        background-repeat: no-repeat;
+
+        @at-root input:checked~& {
+          opacity: 1;
+        }
+
+        @at-root input:checked:disabled~& {
+          border-color: $gray-light;
+        }
+      }
+    }
   }
 
   &__help-text-wrap {
