@@ -12,6 +12,15 @@
   font-weight: 300;
   color: $gray-dark;
 
+  & svg {
+    fill: #ccc;
+  }
+  &:hover {
+    & svg {
+      fill: $color-main;
+    }
+  }
+
   & span {
     margin-left: 15px;
   }

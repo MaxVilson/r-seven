@@ -50,6 +50,14 @@
     border-radius: 50%;
     background-color: #fff;
 
+    &:hover {
+      background-color: $color-main;
+
+      & svg {
+        fill: #fff;
+      }
+    }
+
     &:after {
       font-size: 0;
     }

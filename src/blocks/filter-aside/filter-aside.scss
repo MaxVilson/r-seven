@@ -50,7 +50,7 @@
 
   &__item {
     position: relative; 
-    padding-top: 25px;
+    // padding-top: 25px;
     padding-right: 20px;
     padding-bottom: 0;
     padding-left: 20px;
@@ -67,22 +67,27 @@
 
     &--active {
       padding-bottom: 25px;
+
       & svg {
         transform: rotate(0);
       }
     }
+
+    &-title {
+      padding-top: 25px;
+      padding-bottom: 25px;
+    }
   }
 
   &__subblock {
-    margin-top: 25px;
     max-height: 0;
     overflow: hidden;
-    transition: max-height .5s cubic-bezier(0, 1, 0, 1);
+    transition: max-height .3s cubic-bezier(0, 1, 0, 1);
 
     &--active {
       overflow: inherit;
       max-height: 99em;
-      transition: max-height .5s ease-in-out;
+      transition: max-height .3s ease-in-out;
     }
 
     &-row {

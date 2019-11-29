@@ -26,7 +26,8 @@ mixin filter-aside(text, mods)
           svg(width="10", height="10")
             use(xlink:href="img/sprite.svg#close")
       .filter-aside__items
-        .filter-aside__item.filter-aside__item--active Цена
+        .filter-aside__item.filter-aside__item--active
+          .filter-aside__item-title.filter-aside__item-title--active Цена
           svg(width="10", height="6")
             use(xlink:href="img/sprite.svg#arrow-down")
           .filter-aside__subblock.filter-aside__subblock-price.filter-aside__subblock--active
@@ -35,7 +36,8 @@ mixin filter-aside(text, mods)
               +field-text({val: 'до', attrs: { name: 'fieldRangeEnd', id: 'fieldRangeEnd' }})
             +input-range({ attrs: { name: 'my_range', value: '', }})
         
-        .filter-aside__item.filter-aside__item--active Производитель
+        .filter-aside__item.filter-aside__item--active
+          .filter-aside__item-title.filter-aside__item-title--active Производитель
           svg(width="10", height="6")
             use(xlink:href="img/sprite.svg#arrow-down")
           .filter-aside__subblock.filter-aside__subblock--active
@@ -78,7 +80,8 @@ mixin filter-aside(text, mods)
             ])
             a(href='#').filter-aside__subblock-link Показать все
 
-        .filter-aside__item.filter-aside__item--active Процессор
+        .filter-aside__item.filter-aside__item--active 
+          .filter-aside__item-title.filter-aside__item-title--active Процессор
           svg(width="10", height="6")
             use(xlink:href="img/sprite.svg#arrow-down")
           .filter-aside__subblock.filter-aside__subblock--active
@@ -95,7 +98,8 @@ mixin filter-aside(text, mods)
                 }
               }])
 
-        .filter-aside__item Семейство процессоров
+        .filter-aside__item 
+          .filter-aside__item-title Семейство процессоров
           svg(width="10", height="6")
             use(xlink:href="img/sprite.svg#arrow-down")
           .filter-aside__subblock
@@ -112,7 +116,8 @@ mixin filter-aside(text, mods)
                 }
               }])
 
-        .filter-aside__item Размер оперативной памяти
+        .filter-aside__item 
+          .filter-aside__item-title Размер оперативной памяти 
           svg(width="10", height="6")
             use(xlink:href="img/sprite.svg#arrow-down")
           .filter-aside__subblock
@@ -129,7 +134,8 @@ mixin filter-aside(text, mods)
                 }
               }])
 
-        .filter-aside__item Тип видеокарты
+        .filter-aside__item 
+          .filter-aside__item-title Тип видеокарты
           svg(width="10", height="6")
             use(xlink:href="img/sprite.svg#arrow-down")
           .filter-aside__subblock
@@ -146,7 +152,8 @@ mixin filter-aside(text, mods)
                 }
               }])
 
-        .filter-aside__item Объем SSD
+        .filter-aside__item 
+          .filter-aside__item-title Объем SSD
           svg(width="10", height="6")
             use(xlink:href="img/sprite.svg#arrow-down")
           .filter-aside__subblock
@@ -163,7 +170,8 @@ mixin filter-aside(text, mods)
                 }
               }])
 
-        .filter-aside__item Оптический привод
+        .filter-aside__item 
+          .filter-aside__item-title Оптический привод
           svg(width="10", height="6")
             use(xlink:href="img/sprite.svg#arrow-down")
           .filter-aside__subblock
@@ -180,7 +188,8 @@ mixin filter-aside(text, mods)
                 }
               }])
 
-        .filter-aside__item Операционная система
+        .filter-aside__item 
+          .filter-aside__item-title Операционная система
           svg(width="10", height="6")
             use(xlink:href="img/sprite.svg#arrow-down")
           .filter-aside__subblock

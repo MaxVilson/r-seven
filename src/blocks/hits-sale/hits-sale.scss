@@ -79,6 +79,9 @@
 
       & .slider-controls__item {
         background-color: #f7f7f7;
+        &:hover {
+          background-color: $color-main;
+        }
       }
     }
   }

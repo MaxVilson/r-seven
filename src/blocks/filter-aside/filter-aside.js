@@ -2,7 +2,8 @@
 const ready = require('../../js/utils/documentReady.js');
 
 ready(function () {
-  const item = document.querySelectorAll('.filter-aside__item');
+  const itemTitle = document.querySelectorAll('.filter-aside__item-title');
+  const items = document.querySelectorAll('.filter-aside__item');
   const subblock = document.querySelectorAll('.filter-aside__subblock');
   const aside = document.querySelector('.filter-aside');
   const filter = document.getElementById('filter');
@@ -11,9 +12,10 @@ ready(function () {
   filter.addEventListener('click', () => aside.style.transform = 'translateX(0)');
   close.addEventListener('click', () => aside.style.transform = 'translateX(-100%)');
 
-  for (let i = 0; i < item.length; i++) {
-    item[i].addEventListener('click', () => {
-      item[i].classList.toggle('filter-aside__item--active');
+  for (let i = 0; i < itemTitle.length; i++) {
+    itemTitle[i].addEventListener('click', () => {
+      itemTitle[i].classList.toggle('filter-aside__item-title--active');
+      items[i].classList.toggle('filter-aside__item--active');
       subblock[i].classList.toggle('filter-aside__subblock--active');
     })
   }
