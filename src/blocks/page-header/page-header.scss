@@ -50,6 +50,11 @@
 
       &-arrow {
         cursor: pointer;
+        &:hover {
+          & svg {
+            fill: $color-main;
+          }
+        }
       }
     }
 
@@ -158,6 +163,11 @@
     }
 
     &-tel {  
+      &:hover {
+        & svg {
+          fill: $color-main;
+        }
+      }
       @include desktop {
         display: none;
       }
@@ -168,6 +178,11 @@
     }
 
     &-cart {
+      &:hover {
+        & svg {
+          fill: $color-main;
+        }
+      }
 
       & svg {
         fill: $gray-darkest;
@@ -210,6 +225,11 @@
     &-icon {
       display: inline-block;
       margin-right: 20px;
+      &:hover {
+        & svg {
+          fill: $color-main;
+        }
+      }
 
       & svg {
         fill: $gray-darkest;

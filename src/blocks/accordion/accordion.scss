@@ -79,8 +79,17 @@
     }
 
     &-images {
+      @include tablet {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
       & img {
         margin-bottom: 15px;
+
+        @include tablet {
+          width: 220px;   
+        }
       }
     }
   }
