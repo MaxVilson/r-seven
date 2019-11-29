@@ -28,8 +28,6 @@
 
   &__item {
     position: relative;
-    padding-top: 30px;
-    padding-bottom: 10px;
     padding-left: 0;
     font-size: 12px;
     font-weight: 700;
@@ -40,6 +38,16 @@
       padding-top: 0;
       padding-bottom: 0;
       border: inherit;
+    }
+
+    &-title {
+      padding-top: 30px;
+      padding-bottom: 10px;
+
+      @include desktop {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
     }
 
     &-icon {

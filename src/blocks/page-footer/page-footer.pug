@@ -20,7 +20,8 @@ mixin page-footer(mods)
   footer.page-footer(class=allMods, role='contentinfo')&attributes(attributes)
     .page-footer__inner
       ul.page-footer__list
-        li.page-footer__item Компьютеры
+        li.page-footer__item 
+          .page-footer__item-title Компьютеры
           svg(width="10", height="6").page-footer__item-icon
             use(xlink:href="img/sprite.svg#arrow-down")
           ul.page-footer__sublist
@@ -34,7 +35,8 @@ mixin page-footer(mods)
               a(href='#').page-footer__sublink Профессиональные
             li.page-footer__subitem
               a(href='#').page-footer__sublink Компактные
-        li.page-footer__item Комплектующие
+        li.page-footer__item 
+          .page-footer__item-title Комплектующие
           svg(width="10", height="6").page-footer__item-icon
             use(xlink:href="img/sprite.svg#arrow-down")
           ul.page-footer__sublist
@@ -52,7 +54,8 @@ mixin page-footer(mods)
               a(href='#').page-footer__sublink Видеокарты
             li.page-footer__subitem
               a(href='#').page-footer__sublink Корпуса
-        li.page-footer__item Сетевое оборудование
+        li.page-footer__item
+          .page-footer__item-title Сетевое оборудование
           svg(width="10", height="6").page-footer__item-icon
             use(xlink:href="img/sprite.svg#arrow-down") 
           ul.page-footer__sublist
@@ -68,7 +71,8 @@ mixin page-footer(mods)
               a(href='#').page-footer__sublink Маршрутизаторы
             li.page-footer__subitem
               a(href='#').page-footer__sublink Адаптеры
-        li.page-footer__item Переферия 
+        li.page-footer__item
+          .page-footer__item-title Переферия 
           svg(width="10", height="6").page-footer__item-icon
             use(xlink:href="img/sprite.svg#arrow-down")
           ul.page-footer__sublist
@@ -86,7 +90,8 @@ mixin page-footer(mods)
               a(href='#').page-footer__sublink Аксесуары
             li.page-footer__subitem
               a(href='#').page-footer__sublink Внешние накопители
-        li.page-footer__item Оргтехника
+        li.page-footer__item 
+          .page-footer__item-title Оргтехника
           svg(width="10", height="6").page-footer__item-icon
             use(xlink:href="img/sprite.svg#arrow-down")    
           ul.page-footer__sublist
