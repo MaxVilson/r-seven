@@ -18,37 +18,39 @@ mixin card-hit(img, title, stars, sale, price, priceSale, present, mods)
       }
     }
 
-  a(href='#').card-hit(class=allMods)&attributes(attributes)
+  .card-hit(class=allMods)&attributes(attributes)
     .card-hit__inner
-      .card-hit__img  
-        img(src= img alt='Хит')
-      .card-hit__title= title
-        div= present
+      a(href='#').card-hit__link
+        .card-hit__img  
+          img(src= img alt='Хит')
+        .card-hit__title= title
+          div= present
       +stars(stars)(class='card-hit__stars')
       .card-hit__sale= sale
       .card-hit__price-wrapper
         .card-hit__price= price
         .card-hit__price-sale= priceSale
       .card-hit__footer
-        +btn('Купить', 'transparent')(href='' class='card-hit__btn')
+        +btn('Купить', 'transparent')(href='' class='card-hit__btn')&attributes(attributes)
         +comparison('', 'card-hit__comparison')
 
 
 mixin card-hit-close(props)
-  a(href='#').card-hit.card-hit-close(class=allMods)&attributes(attributes)
+  .card-hit.card-hit-close(class=allMods)&attributes(attributes)
     .card-hit__inner
       .card-hit__close
         svg(width="12", height="12")
           use(xlink:href="img/sprite.svg#close")
-      picture.card-hit__img 
-        source(media='(min-width: 1200px)' srcset=props.imgLg)
-        img(src=props.img alt='товар')
-      .card-hit__title= props.title
-        div= props.present
+      a(href='#').card-hit__link
+        picture.card-hit__img 
+          source(media='(min-width: 1200px)' srcset=props.imgLg)
+          img(src=props.img alt='товар')
+        .card-hit__title= props.title
+          div= props.present
       +stars(props.stars)(class='card-hit__stars')
       .card-hit__sale= props.sale
       .card-hit__price-wrapper
         .card-hit__price= props.price
         .card-hit__price-sale= props.priceSale
       .card-hit__footer
-        +btn('Купить', 'transparent')(href='' class='card-hit__btn')
+        +btn('Купить', 'transparent')(href='' class='card-hit__btn')&attributes(attributes)

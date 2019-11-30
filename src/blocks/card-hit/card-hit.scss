@@ -8,8 +8,6 @@
   width: 100%;
   border: 1px solid #e6e6e6;
   background-color: $white;
-  text-decoration: none;
-  color: $gray-darken;
 
   @include tablet {
     width: 280px;
@@ -26,6 +24,11 @@
     padding-right: 35px;
     padding-bottom: 35px;
     padding-left: 30px;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $gray-darken;
   }
 
   &__close {

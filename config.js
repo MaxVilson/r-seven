@@ -32,6 +32,7 @@ let config = {
   ],
   'addJsAfter': [
     './script.js',
+    './cartProducts.js'
   ],
   'addAssets': {
     "src/fonts/MUSEOSANSCYRL-100.woff": "fonts/",
