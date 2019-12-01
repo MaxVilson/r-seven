@@ -1,0 +1,91 @@
+.modal-thank-you {
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        @include tablet {
+            align-items: flex-end;
+            padding-right: 40px;    
+        }
+    }
+
+    &__wrapper {
+        text-align: center;
+
+        @include tablet {
+          width: 260px;
+          text-align: left;
+        }
+    }
+
+    &__title {
+        margin-top: 20px;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 36px;
+    }
+
+    &__text {
+      margin-top: 15px;
+      font-weight: 400;
+      line-height: 18px;
+    }
+
+    &__btn {
+      margin-top: 30px;
+      width: 200px;
+      height: 54px;
+      background-color: $color-secondory;
+
+      @include desktop {
+        margin-top: 40px;
+      }
+    }
+
+    & .modal__content {
+        background-image: url('../img/thank-you.png');
+        background-repeat: no-repeat;
+        background-position: center 330px;
+
+        @include tablet {
+            background-position: left;
+        }
+    }
+
+    & .modal {
+        @include tablet {
+            padding-top: 100px;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        @include desktop {
+            padding-top: 0;
+        }
+    }
+
+    & .modal__dialog {
+        @include tablet {
+          width: 530px;
+          height: 320px;
+        }
+    }
+
+    & .modal__header {
+        @include tablet {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 50px;
+        }
+    }
+
+    & .modal__title {
+        @include tablet {
+            width: 253px;
+            text-align: left;
+        }
+    }
+}

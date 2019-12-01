@@ -7,10 +7,6 @@
   padding-bottom: 6px;
   box-shadow: 0 0 6px 6px rgba(0, 0, 0, 0.05);
 
-  // @include desktop {
-  //   box-shadow: 0 0 6px 6px rgba(0, 0, 0, 0.05);
-  // }
-
   &__wrapper {
     @include container;
     display: flex;
@@ -119,10 +115,6 @@
       }
     }
 
-    &-links {
-
-    }
-
     &-link {
       margin-right: 65px;
       text-decoration: none;
@@ -133,10 +125,6 @@
         margin-right: 0;
       }
     }
-  }
-
-  &__logo {
-    
   }
 
   &__icons {
@@ -181,6 +169,26 @@
       &:hover {
         & svg {
           fill: $color-main;
+        }
+      }
+
+      &--active {
+        position: relative;
+        &:after {
+          content: '2';
+          position: absolute;
+          top: -11px;
+          right: -14px;
+          width: 15px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 15px;
+          border-radius: 50%;
+          background-color: $color-main;
+          font-size: 10px;
+          font-weight: 300;
+          color: $white;
         }
       }
 
@@ -250,7 +258,47 @@
     }
   }
 
-  &__menu {
+  &__comparison {
 
+    &-wrapper {
+      display: none;
+
+      @include desktop {
+        display: block;
+        margin-top: 14px;
+        margin-left: 49px;
+      }
+    }
+  }
+
+  &__price {
+    display: none;
+    margin-top: 14px;
+    font-weight: 700;
+    line-height: 24px;
+
+    @include desktop {
+      display: block;
+    }
+  }
+}
+
+.page-header-active {
+
+  & .page-header__search {
+    & input {
+      display: none;
+
+      @include desktop {
+        display: block;
+        width: 570px;
+      }
+    }
+  }
+
+  & .page-header__icon-cart {
+    @include desktop {
+      margin-left: 60px;
+    }
   }
 }

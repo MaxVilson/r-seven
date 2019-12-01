@@ -31,7 +31,7 @@ mixin card-hit(img, title, stars, sale, price, priceSale, present, mods)
         .card-hit__price= price
         .card-hit__price-sale= priceSale
       .card-hit__footer
-        +btn('Купить', 'transparent')(href='' class='card-hit__btn')&attributes(attributes)
+        +btn('Купить', 'transparent')(href='' class='card-hit__btn' data-target='#modal-thank-you' data-toggle='modal')&attributes(attributes)
         +comparison('', 'card-hit__comparison')
 
 

@@ -96,6 +96,10 @@
 
     & svg {
       fill: $gray-dark;
+
+      &:hover {
+        fill: $color-main;
+      }
     }
   } 
 }

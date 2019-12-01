@@ -554,11 +554,12 @@ pre {
   &__list-table {
 
     &-row {
+      padding-top: 20px;
+
       @include tablet {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
-        margin-top: 20px;
         padding-right: 20px;
         padding-left: 20px;
       }
@@ -569,6 +570,7 @@ pre {
 
       @include desktop {
         margin-top: 0;
+        padding-top: 0;
         padding-right: 0;
       }
     }
@@ -584,10 +586,6 @@ pre {
       
       &:last-child {
         margin-bottom: 0;
-      }
-
-      & .card-hit__footer {
-        display: none;
       }
     }
   }
@@ -880,13 +878,13 @@ pre {
 
       &-wrapper {
         @include container;
-        padding-top: 30px;
-        padding-bottom: 30px;
       }
 
       @include desktop {
         display: block;
         margin: 0;
+        padding-top: 30px;
+        padding-bottom: 30px;
       }
     }
 
@@ -1595,7 +1593,9 @@ pre {
   &__listing-complectations {
 
     &-wrapper {
-      background-color: #f7f7f7;
+      @include desktop {
+        background-color: #f7f7f7;
+      }
     }
 
     &-breadcrumbs {
@@ -1613,7 +1613,9 @@ pre {
     }
 
     &-container {
-      @include container;
+      @include desktop {
+        @include container;
+      }
     }
 
     &-inner {
@@ -1621,7 +1623,18 @@ pre {
     }
 
     &-item {
+      display: none;
       margin-top: 20px;
+
+      @include desktop {
+        display: block;
+      }
+    }
+
+    &-slider {
+      @include desktop {
+        display: none;
+      }
     }
 
     &-btn-wrapper {
@@ -1783,6 +1796,67 @@ pre {
     }
 
     &__btn {
+      width: 200px;
+      height: 54px;
+
+      @include desktop {
+        margin-top: 40px;
+      }
+    }
+  }
+
+  &-thank-you {
+    padding-top: 230px;
+    padding-bottom: 60px;
+    background-color: #f7f7f7;
+    background-image: url('../img/thank-you.png');
+    background-repeat: no-repeat;
+    background-position: center 30px;
+    text-align: center;
+
+    @include desktop {
+      padding-top: 380px;
+      padding-bottom: 100px;
+      background-image: url('../img/thank-you-lg.png');
+      background-position: center -200px;
+    }
+
+    &__container {
+      @include container;
+
+      @include desktop {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    &__title {
+      margin-top: 20px;
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 36px;
+      color: #25193a;
+    }
+
+    &__text {
+      margin-top: 15px;
+      font-weight: 400;
+      line-height: 18px;
+
+      @include desktop {
+        margin-top: 20px;
+        width: 437px;
+      }
+
+      &-bold {
+        margin-top: 25px;
+        font-weight: 700;
+      }
+    }
+
+    &__btn {
+      margin-top: 40px;
       width: 200px;
       height: 54px;
 

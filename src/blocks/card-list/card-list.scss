@@ -24,6 +24,15 @@
     padding: 0;
     width: 100%;
     border-bottom: 0;
+    &:hover {
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .08),
+        0 5px 8px 0 rgba(0, 0, 0, .05);
+
+      & .btn {
+        background-color: $color-main;
+        color: $white;
+      }
+    }
   }
 
   &__inner {

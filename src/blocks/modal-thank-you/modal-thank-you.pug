@@ -1,0 +1,27 @@
+//- Все примеси в этом файле должны начинаться c имени блока (modal-thank-you)
+
+mixin modal-thank-you(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +modal-thank-you('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' modal-thank-you--' + modsList[i].trim();
+      }
+    }
+
+  .modal-thank-you(class=allMods)&attributes(attributes)
+    +modal('modal-thank-you', 'Спасибо за покупку', 'some')
+        .modal-thank-you__body
+            .modal-thank-you__wrapper
+                .modal-thank-you__title Номер вашего заказа 5446
+                .modal-thank-you__text В ближайшее время менеджер нашего магазина вам перезвонит для уточнения деталей заказа.
+                +btn('Продолжить покупки', 'transparent', true)(class='modal-thank-you__btn')

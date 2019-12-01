@@ -1,0 +1,17 @@
+extends ../pug/layout.pug
+
+block meta
+  title Главная
+  meta(name='description', content='')
+
+//- block append head
+//-   link(rel='stylesheet', href='css/some.css')
+
+block content
+  +page-header()
+  .page-thank-you
+    .page-thank-you__container
+      .page-thank-you__title Спасибо за покупку!
+      .page-thank-you__text-bold Номер вашего заказа 5446.
+      .page-thank-you__text В ближайшее время менеджер нашего магазина вам перезвонит для уточнения деталей заказа.
+      +btn('Вернуться на главную', 'blue')(class='page-thank-you__btn')
